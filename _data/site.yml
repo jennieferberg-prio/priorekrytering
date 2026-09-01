@@ -1,12 +1,14 @@
 seo:
   title: Prio Rekrytering - Search i hela Sverige
-  description: Prio Rekrytering erbjuder personlig och målmedveten search i hela Sverige, med särskilt djup erfarenhet inom byggbranschen.
+  description: Prio Rekrytering erbjuder personlig och målmedveten search i hela
+    Sverige, med särskilt djup erfarenhet inom byggbranschen.
 hero:
   kicker: Prio Rekrytering
   heading_first: Vi hittar människan
   heading_second: som bygger
   heading_emphasis: vidare.
-  introduction: Specialiserad search i hela Sverige, med särskilt djup erfarenhet inom byggbranschen.
+  introduction: Specialiserad search i hela Sverige, med särskilt djup erfarenhet
+    inom byggbranschen.
   experience_number: 12+
   experience_text: års erfarenhet inom rekrytering
   employer_cta: Behöver du rekrytera?
@@ -18,7 +20,9 @@ image:
 method:
   heading_first: Vi börjar med
   heading_second: att förstå.
-  text: Varje sökning tar avstamp i er verksamhet, rollen och det sammanhang kandidaten ska lyckas i. Därefter kartlägger och kontaktar vi de personer som bäst motsvarar behovet - oavsett om de söker nytt eller inte.
+  text: Varje sökning tar avstamp i er verksamhet, rollen och det sammanhang
+    kandidaten ska lyckas i. Därefter kartlägger och kontaktar vi de personer
+    som bäst motsvarar behovet - oavsett om de söker nytt eller inte.
   link_text: Starta ett uppdrag
 expertise:
   label: Det här kan ni förvänta er
@@ -33,7 +37,8 @@ expertise:
       text: Färre kandidater · Bättre beslutsunderlag
 statement:
   kicker: Noggrannhet i praktiken
-  quote: Ni får inte en hög med CV:n. Ni får ett genomarbetat urval av människor som kan rollen och passar verksamheten.
+  quote: Ni får inte en hög med CV:n. Ni får ett genomarbetat urval av människor
+    som kan rollen och passar verksamheten.
 employer_form:
   label: FÖR FÖRETAG
   heading_first: Behöver ni
@@ -44,9 +49,9 @@ candidate:
   kicker: För kandidater
   heading_first: Redo för nästa
   heading_second: möjlighet?
-  text: Vi träffar gärna människor med specialist- och ledarerfarenhet. Skicka in ditt CV så kontaktar vi dig när rätt möjlighet dyker upp.
+  text: Vi träffar gärna människor med specialist- och ledarerfarenhet. Skicka in
+    ditt CV så kontaktar vi dig när rätt möjlighet dyker upp.
   summary: Spontanansök
   button_label: Ladda upp ditt CV
 contact:
-  email: hej@priorekrytering.se
-
+  email: kontakt@priorekrytering.se
