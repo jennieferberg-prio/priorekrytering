@@ -1,0 +1,7 @@
+title: Prio Rekrytering
+url: https://priorekrytering.se
+lang: sv
+exclude:
+  - README.md
+  - .pages.yml
+

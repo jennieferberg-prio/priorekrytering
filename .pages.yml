@@ -1,0 +1,92 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: homepage
+    label: Startsida
+    type: file
+    path: _data/site.yml
+    fields:
+      - name: seo
+        label: Google och delning
+        type: object
+        fields:
+          - { name: title, label: Sidtitel, type: string }
+          - { name: description, label: Beskrivning, type: text }
+      - name: hero
+        label: Första sektionen
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: heading_emphasis, label: Kursivt slutord, type: string }
+          - { name: introduction, label: Introduktion, type: text }
+          - { name: experience_number, label: Erfarenhet siffra, type: string }
+          - { name: experience_text, label: Erfarenhet text, type: string }
+          - { name: employer_cta, label: Företagsknapp, type: string }
+      - name: image
+        label: Huvudbild
+        type: object
+        fields:
+          - { name: url, label: Bildadress, type: string }
+          - { name: alt, label: Bildbeskrivning, type: string }
+          - { name: caption_left, label: Bildtext vänster, type: string }
+          - { name: caption_right, label: Bildtext höger, type: string }
+      - name: method
+        label: Metod
+        type: object
+        fields:
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: link_text, label: Länktext, type: string }
+      - name: expertise
+        label: Fördelar
+        type: object
+        fields:
+          - { name: label, label: Sektionsrubrik, type: string }
+          - name: items
+            label: Punkter
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Rubrik, type: string }
+              - { name: text, label: Text, type: string }
+      - name: statement
+        label: Citat
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: quote, label: Citat, type: text }
+      - name: employer_form
+        label: Företagsformulär
+        type: object
+        fields:
+          - { name: label, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: message_placeholder, label: Meddelandefält, type: string }
+          - { name: button, label: Knapptext, type: string }
+      - name: candidate
+        label: Kandidater
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: summary, label: Formulärrubrik, type: string }
+          - { name: button_label, label: Knapptext, type: string }
+      - name: contact
+        label: Kontakt
+        type: object
+        fields:
+          - { name: email, label: E-postadress, type: string }
+
+settings:
+  hide: true
+  commit:
+    identity: user
+
