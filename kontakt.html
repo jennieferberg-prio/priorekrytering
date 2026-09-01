@@ -26,6 +26,7 @@ layout: null
       <p class="subpage-lede">{{ site.data.contact.hero.text }}</p>
     </section>
     <section class="contact-person">
+      <figure class="contact-portrait">{% if site.data.contact.person.portrait != empty %}<img src="{{ site.data.contact.person.portrait }}" alt="{{ site.data.contact.person.portrait_alt | escape }}">{% else %}<div><span>PRIO</span><small>Porträtt kommer</small></div>{% endif %}</figure>
       <div><span>{{ site.data.contact.person.role }}</span><h2>{{ site.data.contact.person.name }}</h2></div>
       <address>
         <div><span>Mail</span><a class="js-contact" data-kind="email" data-value="amVubmllZmVyYmVyZ0BwcmlvcmVrcnl0ZXJpbmcuc2U=" href="#">Visa e-post</a></div>
@@ -37,4 +38,3 @@ layout: null
   <script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 </html>
-

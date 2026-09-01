@@ -5,6 +5,9 @@ hero:
   kicker: Om Prio Rekrytering
   heading_first: När rätt kompetens
   heading_second: är prio.
+image:
+  url: https://images.unsplash.com/photo-1758518729463-0bb73ed899ac?auto=format&fit=crop&w=2200&q=88
+  alt: Kollegor i ett naturligt samtal
 intro: Prio Rekrytering är ett rekryteringsföretag med fokus på headhunting och search. Vi tror på att de bästa kandidaterna inte alltid finns bland dem som aktivt söker jobb - många av de mest kompetenta personerna har redan en anställning.
 paragraphs:
   - text: Därför arbetar vi aktivt med att identifiera och kontakta personer som har den erfarenhet, kompetens och personlighet som våra kunder söker. Genom en personlig och noggrann process matchar vi rätt kandidat med rätt möjlighet.
@@ -15,4 +18,3 @@ cta:
   heading: Berätta vem ni behöver hitta.
   text: Vi tar gärna ett första samtal om verksamheten, rollen och vad som krävs för att hitta rätt person.
   button: Starta ett uppdrag
-

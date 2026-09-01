@@ -6,8 +6,10 @@ hero:
   heading_first: Nästa möjlighet
   heading_second: kan börja här.
   text: Vi arbetar löpande med roller för specialister och ledare i hela Sverige. Här publicerar vi ett urval av de uppdrag som är öppna för ansökan just nu.
+image:
+  url: https://images.unsplash.com/photo-1761492190254-72fc728f770d?auto=format&fit=crop&w=2200&q=88
+  alt: Människor på väg utanför en modern kontorsbyggnad
 empty:
   heading: Nya möjligheter är på väg.
   text: Just nu har vi inga publicerade roller, men vårt searcharbete pågår hela tiden. Skicka gärna in en spontanansökan så kan vi kontakta dig när en relevant möjlighet dyker upp.
   button: Skicka spontanansökan
-

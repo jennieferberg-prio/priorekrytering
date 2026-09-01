@@ -103,6 +103,12 @@ content:
           - { name: kicker, label: Liten rubrik, type: string }
           - { name: heading_first, label: Rubrik rad 1, type: string }
           - { name: heading_second, label: Rubrik rad 2, type: string }
+      - name: image
+        label: Bild
+        type: object
+        fields:
+          - { name: url, label: Bild, type: image }
+          - { name: alt, label: Bildbeskrivning, type: string }
       - { name: intro, label: Inledning, type: text }
       - name: paragraphs
         label: Brödtext
@@ -145,6 +151,8 @@ content:
         fields:
           - { name: role, label: Titel, type: string }
           - { name: name, label: Namn, type: string }
+          - { name: portrait, label: Porträtt, type: image }
+          - { name: portrait_alt, label: Bildbeskrivning, type: string }
 
   - name: jobs_page
     label: Lediga jobb
@@ -165,6 +173,12 @@ content:
           - { name: heading_first, label: Rubrik rad 1, type: string }
           - { name: heading_second, label: Rubrik rad 2, type: string }
           - { name: text, label: Inledning, type: text }
+      - name: image
+        label: Bild
+        type: object
+        fields:
+          - { name: url, label: Bild, type: image }
+          - { name: alt, label: Bildbeskrivning, type: string }
       - name: empty
         label: När inga jobb är publicerade
         type: object
