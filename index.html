@@ -50,14 +50,15 @@ layout: null
     <section class="search-contact" id="kontakt">
       <p>{{ site.data.site.employer_form.label }}</p>
       <h2>{{ site.data.site.employer_form.heading_first }}<br>{{ site.data.site.employer_form.heading_second }}</h2>
-      <form><input required placeholder="Namn"><input type="email" required placeholder="E-post"><input placeholder="Företag"><textarea required placeholder="{{ site.data.site.employer_form.message_placeholder }}"></textarea><button>{{ site.data.site.employer_form.button }} →</button></form>
+      <div class="tally-embed employer-form"><iframe data-tally-src="https://tally.so/embed/yPajR0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Starta ett uppdrag"></iframe></div>
     </section>
     <section class="candidate-cta" id="spontanansokan">
       <div><p class="kicker">{{ site.data.site.candidate.kicker }}</p><h2>{{ site.data.site.candidate.heading_first }}<i>{{ site.data.site.candidate.heading_second }}</i></h2><p>{{ site.data.site.candidate.text }}</p></div>
-      <details><summary><span>{{ site.data.site.candidate.summary }}</span><b>{{ site.data.site.candidate.button_label }} →</b></summary><form><label>Namn<input required placeholder="För- och efternamn"></label><label>E-post<input type="email" required placeholder="namn@exempel.se"></label><label>CV<input type="file" required accept=".pdf,.doc,.docx"></label><button>Skicka spontanansökan →</button></form></details>
+      <details><summary><span>{{ site.data.site.candidate.summary }}</span><b>{{ site.data.site.candidate.button_label }} →</b></summary><div class="tally-embed candidate-form"><iframe data-tally-src="https://tally.so/embed/yPajp0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Spontanansökan"></iframe></div></details>
     </section>
   </main>
   <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/logo.jpeg' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
+  <script src="https://tally.so/widgets/embed.js"></script>
   <script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 </html>
