@@ -85,8 +85,42 @@ content:
         fields:
           - { name: email, label: E-postadress, type: string }
 
+  - name: about
+    label: Om Prio
+    type: file
+    path: _data/about.yml
+    fields:
+      - name: seo
+        label: Google och delning
+        type: object
+        fields:
+          - { name: title, label: Sidtitel, type: string }
+          - { name: description, label: Beskrivning, type: text }
+      - name: hero
+        label: Sidhuvud
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+      - { name: intro, label: Inledning, type: text }
+      - name: paragraphs
+        label: Brödtext
+        type: object
+        list: true
+        fields:
+          - { name: text, label: Stycke, type: text }
+      - { name: closing, label: Avslutande budskap, type: string }
+      - name: cta
+        label: Kontaktsektion
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading, label: Rubrik, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: button, label: Knapptext, type: string }
+
 settings:
   hide: true
   commit:
     identity: user
-
