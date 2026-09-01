@@ -120,6 +120,59 @@ content:
           - { name: text, label: Text, type: text }
           - { name: button, label: Knapptext, type: string }
 
+  - name: contact_page
+    label: Kontakt
+    type: file
+    path: _data/contact.yml
+    fields:
+      - name: seo
+        label: Google och delning
+        type: object
+        fields:
+          - { name: title, label: Sidtitel, type: string }
+          - { name: description, label: Beskrivning, type: text }
+      - name: hero
+        label: Sidhuvud
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: text, label: Inledning, type: text }
+      - name: person
+        label: Kontaktperson
+        type: object
+        fields:
+          - { name: role, label: Titel, type: string }
+          - { name: name, label: Namn, type: string }
+
+  - name: jobs_page
+    label: Lediga jobb
+    type: file
+    path: _data/jobs.yml
+    fields:
+      - name: seo
+        label: Google och delning
+        type: object
+        fields:
+          - { name: title, label: Sidtitel, type: string }
+          - { name: description, label: Beskrivning, type: text }
+      - name: hero
+        label: Sidhuvud
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: text, label: Inledning, type: text }
+      - name: empty
+        label: När inga jobb är publicerade
+        type: object
+        fields:
+          - { name: heading, label: Rubrik, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: button, label: Knapptext, type: string }
+
 settings:
   hide: true
   commit:

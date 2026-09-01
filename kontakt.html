@@ -1,0 +1,40 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ site.data.contact.seo.description | escape }}">
+  <title>{{ site.data.contact.seo.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body class="site search editorial-prio editorial-blue editorial-purple contact-page">
+  <nav>
+    <a class="editorial-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/logo.jpeg' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a>
+    <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a class="active" href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
+    <span>SEARCH / SE</span>
+  </nav>
+  <main>
+    <section class="subpage-hero contact-hero">
+      <p class="kicker">{{ site.data.contact.hero.kicker }}</p>
+      <h1>{{ site.data.contact.hero.heading_first }}<br><i>{{ site.data.contact.hero.heading_second }}</i></h1>
+      <p class="subpage-lede">{{ site.data.contact.hero.text }}</p>
+    </section>
+    <section class="contact-person">
+      <div><span>{{ site.data.contact.person.role }}</span><h2>{{ site.data.contact.person.name }}</h2></div>
+      <address>
+        <div><span>Mail</span><a class="js-contact" data-kind="email" data-value="amVubmllZmVyYmVyZ0BwcmlvcmVrcnl0ZXJpbmcuc2U=" href="#">Visa e-post</a></div>
+        <div><span>Telefon</span><a class="js-contact" data-kind="phone" data-value="MDc2MTA3MDg4OA==" href="#">Visa telefonnummer</a></div>
+      </address>
+    </section>
+  </main>
+  <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/logo.jpeg' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
+  <script src="{{ '/script.js' | relative_url }}"></script>
+</body>
+</html>
+
