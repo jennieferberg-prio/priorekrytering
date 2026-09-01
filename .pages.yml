@@ -30,7 +30,7 @@ content:
         label: Huvudbild
         type: object
         fields:
-          - { name: url, label: Bildadress, type: string }
+          - { name: url, label: Bild, type: image }
           - { name: alt, label: Bildbeskrivning, type: string }
           - { name: caption_left, label: Bildtext vänster, type: string }
           - { name: caption_right, label: Bildtext höger, type: string }

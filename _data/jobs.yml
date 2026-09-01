@@ -7,7 +7,7 @@ hero:
   heading_second: kan börja här.
   text: Vi arbetar löpande med roller för specialister och ledare i hela Sverige. Här publicerar vi ett urval av de uppdrag som är öppna för ansökan just nu.
 image:
-  url: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2200&q=88
+  url: /assets/uploads/lediga-jobb-arbetsliv.jpg
   alt: Kollegor i ett fokuserat samtal runt ett arbetsbord
 empty:
   heading: Nya möjligheter är på väg.
