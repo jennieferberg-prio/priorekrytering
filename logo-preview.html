@@ -1,0 +1,133 @@
+---
+---
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Logotypöversikt - Prio Rekrytering</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #eeeae5;
+        color: #251d29;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: clamp(24px, 5vw, 72px);
+      }
+
+      header {
+        width: min(1440px, 100%);
+        margin: 0 auto clamp(28px, 4vw, 52px);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(30px, 4vw, 54px);
+        letter-spacing: -.035em;
+      }
+
+      p { margin: 0; color: #655b68; }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(210px, 1fr));
+        gap: 16px;
+        width: min(1440px, 100%);
+        margin: 0 auto;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+
+      .background {
+        min-width: 210px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgb(42 28 48 / 8%);
+      }
+
+      .background h2 {
+        margin: 0;
+        padding: 12px 16px;
+        background: rgb(255 255 255 / 92%);
+        color: #302735;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+      }
+
+      .bisque { background: bisque; }
+      .darkseagreen { background: darkseagreen; }
+      .lavender { background: lavender; }
+      .white { background: white; }
+      .black { background: black; }
+
+      .logo-set {
+        display: grid;
+        grid-template-rows: repeat(3, 270px);
+      }
+
+      figure {
+        display: grid;
+        place-items: center;
+        min-width: 0;
+        margin: 0;
+        padding: 28px 20px;
+        border-top: 1px solid rgb(77 24 106 / 13%);
+      }
+
+      figure:first-child { border-top: 0; }
+
+      img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 210px;
+        object-fit: contain;
+      }
+
+      .round img { max-height: 190px; }
+      .horizontal img { max-height: 145px; }
+
+      @media (max-width: 700px) {
+        body { padding: 24px 16px; }
+        main { grid-template-columns: repeat(5, 78vw); }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Logotypöversikt</h1>
+      <p>Tre varianter på fem olika bakgrunder.</p>
+    </header>
+
+    <main>
+      {% assign backgrounds = "Bisque:bisque,Darkseagreen:darkseagreen,Lavender:lavender,Vit:white,Svart:black" | split: "," %}
+      {% for background in backgrounds %}
+        {% assign details = background | split: ":" %}
+        <section class="background {{ details[1] }}">
+          <h2>{{ details[0] }}</h2>
+          <div class="logo-set">
+            <figure class="round">
+              <img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt="Rund Prio-symbol">
+            </figure>
+            <figure class="vertical">
+              <img src="{{ '/assets/uploads/logo-utkast/prio-original-tva-solida-farger.png' | relative_url }}" alt="Stående logotyp för Prio Rekrytering">
+            </figure>
+            <figure class="horizontal">
+              <img src="{{ '/assets/uploads/logo-utkast/prio-rund-med-ordmarke-hoger.png' | relative_url }}" alt="Rund symbol med Prio Rekrytering till höger">
+            </figure>
+          </div>
+        </section>
+      {% endfor %}
+    </main>
+  </body>
+</html>
