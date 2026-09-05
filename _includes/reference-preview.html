@@ -14,7 +14,7 @@
   <nav>
     <a class="editorial-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a>
     <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
-    <span>FÖRSLAG {{ page.reference_variant }} / 6</span>
+    <span>FÖRSLAG {{ page.reference_variant }} / 9</span>
   </nav>
   <main>
     <section class="search-hero blue-hero">
@@ -64,12 +64,32 @@
         <div><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p><span class="reference-photo-index">01 — 03</span></div>
       </article>
     </section>
-    {% else %}
+    {% elsif page.reference_variant == 6 %}
     <section class="reference-section reference-6">
       <div class="reference-bento-heading"><p class="kicker">Långsiktiga relationer</p><h2>När rätt matchning<br><i>märks på riktigt.</i></h2></div>
       <article class="reference-bento-quote"><span>“</span><blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></article>
       <div class="reference-bento-proof"><strong>Många år</strong><span>av fortsatt förtroende</span></div>
       <div class="reference-bento-tag"><span>01</span><p>Rätt kandidater.<br>Bra arbete.</p></div>
+    </section>
+    {% elsif page.reference_variant == 7 %}
+    <section class="reference-section reference-7">
+      <header><p class="kicker">Kundreferenser</p><h2>Vad våra kunder säger</h2></header>
+      <article>
+        <div class="reference-company"><span>EXEMPEL</span><small>AB</small></div>
+        <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+        <div class="reference-card-meta"><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p><span>01 / 01</span></div>
+      </article>
+    </section>
+    {% elsif page.reference_variant == 8 %}
+    <section class="reference-section reference-8">
+      <div class="reference-logos"><p class="kicker">Ett urval av våra kunder</p><div><span>EXEMPEL AB</span><i>Fler kundlogotyper</i></div></div>
+      <div class="reference-compact-quote"><p class="kicker">Kundens ord</p><blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></div>
+    </section>
+    {% else %}
+    <section class="reference-section reference-9">
+      <div class="reference-strip-label"><p class="kicker">Kundernas ord</p><span>01 / 01</span></div>
+      <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+      <div class="reference-strip-meta"><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p><div><button type="button" aria-label="Föregående referens">←</button><button type="button" aria-label="Nästa referens">→</button></div></div>
     </section>
     {% endif %}
   </main>
