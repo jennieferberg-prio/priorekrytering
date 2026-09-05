@@ -14,7 +14,7 @@
   <nav>
     <a class="editorial-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a>
     <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
-    <span>FÖRSLAG {{ page.reference_variant }} / 3</span>
+    <span>FÖRSLAG {{ page.reference_variant }} / 6</span>
   </nav>
   <main>
     <section class="search-hero blue-hero">
@@ -40,11 +40,39 @@
       <header><p class="kicker">Referenser</p><h2>Förtroende som<br><i>byggts över tid.</i></h2></header>
       <article><span class="reference-mark">“</span><blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></article>
     </section>
-    {% else %}
+    {% elsif page.reference_variant == 3 %}
     <section class="reference-section reference-3">
       <div><p class="kicker">Kundens ord</p><span>01</span></div>
       <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
       <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+    </section>
+    {% elsif page.reference_variant == 4 %}
+    <section class="reference-section reference-4">
+      <div class="reference-card-number">01</div>
+      <article>
+        <p class="kicker">Referens / Exempel AB</p>
+        <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+        <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+      </article>
+      <p class="reference-sideword">RÄTT PERSON.</p>
+    </section>
+    {% elsif page.reference_variant == 5 %}
+    <section class="reference-section reference-5">
+      <p class="kicker">Vad våra kunder säger</p>
+      <div class="reference-ribbon"><span>RÄTT KANDIDATER · RÄTT KANDIDATER · RÄTT KANDIDATER ·</span></div>
+      <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+      <div class="reference-ribbon reference-ribbon-bottom"><span>FÖRTROENDE ÖVER TID · FÖRTROENDE ÖVER TID ·</span></div>
+      <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+    </section>
+    {% else %}
+    <section class="reference-section reference-6">
+      <p class="reference-orbit-label">KUNDREFERENS <span>01</span></p>
+      <article>
+        <span class="reference-quote-mark">“</span>
+        <blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote>
+        <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+      </article>
+      <p class="reference-orbit-note">SEARCH · HEADHUNTING · SVERIGE</p>
     </section>
     {% endif %}
   </main>
