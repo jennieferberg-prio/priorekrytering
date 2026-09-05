@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Referensförslag {{ page.reference_variant }} | Prio Rekrytering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body class="site search editorial-prio editorial-blue editorial-purple reference-preview">
+  <nav>
+    <a class="editorial-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a>
+    <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
+    <span>FÖRSLAG {{ page.reference_variant }} / 3</span>
+  </nav>
+  <main>
+    <section class="search-hero blue-hero">
+      <p class="kicker">{{ site.data.site.hero.kicker }}</p>
+      <h1>{{ site.data.site.hero.heading_first }}<br>{{ site.data.site.hero.heading_second }} <i>{{ site.data.site.hero.heading_emphasis }}</i></h1>
+      <div class="blue-hero-meta"><p>{{ site.data.site.hero.introduction }}</p><div class="blue-proof"><b>{{ site.data.site.hero.experience_number }}</b><span>{{ site.data.site.hero.experience_text }}</span></div><a href="#kontakt">{{ site.data.site.hero.employer_cta }} <span>→</span></a></div>
+    </section>
+    <section class="search-image"><img src="{{ site.data.site.image.url }}" alt="{{ site.data.site.image.alt | escape }}"><div><span>{{ site.data.site.image.caption_left }}</span><span>{{ site.data.site.image.caption_right }}</span></div></section>
+    <section class="search-approach blue-approach" id="metod"><div><h2>{{ site.data.site.method.heading_first }}<br>{{ site.data.site.method.heading_second }}</h2><p>{{ site.data.site.method.text }}</p><a href="#kontakt">{{ site.data.site.method.link_text }} →</a></div></section>
+    <section class="search-focus" id="expertis"><header><span>{{ site.data.site.expertise.label }}</span></header><div>{% for item in site.data.site.expertise.items %}<article><b>{{ item.title }}</b><span>{{ item.text }}</span></article>{% endfor %}</div></section>
+    <section class="editorial-statement"><p class="kicker">{{ site.data.site.statement.kicker }}</p><blockquote>{{ site.data.site.statement.quote }}</blockquote></section>
+    <section class="search-contact" id="kontakt"><p>{{ site.data.site.employer_form.label }}</p><h2>{{ site.data.site.employer_form.heading_first }}<br>{{ site.data.site.employer_form.heading_second }}</h2><div class="tally-embed employer-form"><iframe data-tally-src="https://tally.so/embed/yPajR0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" title="Starta ett uppdrag"></iframe></div></section>
+    <section class="candidate-cta" id="spontanansokan"><div><p class="kicker">{{ site.data.site.candidate.kicker }}</p><h2>{{ site.data.site.candidate.heading_first }}<i>{{ site.data.site.candidate.heading_second }}</i></h2><p>{{ site.data.site.candidate.text }}</p></div><details><summary><span>{{ site.data.site.candidate.summary }}</span><b>{{ site.data.site.candidate.button_label }} →</b></summary><div class="tally-embed candidate-form"><iframe data-tally-src="https://tally.so/embed/yPajp0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" title="Spontanansökan"></iframe></div></details></section>
+
+    {% if page.reference_variant == 1 %}
+    <section class="reference-section reference-1">
+      <p class="kicker">Ord från en kund</p>
+      <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+      <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+    </section>
+    {% elsif page.reference_variant == 2 %}
+    <section class="reference-section reference-2">
+      <header><p class="kicker">Referenser</p><h2>Förtroende som<br><i>byggts över tid.</i></h2></header>
+      <article><span class="reference-mark">“</span><blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></article>
+    </section>
+    {% else %}
+    <section class="reference-section reference-3">
+      <div><p class="kicker">Kundens ord</p><span>01</span></div>
+      <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+      <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+    </section>
+    {% endif %}
+  </main>
+  <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
+  <script src="https://tally.so/widgets/embed.js"></script>
+  <script src="{{ '/script.js' | relative_url }}"></script>
+</body>
+</html>
