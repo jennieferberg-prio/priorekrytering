@@ -14,7 +14,7 @@
   <nav>
     <a class="editorial-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a>
     <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
-    <span>FÖRSLAG {{ page.reference_variant }} / 9</span>
+    <span>FÖRSLAG {{ page.reference_variant }} / 10</span>
   </nav>
   <main>
     <section class="search-hero blue-hero">
@@ -85,11 +85,47 @@
       <div class="reference-logos"><p class="kicker">Ett urval av våra kunder</p><div><span>EXEMPEL AB</span><i>Fler kundlogotyper</i></div></div>
       <div class="reference-compact-quote"><p class="kicker">Kundens ord</p><blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></div>
     </section>
-    {% else %}
+    {% elsif page.reference_variant == 9 %}
     <section class="reference-section reference-9">
       <div class="reference-strip-label"><p class="kicker">Kundernas ord</p><span>01 / 01</span></div>
       <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
       <div class="reference-strip-meta"><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p><div><button type="button" aria-label="Föregående referens">←</button><button type="button" aria-label="Nästa referens">→</button></div></div>
+    </section>
+    {% else %}
+    <section class="reference-section reference-10">
+      <header class="showcase-intro">
+        <p class="kicker">Referenser</p>
+        <h2>Det säger våra kunder</h2>
+        <p>Vi är stolta över förtroendet vi får från våra kunder. Här delar några av dem sina erfarenheter av att samarbeta med Prio Rekrytering.</p>
+      </header>
+      <div class="showcase-cards">
+        <article>
+          <span class="showcase-quote-mark" aria-hidden="true">“</span>
+          <small>Exempeltext</small>
+          <blockquote>Prio Rekrytering har en mycket god förståelse för vår bransch och våra behov. De presenterade snabbt relevanta kandidater av hög kvalitet och processen var både effektiv och professionell. Vi är mycket nöjda med resultatet.</blockquote>
+          <div class="showcase-card-footer"><p><strong>Kundnamn</strong><span>VD · Företag 01 AB</span></p><div class="showcase-wordmark">FÖRETAG <b>01</b></div></div>
+        </article>
+        <article>
+          <span class="showcase-quote-mark" aria-hidden="true">“</span>
+          <small>Exempeltext</small>
+          <blockquote>Samarbetet med Prio Rekrytering har varit personligt och professionellt från första kontakt. Jenniefer förstod snabbt vilken kompetens vi behövde och presenterade ett träffsäkert urval. Vi kände oss trygga genom hela processen.</blockquote>
+          <div class="showcase-card-footer"><p><strong>Kundnamn</strong><span>HR-chef · Företag 02 AB</span></p><div class="showcase-wordmark">FÖRETAG <b>02</b></div></div>
+        </article>
+        <article>
+          <span class="showcase-quote-mark" aria-hidden="true">“</span>
+          <small>Exempeltext</small>
+          <blockquote>Prio satte sig snabbt in i både rollen och vår verksamhet. Dialogen var nära, återkopplingen tydlig och kandidaterna höll genomgående hög kvalitet. Vi anlitar gärna Prio igen när nästa behov uppstår.</blockquote>
+          <div class="showcase-card-footer"><p><strong>Kundnamn</strong><span>Projektchef · Företag 03 AB</span></p><div class="showcase-wordmark">FÖRETAG <b>03</b></div></div>
+        </article>
+      </div>
+      <div class="showcase-clients">
+        <h3>Några av våra kunder</h3>
+        <div><span>FÖRETAG 01</span><span>FÖRETAG 02</span><span>FÖRETAG 03</span><span>FÖRETAG 04</span><span>FÖRETAG 05</span></div>
+      </div>
+      <div class="showcase-cta">
+        <div><p>Vill du också hitta rätt kompetens?</p><h3>Låt oss prata om ditt nästa tillskott.</h3></div>
+        <a href="{{ '/kontakt.html' | relative_url }}">Kontakta oss →</a>
+      </div>
     </section>
     {% endif %}
   </main>
