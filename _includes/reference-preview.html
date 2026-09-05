@@ -48,31 +48,28 @@
     </section>
     {% elsif page.reference_variant == 4 %}
     <section class="reference-section reference-4">
-      <div class="reference-card-number">01</div>
-      <article>
-        <p class="kicker">Referens / Exempel AB</p>
-        <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
-        <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+      <header><div><p class="kicker">Kundreferenser</p><h2>Det säger de<br>som anlitat oss.</h2></div><div class="reference-controls"><span>01 / 03</span><button type="button" aria-label="Föregående referens">←</button><button type="button" aria-label="Nästa referens">→</button></div></header>
+      <article class="reference-slide">
+        <span class="reference-slide-mark">“</span>
+        <blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote>
+        <div class="reference-slide-client"><span>JA</span><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></div>
       </article>
-      <p class="reference-sideword">RÄTT PERSON.</p>
     </section>
     {% elsif page.reference_variant == 5 %}
     <section class="reference-section reference-5">
-      <p class="kicker">Vad våra kunder säger</p>
-      <div class="reference-ribbon"><span>RÄTT KANDIDATER · RÄTT KANDIDATER · RÄTT KANDIDATER ·</span></div>
-      <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
-      <div class="reference-ribbon reference-ribbon-bottom"><span>FÖRTROENDE ÖVER TID · FÖRTROENDE ÖVER TID ·</span></div>
-      <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
+      <div class="reference-photo" role="img" aria-label="Yrkesarbetare i samtal"></div>
+      <article>
+        <p class="kicker">Röster från våra kunder</p>
+        <blockquote>“Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!”</blockquote>
+        <div><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p><span class="reference-photo-index">01 — 03</span></div>
+      </article>
     </section>
     {% else %}
     <section class="reference-section reference-6">
-      <p class="reference-orbit-label">KUNDREFERENS <span>01</span></p>
-      <article>
-        <span class="reference-quote-mark">“</span>
-        <blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote>
-        <p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p>
-      </article>
-      <p class="reference-orbit-note">SEARCH · HEADHUNTING · SVERIGE</p>
+      <div class="reference-bento-heading"><p class="kicker">Långsiktiga relationer</p><h2>När rätt matchning<br><i>märks på riktigt.</i></h2></div>
+      <article class="reference-bento-quote"><span>“</span><blockquote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</blockquote><p class="reference-byline"><strong>John</strong><span>Exempel AB</span></p></article>
+      <div class="reference-bento-proof"><strong>Många år</strong><span>av fortsatt förtroende</span></div>
+      <div class="reference-bento-tag"><span>01</span><p>Rätt kandidater.<br>Bra arbete.</p></div>
     </section>
     {% endif %}
   </main>
