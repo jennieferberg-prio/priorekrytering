@@ -1,0 +1,42 @@
+home:
+  original: /assets/uploads/startsida-byggarbetsplats.jpg
+  fallback: /assets/uploads/optimized/startsida-byggarbetsplats-1280.webp
+  width: 2200
+  height: 1467
+  sources:
+    - { url: /assets/uploads/optimized/startsida-byggarbetsplats-640.webp, width: 640 }
+    - { url: /assets/uploads/optimized/startsida-byggarbetsplats-1280.webp, width: 1280 }
+    - { url: /assets/uploads/optimized/startsida-byggarbetsplats-1800.webp, width: 1800 }
+    - { url: /assets/uploads/optimized/startsida-byggarbetsplats-2200.webp, width: 2200 }
+
+about:
+  original: /assets/uploads/om-prio-yrkesarbetare.jpg
+  fallback: /assets/uploads/optimized/om-prio-yrkesarbetare-1280.webp
+  width: 2200
+  height: 1468
+  sources:
+    - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-640.webp, width: 640 }
+    - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-1280.webp, width: 1280 }
+    - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-1800.webp, width: 1800 }
+    - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-2200.webp, width: 2200 }
+
+jobs:
+  original: /assets/uploads/lediga-jobb-arbetsliv.jpg
+  fallback: /assets/uploads/optimized/lediga-jobb-arbetsliv-1280.webp
+  width: 2200
+  height: 1467
+  sources:
+    - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-640.webp, width: 640 }
+    - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-1280.webp, width: 1280 }
+    - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-1800.webp, width: 1800 }
+    - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-2200.webp, width: 2200 }
+
+contact:
+  original: /assets/uploads/jen.jpg
+  fallback: /assets/uploads/optimized/jen-800.webp
+  width: 1125
+  height: 1398
+  sources:
+    - { url: /assets/uploads/optimized/jen-480.webp, width: 480 }
+    - { url: /assets/uploads/optimized/jen-800.webp, width: 800 }
+    - { url: /assets/uploads/optimized/jen-1125.webp, width: 1125 }

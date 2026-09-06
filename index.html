@@ -60,7 +60,7 @@ layout: null
       </div>
     </section>
     <section class="search-image">
-      <img src="{{ site.data.site.image.url }}" alt="{{ site.data.site.image.alt | escape }}">
+      {% include responsive-image.html variant="home" src=site.data.site.image.url alt=site.data.site.image.alt sizes="94vw" fetchpriority="high" %}
       <div><span>{{ site.data.site.image.caption_left }}</span><span>{{ site.data.site.image.caption_right }}</span></div>
     </section>
     <section class="search-approach blue-approach" id="metod">

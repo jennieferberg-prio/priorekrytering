@@ -26,7 +26,7 @@ layout: null
         <h1>{{ site.data.process.hero.heading_first }}<br><i>{{ site.data.process.hero.heading_second }}</i></h1>
         <p class="process-intro">{{ site.data.process.hero.text }}</p>
       </div>
-      <figure><img src="{{ site.data.process.image.url | relative_url }}" alt="{{ site.data.process.image.alt | escape }}" fetchpriority="high"></figure>
+      <figure>{% include responsive-image.html variant="about" src=site.data.process.image.url alt=site.data.process.image.alt sizes="(max-width: 760px) calc(100vw - 48px), 42vw" fetchpriority="high" %}</figure>
     </section>
     <section class="process-steps" aria-label="Rekryteringens fem steg">
       <ol>
