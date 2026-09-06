@@ -5,6 +5,7 @@ home:
   height: 1467
   sources:
     - { url: /assets/uploads/optimized/startsida-byggarbetsplats-640.webp, width: 640 }
+    - { url: /assets/uploads/optimized/startsida-byggarbetsplats-960.webp, width: 960 }
     - { url: /assets/uploads/optimized/startsida-byggarbetsplats-1280.webp, width: 1280 }
     - { url: /assets/uploads/optimized/startsida-byggarbetsplats-1800.webp, width: 1800 }
     - { url: /assets/uploads/optimized/startsida-byggarbetsplats-2200.webp, width: 2200 }
@@ -16,6 +17,7 @@ about:
   height: 1468
   sources:
     - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-640.webp, width: 640 }
+    - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-960.webp, width: 960 }
     - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-1280.webp, width: 1280 }
     - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-1800.webp, width: 1800 }
     - { url: /assets/uploads/optimized/om-prio-yrkesarbetare-2200.webp, width: 2200 }
@@ -27,6 +29,7 @@ jobs:
   height: 1467
   sources:
     - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-640.webp, width: 640 }
+    - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-960.webp, width: 960 }
     - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-1280.webp, width: 1280 }
     - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-1800.webp, width: 1800 }
     - { url: /assets/uploads/optimized/lediga-jobb-arbetsliv-2200.webp, width: 2200 }
