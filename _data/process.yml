@@ -1,0 +1,26 @@
+seo:
+  title: Så fungerar Prio | Rekrytering i fem steg
+  description: Från kravprofil och aktiv search till kontakt, presentation och intervju. Så hjälper Prio er att hitta rätt kompetens genom personlig headhunting.
+hero:
+  kicker: Search & headhunting
+  heading_first: Så fungerar
+  heading_second: Prio
+  text: En träffsäker rekrytering börjar med att förstå behovet. På Prio arbetar vi främst med aktiv search och headhunting för att hitta rätt kompetens – även bland kandidater som inte aktivt söker nytt jobb.
+image:
+  url: /assets/uploads/om-prio-yrkesarbetare.jpg
+  alt: Yrkesarbetare i samtal på en arbetsplats
+steps:
+  - title: Kravprofil
+    text: Vi börjar med att lära känna er verksamhet, rollen och vad ni faktiskt behöver. Tillsammans tar vi fram en tydlig kravprofil som ligger till grund för hela rekryteringen.
+  - title: Search
+    text: När kravprofilen är på plats börjar sökandet. Vi kartlägger marknaden och identifierar personer med rätt erfarenhet, kompetens och bakgrund – med fokus på att hitta de kandidater som bäst matchar uppdraget.
+  - title: Kontakt
+    text: Vi kontaktar intressanta kandidater direkt och presenterar möjligheten. Eftersom många av kandidaterna redan har en anställning handlar det om att väcka intresse för rätt nästa steg.
+  - title: Presentation
+    text: De kandidater vi bedömer som relevanta presenteras för er tillsammans med vår bedömning av erfarenhet, kompetens och matchning mot kravprofilen.
+  - title: Intervju
+    text: Ni väljer vilka kandidater ni vill träffa och vi hjälper till att driva processen framåt mot intervju och förhoppningsvis en lyckad rekrytering.
+closing:
+  heading: Vi söker. Vi kontaktar. Vi bokar in.
+  text: Ni träffar rätt personer. Vi finns med hela vägen fram till signering av kandidat.
+  button: Prata rekrytering med oss

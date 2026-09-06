@@ -187,6 +187,46 @@ content:
           - { name: text, label: Text, type: text }
           - { name: button, label: Knapptext, type: string }
 
+  - name: process_page
+    label: Så fungerar Prio
+    type: file
+    path: _data/process.yml
+    fields:
+      - name: seo
+        label: Google och delning
+        type: object
+        fields:
+          - { name: title, label: Sidtitel, type: string }
+          - { name: description, label: Beskrivning, type: text }
+      - name: hero
+        label: Sidhuvud
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: text, label: Inledning, type: text }
+      - name: image
+        label: Bild
+        type: object
+        fields:
+          - { name: url, label: Bild, type: image }
+          - { name: alt, label: Bildbeskrivning, type: string }
+      - name: steps
+        label: Rekryteringens steg
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Rubrik, type: string }
+          - { name: text, label: Text, type: text }
+      - name: closing
+        label: Avslutning
+        type: object
+        fields:
+          - { name: heading, label: Rubrik, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: button, label: Knapptext, type: string }
+
 settings:
   hide: true
   commit:

@@ -15,4 +15,7 @@ layout: null
   <url>
     <loc>{{ '/kontakt.html' | absolute_url }}</loc>
   </url>
+  <url>
+    <loc>{{ '/sa-fungerar-prio.html' | absolute_url }}</loc>
+  </url>
 </urlset>
