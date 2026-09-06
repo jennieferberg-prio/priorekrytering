@@ -41,7 +41,7 @@ layout: null
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
 </head>
 <body class="site search editorial-prio editorial-blue editorial-purple">
   <nav>
@@ -90,6 +90,6 @@ layout: null
   </main>
   <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}"><span class="round-logo"><img src="{{ '/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png' | relative_url }}" alt=""></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
   <script src="https://tally.so/widgets/embed.js"></script>
-  <script src="{{ '/script.js' | relative_url }}"></script>
+  <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
 </body>
 </html>
