@@ -1,7 +1,8 @@
 title: Prio Rekrytering
 url: https://priorekrytering.se
 lang: sv
-social_image: /assets/uploads/startsida-byggarbetsplats.jpg
+social_image: /assets/uploads/prio-social-preview.jpg
+social_image_alt: Svartvit vy över en byggarbetsplats med en grupp yrkesarbetare
 google_analytics: G-9RT4SH1HEK
 exclude:
   - README.md
