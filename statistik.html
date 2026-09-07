@@ -1,0 +1,135 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#351b46">
+  <title>Webbstatistik | Prio Rekrytering</title>
+  <link rel="icon" type="image/png" href="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/statistik.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+</head>
+<body>
+  <div class="stats-shell">
+    <header class="stats-header">
+      <a class="stats-brand" href="{{ '/' | relative_url }}" aria-label="Till Prio Rekrytering">
+        <img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="" width="44" height="44">
+        <span><strong>PRIO REKRYTERING</strong><small>Webbstatistik</small></span>
+      </a>
+      <div class="stats-header-actions">
+        <span class="demo-badge" id="demo-badge" hidden>Testdata</span>
+        <button class="text-button" id="logout-button" type="button" hidden>Logga ut</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="auth-panel" id="auth-panel">
+        <div class="auth-mark"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="" width="80" height="80"></div>
+        <p class="eyebrow">Intern webbstatistik</p>
+        <h1>Se hur besökarna<br><i>hittar till Prio.</i></h1>
+        <p class="auth-copy">Logga in med ett Google-konto som har läsbehörighet till Prio Rekryterings Analytics och Search Console.</p>
+        <button class="login-button" id="login-button" type="button"><span aria-hidden="true">G</span> Logga in med Google</button>
+        <button class="demo-button" id="demo-button" type="button" hidden>Visa med testdata</button>
+        <p class="auth-status" id="auth-status" role="status"></p>
+      </section>
+
+      <section class="dashboard" id="dashboard" hidden>
+        <div class="dashboard-intro">
+          <div>
+            <p class="eyebrow">Översikt</p>
+            <h1>Hur går det för <i>webbplatsen?</i></h1>
+            <p id="last-updated">Hämtar aktuell statistik…</p>
+          </div>
+          <div class="range-picker" aria-label="Välj datumintervall">
+            <button type="button" data-days="7">7 dagar</button>
+            <button type="button" data-days="28" class="active">28 dagar</button>
+            <button type="button" data-days="90">90 dagar</button>
+          </div>
+        </div>
+
+        <div class="loading-bar" id="loading-bar" hidden><span></span></div>
+        <div class="error-banner" id="error-banner" role="alert" hidden></div>
+
+        <section class="metric-grid" aria-label="Nyckeltal">
+          <article><span>Besökare</span><strong id="metric-users">–</strong><small>aktiva användare</small></article>
+          <article><span>Besök</span><strong id="metric-sessions">–</strong><small>sessioner</small></article>
+          <article><span>Sidvisningar</span><strong id="metric-views">–</strong><small>visade sidor</small></article>
+          <article><span>Genomsnittlig tid</span><strong id="metric-engagement">–</strong><small>engagemang per besök</small></article>
+        </section>
+
+        <section class="panel trend-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Utveckling</p><h2>Besökare över tid</h2></div>
+            <div class="legend"><span class="legend-users">Besökare</span><span class="legend-sessions">Besök</span></div>
+          </div>
+          <div class="trend-chart" id="trend-chart" aria-label="Diagram över besökare och besök"></div>
+        </section>
+
+        <div class="dashboard-grid">
+          <section class="panel acquisition-panel">
+            <div class="panel-heading"><div><p class="eyebrow">Förvärv</p><h2>Första källa / medium</h2></div></div>
+            <div class="bar-list" id="source-list"></div>
+          </section>
+
+          <section class="panel split-panel">
+            <div class="panel-heading"><div><p class="eyebrow">Besökare</p><h2>Enheter</h2></div></div>
+            <div class="device-wrap">
+              <div class="donut" id="device-donut"><span id="device-total">–</span></div>
+              <div class="device-legend" id="device-legend"></div>
+            </div>
+            <div class="country-section">
+              <p class="eyebrow">Länder</p>
+              <div class="bar-list compact" id="country-list"></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel table-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Innehåll</p><h2>Mest lästa sidor</h2></div>
+            <span>Alla sidvisningar under perioden</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Sida</th><th>Sidvisningar</th><th>Besökare</th><th>Engagemang</th></tr></thead>
+              <tbody id="page-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Ingångar</p><h2>Landningssidor</h2></div>
+            <span>Första sidan i besöket</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Sida</th><th>Besök</th><th>Besökare</th><th>Sidvisningar</th><th>Snittid</th></tr></thead>
+              <tbody id="landing-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel table-panel search-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Google Search Console</p><h2>Sökfrågor som visar Prio</h2></div>
+            <span id="search-status">Organiska Google-sökningar</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Sökfråga</th><th>Klick</th><th>Visningar</th><th>CTR</th><th>Position</th></tr></thead>
+              <tbody id="search-table"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ '/statistik-config.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
+  <script src="{{ '/statistik.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
+</body>
+</html>
