@@ -126,10 +126,10 @@
       gaReport({...gaBody(range,["firstUserSourceMedium"],["totalUsers"],12),orderBys:[{metric:{metricName:"totalUsers"},desc:true}]}),
       gaReport({...gaBody(range,["landingPagePlusQueryString"],baseMetrics,20),orderBys:[{metric:{metricName:"sessions"},desc:true}]}),
       gaReport({...gaBody(range,["pagePathPlusQueryString"],["screenPageViews","activeUsers","userEngagementDuration"],20),orderBys:[{metric:{metricName:"screenPageViews"},desc:true}]}),
-      gaReport({...gaBody(range,["country"],["activeUsers"],8),orderBys:[{metric:{metricName:"activeUsers"},desc:true}]}),
+      gaReport({...gaBody(range,["city","region","country"],["activeUsers","sessions"],50),orderBys:[{metric:{metricName:"activeUsers"},desc:true}]}),
       gaReport({...gaBody(range,["deviceCategory"],["activeUsers"],8),orderBys:[{metric:{metricName:"activeUsers"},desc:true}]})
     ];
-    const [summaryReport,trendReport,sourceReport,landingReport,pageReport,countryReport,deviceReport]=await Promise.all(requests);
+    const [summaryReport,trendReport,sourceReport,landingReport,pageReport,locationReport,deviceReport]=await Promise.all(requests);
     const summary=parseGaRows(summaryReport)[0]||{};
     let searches=[];
     let searchError="";
@@ -141,7 +141,7 @@
     }catch(error){searchError=error.message}
     return {
       range,summary,trend:parseGaRows(trendReport),sources:parseGaRows(sourceReport),
-      landings:parseGaRows(landingReport),pages:parseGaRows(pageReport),countries:parseGaRows(countryReport),devices:parseGaRows(deviceReport),
+      landings:parseGaRows(landingReport),pages:parseGaRows(pageReport),locations:parseGaRows(locationReport),devices:parseGaRows(deviceReport),
       searches,searchError
     };
   }
@@ -179,7 +179,15 @@
         ["/",315,129,9400],["/lediga-jobb.html",140,48,5200],["/sa-fungerar-prio.html",77,35,3800],
         ["/kontakt.html",51,25,2100],["/om.html",24,12,1300]
       ].map(([pagePathPlusQueryString,views,activeUsers,userEngagementDuration])=>({pagePathPlusQueryString,screenPageViews:Math.round(views*multiplier),activeUsers:Math.round(activeUsers*multiplier),userEngagementDuration:Math.round(userEngagementDuration*multiplier)})),
-      countries:[["Sweden",.82],["Norway",.07],["Denmark",.05],["Germany",.03],["United Kingdom",.02]].map(([country,share])=>({country,activeUsers:Math.max(1,Math.round(users*share))})),
+      locations:[
+        ["Gothenburg","Västra Götaland County","Sweden",.48,.55],
+        ["Stockholm","Stockholm County","Sweden",.16,.18],
+        ["Mölndal","Västra Götaland County","Sweden",.11,.12],
+        ["Kungälv","Västra Götaland County","Sweden",.08,.09],
+        ["Borås","Västra Götaland County","Sweden",.06,.07],
+        ["Malmö","Skåne County","Sweden",.05,.06],
+        ["(not set)","(not set)","Sweden",.03,.035]
+      ].map(([city,region,country,userShare,sessionShare])=>({city,region,country,activeUsers:Math.max(1,Math.round(users*userShare)),sessions:Math.max(1,Math.round(sessions*sessionShare))})),
       devices:[["mobile",.57],["desktop",.39],["tablet",.04]].map(([deviceCategory,share])=>({deviceCategory,activeUsers:Math.max(1,Math.round(users*share))})),
       searches:[
         ["prio rekrytering",18,94,.191,1.4],["rekryteringsföretag göteborg",9,138,.065,7.2],
@@ -223,6 +231,13 @@
     document.getElementById("device-total").textContent=numberFormat.format(total);
     document.getElementById("device-legend").innerHTML=rows.map((row,index)=>`<div class="device-item"><i style="background:${deviceColors[index%deviceColors.length]}"></i><span>${escapeHtml(deviceNames[row.deviceCategory]||row.deviceCategory)}</span><strong>${decimalFormat.format(row.activeUsers/total*100)}%</strong></div>`).join("");
   }
+  function locationValue(value,fallback){return !value||value==="(not set)"?fallback:value}
+  function renderLocations(rows){
+    const normalized=rows.map(row=>({...row,placeLabel:locationValue(row.city,"Okänd plats")}));
+    renderBars("city-list",normalized,"placeLabel","activeUsers",true);
+    const body=document.getElementById("location-table");
+    body.innerHTML=rows.length?rows.slice(0,30).map(row=>`<tr><td>${escapeHtml(locationValue(row.city,"Okänd plats"))}</td><td>${escapeHtml(locationValue(row.region,"–"))}</td><td>${escapeHtml(locationValue(row.country,"–"))}</td><td>${numberFormat.format(row.activeUsers)}</td><td>${numberFormat.format(row.sessions)}</td></tr>`).join(""):'<tr class="empty-row"><td colspan="5">GA4 har ingen tillgänglig platsdata för perioden.</td></tr>';
+  }
   function renderLandings(rows){
     const body=document.getElementById("landing-table");
     body.innerHTML=rows.length?rows.slice(0,12).map(row=>`<tr><td title="${escapeHtml(row.landingPagePlusQueryString)}">${escapeHtml(row.landingPagePlusQueryString||"(inte angiven)")}</td><td>${numberFormat.format(row.sessions)}</td><td>${numberFormat.format(row.activeUsers)}</td><td>${numberFormat.format(row.screenPageViews)}</td><td>${seconds(row.userEngagementDuration/Math.max(1,row.sessions))}</td></tr>`).join(""):'<tr class="empty-row"><td colspan="5">Ingen data för perioden.</td></tr>';
@@ -240,8 +255,7 @@
   function render(data){
     renderMetrics(data.summary);renderTrend(data.trend);
     renderBars("source-list",data.sources,"firstUserSourceMedium","totalUsers");
-    renderBars("country-list",data.countries,"country","activeUsers",true);
-    renderDevices(data.devices);renderPages(data.pages);renderLandings(data.landings);renderSearches(data.searches,data.searchError);
+    renderDevices(data.devices);renderLocations(data.locations);renderPages(data.pages);renderLandings(data.landings);renderSearches(data.searches,data.searchError);
     const start=new Date(`${data.range.start}T00:00:00Z`),end=new Date(`${data.range.end}T00:00:00Z`);
     elements.lastUpdated.textContent=`${dateFormat.format(start)}–${dateFormat.format(end)} · Uppdaterad ${new Intl.DateTimeFormat("sv-SE",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`;
   }

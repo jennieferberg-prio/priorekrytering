@@ -80,12 +80,25 @@ layout: null
               <div class="donut" id="device-donut"><span id="device-total">–</span></div>
               <div class="device-legend" id="device-legend"></div>
             </div>
-            <div class="country-section">
-              <p class="eyebrow">Länder</p>
-              <div class="bar-list compact" id="country-list"></div>
+            <div class="location-section">
+              <p class="eyebrow">Vanligaste orter</p>
+              <div class="bar-list compact" id="city-list"></div>
             </div>
           </section>
         </div>
+
+        <section class="panel table-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Geografi</p><h2>Besökarnas plats</h2></div>
+            <span>Ungefärlig plats enligt GA4</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Stad / område</th><th>Region</th><th>Land</th><th>Besökare</th><th>Besök</th></tr></thead>
+              <tbody id="location-table"></tbody>
+            </table>
+          </div>
+        </section>
 
         <section class="panel table-panel">
           <div class="panel-heading">

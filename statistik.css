@@ -81,7 +81,7 @@ main{padding:0 clamp(18px,4vw,60px) 80px}
 .device-item{display:grid;grid-template-columns:9px 1fr auto;gap:8px;align-items:center;font-size:11px}
 .device-item i{width:8px;height:8px;border-radius:50%}
 .device-item strong{font-size:11px}
-.country-section{border-top:1px solid var(--line);padding-top:24px}
+.location-section{border-top:1px solid var(--line);padding-top:24px}
 .table-panel{padding-bottom:16px}
 .table-scroll{overflow-x:auto;margin:0 -8px}
 table{width:100%;border-collapse:collapse;min-width:720px}
