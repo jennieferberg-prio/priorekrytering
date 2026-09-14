@@ -10,7 +10,7 @@ layout: null
   {% if page.job_status != 'active' %}<meta name="robots" content="noindex,follow">{% endif %}
   {% if page.job_status == 'redirect' %}<meta http-equiv="refresh" content="0;url={{ page.target_permalink | relative_url }}">{% endif %}
   <title>{{ page.title | escape }} | Prio Rekrytering</title>
-{% include seo.html title=page.title description=page.description path=canonical_path type='article' %}
+{% include seo.html title=page.title description=page.description path=canonical_path type='article' image='/assets/uploads/logo-utkast/prio-rund-med-ordmarke-hoger.png' image_type='image/png' image_width=1518 image_height=747 image_alt='Prio Rekrytering' %}
   {% if page.publish_date != '' %}<meta property="article:published_time" content="{{ page.publish_date | escape }}">{% endif %}
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
   <link rel="stylesheet" href="{{ '/lediga-jobb-preview.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
