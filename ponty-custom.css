@@ -53,9 +53,9 @@ body {
 }
 
 .company-logo {
-  content: url("https://priorekrytering.se/assets/uploads/prio-p-rund-128.png");
-  width: 104px;
-  height: 104px;
+  content: url("https://priorekrytering.se/assets/uploads/logo-utkast/prio-rund-med-ordmarke-hoger.png");
+  width: 250px;
+  height: auto;
   margin: 0 auto 2.5rem;
   object-fit: contain;
 }
@@ -83,12 +83,14 @@ body {
 }
 
 #pnty-apply h3 {
+  width: min(100%, 48rem);
   color: var(--prio-ink);
-  margin: 3.75rem 0 1.5rem;
+  margin: 3.75rem auto 1.5rem;
   font-family: "Playfair Display", Georgia, serif;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: -.02em;
+  text-align: center;
 }
 
 .container {
@@ -131,6 +133,9 @@ body {
 #pnty-apply input[type="url"],
 #pnty-apply select,
 #pnty-apply textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
   min-height: 3.1rem;
   color: var(--prio-ink);
   background: rgba(255, 255, 255, .62);
@@ -139,6 +144,10 @@ body {
   padding: .75rem .85rem;
   font-family: "DM Sans", Arial, sans-serif;
   font-size: 1rem;
+}
+
+#pnty-apply .iti {
+  width: 100%;
 }
 
 #pnty-apply input:hover,
@@ -252,6 +261,10 @@ input[type="checkbox"]:checked ~ div.fake-checkbox::after {
   padding: 2.25rem 0 4rem;
 }
 
+.form-actions .btn {
+  margin-right: 0;
+}
+
 #pnty-apply .btn--raised.btn--primary {
   min-width: 10rem;
   color: #fff;
@@ -280,8 +293,7 @@ input[type="checkbox"]:checked ~ div.fake-checkbox::after {
   }
 
   .company-logo {
-    width: 82px;
-    height: 82px;
+    width: 215px;
     margin-bottom: 2rem;
   }
 
