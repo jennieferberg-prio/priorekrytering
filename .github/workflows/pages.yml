@@ -41,6 +41,7 @@ jobs:
         uses: actions/upload-pages-artifact@v5
 
       - name: Save generated pages
+        continue-on-error: true
         run: |
           git add -- _data/ponty_jobs.json lediga-jobb
           if git diff --cached --quiet; then
