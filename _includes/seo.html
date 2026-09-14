@@ -2,7 +2,7 @@
   <link rel="canonical" href="{{ include.path | absolute_url }}">
 
   <meta property="og:locale" content="sv_SE">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ include.type | default: 'website' | escape }}">
   <meta property="og:site_name" content="Prio Rekrytering">
   <meta property="og:title" content="{{ include.title | escape }}">
   <meta property="og:description" content="{{ include.description | escape }}">

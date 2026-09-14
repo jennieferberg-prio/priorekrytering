@@ -112,6 +112,7 @@
   }
 
   function routeFor(job) {
+    if (!job.demo) return `/lediga-jobb/${encodeURIComponent(job.slug)}-${encodeURIComponent(job.id)}/`;
     return `#jobb/${encodeURIComponent(job.slug)}-${encodeURIComponent(job.id)}`;
   }
 

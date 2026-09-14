@@ -7,3 +7,4 @@ google_analytics: G-9RT4SH1HEK
 exclude:
   - README.md
   - .pages.yml
+  - scripts

@@ -1,0 +1,18 @@
+{
+  "generated_from": "Ponty",
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Spontanansökan",
+      "slug": "spontanansokan",
+      "route_name": "spontanansokan-1",
+      "route": "/lediga-jobb/spontanansokan-1/",
+      "description": "Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor Sit Amet Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris…",
+      "organization": "Prio rekrytering AB",
+      "location": "Stockholm Norr",
+      "publish_date": "2026-09-14",
+      "status": "active",
+      "aliases": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  {% assign canonical_path = page.target_permalink | default: page.permalink %}
+  {% if page.job_status != 'active' %}<meta name="robots" content="noindex,follow">{% endif %}
+  {% if page.job_status == 'redirect' %}<meta http-equiv="refresh" content="0;url={{ page.target_permalink | relative_url }}">{% endif %}
+  <title>{{ page.title | escape }} | Prio Rekrytering</title>
+{% include seo.html title=page.title description=page.description path=canonical_path type='article' %}
+  {% if page.publish_date != '' %}<meta property="article:published_time" content="{{ page.publish_date | escape }}">{% endif %}
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+  <link rel="stylesheet" href="{{ '/lediga-jobb-preview.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+  {% if page.job_status == 'redirect' %}<script>location.replace({{ page.target_permalink | relative_url | jsonify }});</script>{% endif %}
+</head>
+<body class="site search editorial-prio editorial-blue editorial-purple jobs-page jobs-preview showing-job">
+  <nav>
+    <a class="editorial-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a>
+    <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/sa-fungerar-prio.html' | relative_url }}">Så fungerar Prio</a><a class="active" href="{{ '/lediga-jobb-preview.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
+    <span>LEDIGA JOBB</span>
+  </nav>
+  <main>
+    <section class="jobs-app visible">
+      {% if page.job_status == 'redirect' %}
+      <div class="jobs-error">
+        <h1>{{ page.title | escape }}</h1>
+        <p>Annonsen har fått en ny adress.</p>
+        <a class="job-apply" href="{{ page.target_permalink | relative_url }}">Öppna annonsen</a>
+      </div>
+      {% elsif page.job_status == 'closed' %}
+      <div class="jobs-error">
+        <a class="job-back" href="{{ '/lediga-jobb-preview.html' | relative_url }}">← Alla lediga jobb</a>
+        <h1>{{ page.title | escape }}</h1>
+        <p>Den här annonsen är inte längre aktuell.</p>
+        <a class="job-apply" href="{{ '/lediga-jobb-preview.html' | relative_url }}">Se aktuella möjligheter</a>
+      </div>
+      {% else %}
+      <article class="job-detail">
+        <a class="job-back" href="{{ '/lediga-jobb-preview.html' | relative_url }}">← Alla lediga jobb</a>
+        <header class="job-detail-header">
+          <div class="job-detail-heading-row">
+            <h1>{{ page.title | escape }}</h1>
+            <div class="job-facts">
+              {% if page.organization != '' %}<div><span>Företag</span><strong>{{ page.organization | escape }}</strong></div>{% endif %}
+              {% if page.location != '' %}<div><span>Plats</span><strong>{{ page.location | escape }}</strong></div>{% endif %}
+              {% if page.published_label != '' %}<div><span>Publicerad</span><strong>{{ page.published_label | escape }}</strong></div>{% endif %}
+            </div>
+          </div>
+          {% if page.summary != '' %}<p class="job-detail-summary">{{ page.summary | escape }}</p>{% endif %}
+        </header>
+        <div class="job-detail-layout">
+          <div class="job-body">{{ content }}</div>
+          <aside class="job-sidebar">
+            {% if page.logo_url != '' %}<div class="job-client-logo-stage"><img class="job-client-logo" src="{{ page.logo_url | escape }}" alt="{{ page.organization | escape }}" loading="lazy" decoding="async"></div>{% endif %}
+            {% if page.organization != '' %}<strong class="job-sidebar-organization">{{ page.organization | escape }}</strong>{% endif %}
+            {% if page.location != '' %}<span class="job-sidebar-location"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Zm0-8.5A2.5 2.5 0 1 1 12 7a2.5 2.5 0 0 1 0 5.5Z"/></svg>{{ page.location | escape }}</span>{% endif %}
+            {% if page.showcase %}<p class="job-showcase-note">Detta är ett referensuppdrag och tar inte emot ansökningar.</p>{% else %}<a class="job-apply" href="{{ page.apply_url | escape }}" data-job-apply>Ansök</a>{% endif %}
+            {% if page.contact_name != '' or page.contact_email != '' or page.contact_phone != '' %}
+            <div class="job-contact">
+              <strong>{% if page.contact_name != '' %}{{ page.contact_name | escape }}{% else %}Prio Rekrytering{% endif %}</strong>
+              {% if page.contact_title != '' %}<span>{{ page.contact_title | escape }}</span>{% endif %}
+              {% if page.contact_email != '' %}<a href="mailto:{{ page.contact_email | escape }}">{{ page.contact_email | escape }}</a>{% endif %}
+              {% if page.contact_phone != '' %}<a href="tel:{{ page.contact_phone_href | escape }}">{{ page.contact_phone | escape }}</a>{% endif %}
+            </div>
+            {% endif %}
+          </aside>
+        </div>
+      </article>
+      {% endif %}
+    </section>
+  </main>
+{% include site-footer.html %}
+  <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
+  {% if page.job_status == 'active' and page.showcase == false %}<script src="{{ '/ponty-job.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>{% endif %}
+</body>
+</html>

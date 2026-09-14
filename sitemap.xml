@@ -21,4 +21,10 @@ layout: null
   <url>
     <loc>{{ '/integritet.html' | absolute_url }}</loc>
   </url>
+{% for job in site.data.ponty_jobs.jobs %}{% if job.status == 'active' %}
+  <url>
+    <loc>{{ job.route | absolute_url }}</loc>
+    {% if job.publish_date != '' %}<lastmod>{{ job.publish_date }}</lastmod>{% endif %}
+  </url>
+{% endif %}{% endfor %}
 </urlset>
