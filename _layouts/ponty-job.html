@@ -6,6 +6,7 @@ layout: null
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Prio Rekrytering">
   {% assign canonical_path = page.target_permalink | default: page.permalink %}
   {% if page.job_status != 'active' %}<meta name="robots" content="noindex,follow">{% endif %}
   {% if page.job_status == 'redirect' %}<meta http-equiv="refresh" content="0;url={{ page.target_permalink | relative_url }}">{% endif %}
