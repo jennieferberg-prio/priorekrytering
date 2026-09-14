@@ -20,7 +20,7 @@ layout: null
 <body class="site search editorial-prio editorial-blue editorial-purple jobs-page jobs-preview showing-job">
   <nav>
     <a class="editorial-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a>
-    <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/sa-fungerar-prio.html' | relative_url }}">Så fungerar Prio</a><a class="active" href="{{ '/lediga-jobb-preview.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
+    <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/sa-fungerar-prio.html' | relative_url }}">Så fungerar Prio</a><a class="active" href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
     <span>LEDIGA JOBB</span>
   </nav>
   <main>
@@ -33,14 +33,14 @@ layout: null
       </div>
       {% elsif page.job_status == 'closed' %}
       <div class="jobs-error">
-        <a class="job-back" href="{{ '/lediga-jobb-preview.html' | relative_url }}">← Alla lediga jobb</a>
+        <a class="job-back" href="{{ '/lediga-jobb.html' | relative_url }}">← Alla lediga jobb</a>
         <h1>{{ page.title | escape }}</h1>
         <p>Den här annonsen är inte längre aktuell.</p>
-        <a class="job-apply" href="{{ '/lediga-jobb-preview.html' | relative_url }}">Se aktuella möjligheter</a>
+        <a class="job-apply" href="{{ '/lediga-jobb.html' | relative_url }}">Se aktuella möjligheter</a>
       </div>
       {% else %}
       <article class="job-detail">
-        <a class="job-back" href="{{ '/lediga-jobb-preview.html' | relative_url }}">← Alla lediga jobb</a>
+        <a class="job-back" href="{{ '/lediga-jobb.html' | relative_url }}">← Alla lediga jobb</a>
         <header class="job-detail-header">
           <div class="job-detail-heading-row">
             <h1>{{ page.title | escape }}</h1>

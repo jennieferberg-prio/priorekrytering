@@ -58,30 +58,5 @@ layout: null
 {% include site-footer.html %}
   <script src="https://tally.so/widgets/embed.js"></script>
   <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
-  <script>
-    document.querySelectorAll('[data-ponty-open]').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var popupWidth = Math.min(960, window.screen.availWidth - 40);
-        var popupHeight = Math.min(900, window.screen.availHeight - 40);
-        var popupLeft = (window.screen.availLeft || 0) + Math.round((window.screen.availWidth - popupWidth) / 2);
-        var popupTop = (window.screen.availTop || 0) + Math.round((window.screen.availHeight - popupHeight) / 2);
-        var popupFeatures = [
-          'popup=yes',
-          'width=' + popupWidth,
-          'height=' + popupHeight,
-          'left=' + popupLeft,
-          'top=' + popupTop,
-          'resizable=yes',
-          'scrollbars=yes'
-        ].join(',');
-        var popup = window.open(link.href, 'prioSpontanansokan', popupFeatures);
-        if (popup) {
-          popup.opener = null;
-          popup.focus();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
