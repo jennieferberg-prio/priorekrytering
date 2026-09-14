@@ -21,7 +21,8 @@
     slug: "projektledare-inom-bygg",
     excerpt: "Vill du leda byggprojekt där kvalitet, samarbete och tydliga beslut står i centrum? Vi söker en erfaren projektledare till ett växande bolag i Göteborg.",
     body: demoBody,
-    organization_name: "Prio Rekrytering AB",
+    organization_name: "Berg & Grund AB",
+    image_url: "https://priorekrytering.se/assets/uploads/demo-logos/berg-grund.png",
     location: "Göteborg",
     publish_date: "2026-09-14T08:00:00",
     name: "Jenniefer Berg",
@@ -35,7 +36,8 @@
     slug: "ekonomichef-till-tillvaxtbolag",
     excerpt: "En strategisk roll för dig som vill kombinera affärsutveckling, ledarskap och ett nära ansvar för ekonomifunktionen.",
     body: demoBody,
-    organization_name: "Nordform AB",
+    organization_name: "Nordform Bygg AB",
+    image_url: "https://priorekrytering.se/assets/uploads/demo-logos/nordform-bygg.png",
     location: "Stockholm",
     publish_date: "2026-09-12T08:00:00",
     name: "Jenniefer Berg",
@@ -47,7 +49,8 @@
     slug: "produktionsledare",
     excerpt: "Vi söker en trygg produktionsledare som skapar struktur, engagemang och framdrift i den dagliga verksamheten.",
     body: demoBody,
-    organization_name: "Västindustri AB",
+    organization_name: "Västkust Bygg AB",
+    image_url: "https://priorekrytering.se/assets/uploads/demo-logos/vastkust-bygg.png",
     location: "Borås",
     publish_date: "2026-09-10T08:00:00",
     name: "Jenniefer Berg",
@@ -208,7 +211,6 @@
       const locationMarkup = job.location ? `<span class="job-card-location"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Zm0-8.5A2.5 2.5 0 1 1 12 7a2.5 2.5 0 0 1 0 5.5Z"/></svg>${escapeHtml(job.location)}</span>` : "";
       return `<a class="job-card" href="${routeFor(job)}">
         <span class="job-card-logo-stage">${logoMarkup}</span>
-        <span class="job-card-company">${escapeHtml(job.organization || "Prio Rekrytering")}</span>
         <h3>${escapeHtml(job.title)}</h3>
         ${locationMarkup}
         <span class="job-card-arrow" aria-hidden="true">→</span>
@@ -250,7 +252,8 @@
         <div class="job-body">${sanitizeHtml(job.body) || `<p>${escapeHtml(job.excerpt)}</p>`}</div>
         <aside class="job-sidebar">
           ${job.logo ? `<div class="job-client-logo-stage"><img class="job-client-logo" src="${job.logo}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async"></div>` : ""}
-          ${job.location ? `<p>${escapeHtml(job.location)}</p>` : ""}
+          ${job.organization ? `<strong class="job-sidebar-organization">${escapeHtml(job.organization)}</strong>` : ""}
+          ${job.location ? `<span class="job-sidebar-location"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Zm0-8.5A2.5 2.5 0 1 1 12 7a2.5 2.5 0 0 1 0 5.5Z"/></svg>${escapeHtml(job.location)}</span>` : ""}
           ${job.showcase ? '<p class="job-showcase-note">Detta är ett referensuppdrag och tar inte emot ansökningar.</p>' : `<a class="job-apply" href="${applyUrl}" data-job-apply>Ansök</a>`}
           ${contactMarkup(job)}
         </aside>
