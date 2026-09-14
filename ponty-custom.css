@@ -150,6 +150,11 @@ body {
   width: 100%;
 }
 
+#pnty-apply .iti--allow-dropdown input[type="tel"] {
+  padding-left: 3.5rem;
+  padding-right: .85rem;
+}
+
 #pnty-apply input:hover,
 #pnty-apply select:hover,
 #pnty-apply textarea:hover {
