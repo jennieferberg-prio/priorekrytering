@@ -7,25 +7,51 @@
   if (!app || !indexHero || !emptyTemplate) return;
 
   const params = new URLSearchParams(window.location.search);
-  const demoMode = params.get("demo") === "1";
+  const demoMode = params.has("demo") && params.get("demo") !== "0";
   const showcaseMode = params.get("showcase") === "1";
   const pageTitle = document.title;
   const dateFormat = new Intl.DateTimeFormat("sv-SE", { day: "numeric", month: "long", year: "numeric" });
+  const prioOrganizationLogo = "https://priorekrytering.se/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png";
   let jobs = [];
 
+  const demoBody = "<h2>Om rollen</h2><p>Som projektledare ansvarar du för projektets helhet – från planering och ekonomi till genomförande och överlämning. Du samordnar interna och externa parter och skapar goda förutsättningar för teamet.</p><h2>Vi söker dig som</h2><ul><li>Har erfarenhet av att leda projekt</li><li>Arbetar strukturerat och affärsmässigt</li><li>Trivs i nära dialog med kunder och kollegor</li></ul><h2>Om processen</h2><p>Prio Rekrytering ansvarar för processen. Urval och intervjuer sker löpande.</p>";
   const demoJobs = [{
     title: "Projektledare inom bygg",
     assignment_id: "12345",
     slug: "projektledare-inom-bygg",
     excerpt: "Vill du leda byggprojekt där kvalitet, samarbete och tydliga beslut står i centrum? Vi söker en erfaren projektledare till ett växande bolag i Göteborg.",
-    body: "<h2>Om rollen</h2><p>Som projektledare ansvarar du för projektets helhet – från planering och ekonomi till genomförande och överlämning. Du samordnar interna och externa parter och skapar goda förutsättningar för teamet.</p><h2>Vi söker dig som</h2><ul><li>Har erfarenhet av att leda byggprojekt</li><li>Arbetar strukturerat och affärsmässigt</li><li>Trivs i nära dialog med kunder och kollegor</li></ul><h2>Om processen</h2><p>Prio Rekrytering ansvarar för processen. Urval och intervjuer sker löpande.</p>",
-    organization_name: "Exempel Bygg AB",
+    body: demoBody,
+    organization_name: "Prio Rekrytering AB",
     location: "Göteborg",
     publish_date: "2026-09-14T08:00:00",
     name: "Jenniefer Berg",
     user_title: "Rekryteringskonsult",
     email: "kontakt@priorekrytering.se",
     showcase: false,
+    demo: true
+  }, {
+    title: "Ekonomichef till tillväxtbolag",
+    assignment_id: "12346",
+    slug: "ekonomichef-till-tillvaxtbolag",
+    excerpt: "En strategisk roll för dig som vill kombinera affärsutveckling, ledarskap och ett nära ansvar för ekonomifunktionen.",
+    body: demoBody,
+    organization_name: "Nordform AB",
+    location: "Stockholm",
+    publish_date: "2026-09-12T08:00:00",
+    name: "Jenniefer Berg",
+    email: "kontakt@priorekrytering.se",
+    demo: true
+  }, {
+    title: "Produktionsledare",
+    assignment_id: "12347",
+    slug: "produktionsledare",
+    excerpt: "Vi söker en trygg produktionsledare som skapar struktur, engagemang och framdrift i den dagliga verksamheten.",
+    body: demoBody,
+    organization_name: "Västindustri AB",
+    location: "Borås",
+    publish_date: "2026-09-10T08:00:00",
+    name: "Jenniefer Berg",
+    email: "kontakt@priorekrytering.se",
     demo: true
   }];
 
@@ -58,13 +84,16 @@
     const address = raw.address && typeof raw.address === "object" ? raw.address : {};
     const id = String(raw.assignment_id ?? raw.assignmentId ?? raw.id ?? "");
     const title = String(raw.title || "Ledig tjänst");
+    const organization = String(raw.organization_name || raw.organization || "");
+    const normalizedOrganization = organization.trim().replace(/\s+/g, " ").toLocaleLowerCase("sv-SE");
+    const suppliedLogo = raw.logo === false ? "" : raw.image_url || (typeof raw.logo === "string" ? raw.logo : "");
     return {
       id,
       title,
       slug: String(raw.title_slug || raw.slug || slugify(title)),
       excerpt: String(raw.excerpt || raw.meta_description || ""),
       body: String(raw.body || raw.description || ""),
-      organization: String(raw.organization_name || raw.organization || ""),
+      organization,
       location: String(raw.location || address.city || raw.region || ""),
       publishDate: String(raw.publish_date || raw.published_at || ""),
       withdrawalDate: String(raw.withdrawal_date || ""),
@@ -72,7 +101,7 @@
       userTitle: String(raw.user_title || ""),
       email: String(raw.email || raw.user_email || ""),
       phone: String(raw.phone || raw.user_phone || ""),
-      logo: raw.logo === false ? "" : safeUrl(raw.image_url || raw.logo),
+      logo: normalizedOrganization === "prio rekrytering ab" ? prioOrganizationLogo : safeUrl(suppliedLogo),
       externalApplyUrl: safeUrl(raw.external_apply_url || raw.apply_url),
       showcase: Boolean(raw.showcase) || showcaseMode,
       demo: Boolean(raw.demo)
@@ -153,6 +182,17 @@
     return "";
   }
 
+  function organizationInitials(value) {
+    return String(value || "PR")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(word => word.charAt(0))
+      .join("")
+      .toUpperCase();
+  }
+
   function renderList() {
     indexHero.hidden = false;
     document.body.classList.remove("showing-job");
@@ -162,10 +202,15 @@
       return;
     }
     const cards = jobs.map(job => {
-      const meta = [job.organization, job.location, formattedDate(job.publishDate)].filter(Boolean);
+      const logoMarkup = job.logo
+        ? `<img class="job-card-logo" src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async">`
+        : `<span class="job-card-logo-fallback" aria-hidden="true">${escapeHtml(organizationInitials(job.organization))}</span>`;
+      const locationMarkup = job.location ? `<span class="job-card-location"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Zm0-8.5A2.5 2.5 0 1 1 12 7a2.5 2.5 0 0 1 0 5.5Z"/></svg>${escapeHtml(job.location)}</span>` : "";
       return `<a class="job-card" href="${routeFor(job)}">
-        <div class="job-card-copy"><h3>${escapeHtml(job.title)}</h3>${job.excerpt ? `<p>${escapeHtml(job.excerpt)}</p>` : ""}</div>
-        <div class="job-card-meta">${job.logo ? `<img class="job-card-logo" src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async">` : ""}${meta.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+        <span class="job-card-logo-stage">${logoMarkup}</span>
+        <span class="job-card-company">${escapeHtml(job.organization || "Prio Rekrytering")}</span>
+        <h3>${escapeHtml(job.title)}</h3>
+        ${locationMarkup}
         <span class="job-card-arrow" aria-hidden="true">→</span>
       </a>`;
     }).join("");
@@ -193,7 +238,6 @@
       formattedDate(job.publishDate) ? ["Publicerad", formattedDate(job.publishDate)] : null
     ].filter(Boolean);
     const applyUrl = job.externalApplyUrl || `${app.dataset.applyBase}?id=${encodeURIComponent(job.id)}`;
-    const sidebarTitle = job.organization || "Om tjänsten";
     const factsMarkup = facts.length ? `<div class="job-facts">${facts.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("")}</div>` : "";
     app.innerHTML = `<article class="job-detail">
       <a class="job-back" href="${escapeHtml(window.location.pathname + window.location.search)}">← Alla lediga jobb</a>
@@ -205,8 +249,7 @@
       <div class="job-detail-layout">
         <div class="job-body">${sanitizeHtml(job.body) || `<p>${escapeHtml(job.excerpt)}</p>`}</div>
         <aside class="job-sidebar">
-          ${job.logo ? `<img class="job-client-logo" src="${job.logo}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async">` : ""}
-          <p class="kicker">Ansökan</p><h2>${escapeHtml(sidebarTitle)}</h2>
+          ${job.logo ? `<div class="job-client-logo-stage"><img class="job-client-logo" src="${job.logo}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async"></div>` : ""}
           ${job.location ? `<p>${escapeHtml(job.location)}</p>` : ""}
           ${job.showcase ? '<p class="job-showcase-note">Detta är ett referensuppdrag och tar inte emot ansökningar.</p>' : `<a class="job-apply" href="${applyUrl}" data-job-apply>Ansök</a>`}
           ${contactMarkup(job)}
