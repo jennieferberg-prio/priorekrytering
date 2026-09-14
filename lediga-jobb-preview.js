@@ -278,6 +278,10 @@
     else renderDetail(selected || null);
   }
 
+  function isSpontaneousApplication(job) {
+    return job.id === "1" || slugify(`${job.slug} ${job.title}`).includes("spontanansokan");
+  }
+
   async function loadJobs() {
     try {
       if (demoMode) jobs = demoJobs.map(normalizeJob);
@@ -289,7 +293,10 @@
         if (!data || !Array.isArray(data.jobs)) throw new Error("Ponty returnerade ett oväntat svar.");
         jobs = data.jobs.map(normalizeJob).filter(job => job.id);
       }
-      jobs.sort((a, b) => new Date(b.publishDate || 0) - new Date(a.publishDate || 0));
+      jobs.sort((a, b) => {
+        const applicationOrder = Number(isSpontaneousApplication(a)) - Number(isSpontaneousApplication(b));
+        return applicationOrder || new Date(b.publishDate || 0) - new Date(a.publishDate || 0);
+      });
       renderRoute();
     } catch (error) {
       indexHero.hidden = false;
