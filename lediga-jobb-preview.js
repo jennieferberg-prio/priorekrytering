@@ -164,12 +164,12 @@
     const cards = jobs.map(job => {
       const meta = [job.organization, job.location, formattedDate(job.publishDate)].filter(Boolean);
       return `<a class="job-card" href="${routeFor(job)}">
-        <div><h3>${escapeHtml(job.title)}</h3>${job.excerpt ? `<p>${escapeHtml(job.excerpt)}</p>` : ""}</div>
-        <div class="job-card-meta">${meta.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+        <div class="job-card-copy"><h3>${escapeHtml(job.title)}</h3>${job.excerpt ? `<p>${escapeHtml(job.excerpt)}</p>` : ""}</div>
+        <div class="job-card-meta">${job.logo ? `<img class="job-card-logo" src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async">` : ""}${meta.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
         <span class="job-card-arrow" aria-hidden="true">→</span>
       </a>`;
     }).join("");
-    app.innerHTML = `${renderModeLabel()}<header class="jobs-app-heading"><p class="kicker">Aktuella möjligheter</p><div><h2>Lediga jobb</h2><span class="jobs-count">${jobs.length} ${jobs.length === 1 ? "tjänst" : "tjänster"}</span></div></header><div class="jobs-list">${cards}</div>`;
+    app.innerHTML = `${renderModeLabel()}<header class="jobs-app-heading"><div><h2>Aktuella möjligheter</h2><span class="jobs-count">${jobs.length} ${jobs.length === 1 ? "tjänst" : "tjänster"}</span></div></header><div class="jobs-list">${cards}</div>`;
   }
 
   function contactMarkup(job) {
@@ -194,13 +194,13 @@
     ].filter(Boolean);
     const applyUrl = job.externalApplyUrl || `${app.dataset.applyBase}?id=${encodeURIComponent(job.id)}`;
     const sidebarTitle = job.organization || "Om tjänsten";
+    const factsMarkup = facts.length ? `<div class="job-facts">${facts.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("")}</div>` : "";
     app.innerHTML = `<article class="job-detail">
       <a class="job-back" href="${escapeHtml(window.location.pathname + window.location.search)}">← Alla lediga jobb</a>
       ${renderModeLabel()}
       <header class="job-detail-header">
-        <p class="kicker">Ledig tjänst</p>
-        <h1>${escapeHtml(job.title)}</h1>
-        <div class="job-detail-lede">${job.excerpt ? `<p>${escapeHtml(job.excerpt)}</p>` : "<p></p>"}<div class="job-facts">${facts.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("")}</div></div>
+        <div class="job-detail-heading-row"><h1>${escapeHtml(job.title)}</h1>${factsMarkup}</div>
+        ${job.excerpt ? `<p class="job-detail-summary">${escapeHtml(job.excerpt)}</p>` : ""}
       </header>
       <div class="job-detail-layout">
         <div class="job-body">${sanitizeHtml(job.body) || `<p>${escapeHtml(job.excerpt)}</p>`}</div>
