@@ -5,12 +5,12 @@ hero:
   kicker: Integritet
   heading_first: Så hanterar vi
   heading_second: dina uppgifter.
-  introduction: Här beskriver vi vilka personuppgifter Prio Rekrytering behandlar, varför vi gör det och vilka rättigheter du har.
-updated: 14 september 2026
+  introduction: Policyn gäller både dig som söker en tjänst eller registrerar ditt intresse och dig som vi kontaktar genom search och headhunting.
+updated: september 2026
 controller:
   name: Prio Rekrytering AB
+  organization_number: 559596-7380
   email: kontakt@priorekrytering.se
+  website: https://priorekrytering.se
 retention:
-  recruitment: 24 månader efter att rekryteringsprocessen har avslutats
-  candidate_network: 24 månader efter din senaste meningsfulla kontakt med oss
-  business_contact: 24 månader efter den senaste kontakten eller affärsrelationens slut
+  candidate_network: 24 månader från ditt senaste aktiva samtycke eller din senaste kontakt med oss

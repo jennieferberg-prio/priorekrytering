@@ -252,14 +252,14 @@ content:
         type: object
         fields:
           - { name: name, label: Företagsnamn, type: string }
+          - { name: organization_number, label: Organisationsnummer, type: string }
           - { name: email, label: E-post för integritetsfrågor, type: string }
+          - { name: website, label: Webbplats, type: string }
       - name: retention
         label: Gallringstider
         type: object
         fields:
-          - { name: recruitment, label: Aktuell rekrytering, type: string }
           - { name: candidate_network, label: Kandidatnätverk, type: string }
-          - { name: business_contact, label: Affärskontakter, type: string }
 
 settings:
   hide: true
