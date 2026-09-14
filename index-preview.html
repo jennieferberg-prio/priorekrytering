@@ -52,7 +52,7 @@ layout: null
     </section>
     <section class="candidate-cta" id="spontanansokan">
       <div><p class="kicker">{{ site.data.site.candidate.kicker }}</p><h2>{{ site.data.site.candidate.heading_first }}<i>{{ site.data.site.candidate.heading_second }}</i></h2><p>{{ site.data.site.candidate.text }}</p></div>
-      <div class="candidate-action"><span>{{ site.data.site.candidate.summary }}</span><a class="ponty-cta" href="https://pnty-apply.ponty-system.se/priorekrytering?id=1" target="_blank" rel="noopener noreferrer" data-ponty-open>{{ site.data.site.candidate.button_label }} →</a></div>
+      <div class="candidate-action"><span>{{ site.data.site.candidate.summary }}</span><a class="ponty-cta" href="https://pnty-apply.ponty-system.se/priorekrytering?id=1" aria-label="{{ site.data.site.candidate.button_label }} (öppnas i ett nytt fönster)" data-ponty-open>{{ site.data.site.candidate.button_label }} →</a></div>
     </section>
   </main>
   <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
@@ -62,7 +62,24 @@ layout: null
     document.querySelectorAll('[data-ponty-open]').forEach(function (link) {
       link.addEventListener('click', function (event) {
         event.preventDefault();
-        window.open(link.href, '_blank', 'noopener,noreferrer');
+        var popupWidth = Math.min(960, window.screen.availWidth - 40);
+        var popupHeight = Math.min(900, window.screen.availHeight - 40);
+        var popupLeft = (window.screen.availLeft || 0) + Math.round((window.screen.availWidth - popupWidth) / 2);
+        var popupTop = (window.screen.availTop || 0) + Math.round((window.screen.availHeight - popupHeight) / 2);
+        var popupFeatures = [
+          'popup=yes',
+          'width=' + popupWidth,
+          'height=' + popupHeight,
+          'left=' + popupLeft,
+          'top=' + popupTop,
+          'resizable=yes',
+          'scrollbars=yes'
+        ].join(',');
+        var popup = window.open(link.href, 'prioSpontanansokan', popupFeatures);
+        if (popup) {
+          popup.opener = null;
+          popup.focus();
+        }
       });
     });
   </script>
