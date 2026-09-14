@@ -1,0 +1,338 @@
+/* Prio Rekrytering – custom CSS for Ponty's hosted application form */
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("https://priorekrytering.se/assets/fonts/dm-sans-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://priorekrytering.se/assets/fonts/playfair-display-600-latin.woff2") format("woff2");
+}
+
+:root {
+  --prio-ink: #321d40;
+  --prio-purple: #7c3f72;
+  --prio-purple-dark: #61305a;
+  --prio-lilac: #ddcce5;
+  --prio-paper: #f5f0f3;
+  --prio-line: #c7b4ce;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--prio-paper);
+}
+
+body {
+  display: block;
+  margin: 0;
+  color: var(--prio-ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#pnty-apply {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#pnty-apply fieldset {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 3.5rem 2rem 0;
+}
+
+.company-logo {
+  content: url("https://priorekrytering.se/assets/uploads/prio-p-rund-128.png");
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 2.5rem;
+  object-fit: contain;
+}
+
+.legend {
+  margin: 0 auto .4rem;
+}
+
+.legend legend {
+  color: var(--prio-ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.sub-legend {
+  color: var(--prio-purple);
+  margin: .9rem 0 3rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+#pnty-apply h3 {
+  color: var(--prio-ink);
+  margin: 3.75rem 0 1.5rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+.container {
+  width: min(100%, 48rem);
+}
+
+.narrow-container,
+.input-group {
+  max-width: 34rem;
+}
+
+.grid-row {
+  gap: 1.25rem;
+}
+
+.grid-row .col-1-2 {
+  flex: 1 1 calc(50% - .625rem);
+  min-width: 0;
+}
+
+.grid-row .col-1-2:nth-of-type(2n) {
+  align-items: stretch;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 1.3rem;
+}
+
+#pnty-apply label {
+  color: var(--prio-ink);
+  margin-bottom: .35rem;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+#pnty-apply input[type="text"],
+#pnty-apply input[type="email"],
+#pnty-apply input[type="tel"],
+#pnty-apply input[type="url"],
+#pnty-apply select,
+#pnty-apply textarea {
+  min-height: 3.1rem;
+  color: var(--prio-ink);
+  background: rgba(255, 255, 255, .62);
+  border: 1px solid var(--prio-line);
+  border-radius: 0;
+  padding: .75rem .85rem;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+#pnty-apply input:hover,
+#pnty-apply select:hover,
+#pnty-apply textarea:hover {
+  border-color: #a182af;
+}
+
+#pnty-apply input:focus,
+#pnty-apply select:focus,
+#pnty-apply textarea:focus {
+  border-color: var(--prio-purple);
+  outline: 2px solid rgba(124, 63, 114, .16);
+  outline-offset: 1px;
+}
+
+#pnty-apply input.error,
+#pnty-apply select.error,
+#pnty-apply textarea.error {
+  background: #fff8f7;
+  border-color: #a84f32;
+}
+
+.errorlist {
+  color: #873a26;
+}
+
+.errorlist li {
+  border-left-color: #a84f32;
+}
+
+.social-apply__disclaimer {
+  color: #725f79;
+}
+
+.or {
+  color: #725f79;
+}
+
+.or::before {
+  background: linear-gradient(90deg, transparent, var(--prio-line), transparent);
+}
+
+.or .or__text {
+  background: var(--prio-paper);
+}
+
+#pnty-apply .btn {
+  min-height: 2.9rem;
+  height: auto;
+  color: var(--prio-purple);
+  border: 1px solid var(--prio-purple);
+  border-radius: 0;
+  padding: .75rem 1.15rem;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+#pnty-apply .btn:hover,
+#pnty-apply .btn:focus {
+  color: #fff;
+  background: var(--prio-purple-dark);
+  border-color: var(--prio-purple-dark);
+}
+
+.files {
+  margin: 4.5rem auto 0;
+}
+
+.files__info {
+  color: #725f79;
+}
+
+.files__drop--area {
+  color: var(--prio-purple);
+  background: rgba(255, 255, 255, .48);
+  border: 1px dashed #a182af;
+  border-radius: 0;
+}
+
+.files__drop--area:hover,
+.files__drop--area.hovering {
+  background: #fff;
+}
+
+.consent-wrapper {
+  width: calc(100% + 4rem);
+  margin: 4rem -2rem 0;
+  color: var(--prio-ink);
+  background: var(--prio-lilac);
+  padding: 2rem;
+}
+
+label.checkbox .fake-checkbox {
+  border-color: #a182af;
+  border-radius: 0;
+}
+
+input[type="checkbox"]:checked ~ div.fake-checkbox {
+  border-color: var(--prio-purple);
+}
+
+input[type="checkbox"]:checked ~ div.fake-checkbox::after {
+  color: var(--prio-purple);
+}
+
+.form-actions {
+  justify-content: center;
+  padding: 2.25rem 0 4rem;
+}
+
+#pnty-apply .btn--raised.btn--primary {
+  min-width: 10rem;
+  color: #fff;
+  background: var(--prio-purple);
+  border-color: var(--prio-purple);
+  box-shadow: none;
+}
+
+#pnty-apply .btn--raised.btn--primary:hover,
+#pnty-apply .btn--raised.btn--primary:focus,
+#pnty-apply .btn--raised.btn--primary:active {
+  color: #fff;
+  background: var(--prio-purple-dark);
+  border-color: var(--prio-purple-dark);
+  box-shadow: none;
+}
+
+::selection {
+  color: var(--prio-ink);
+  background: var(--prio-lilac);
+}
+
+@media (max-width: 48em) {
+  #pnty-apply fieldset {
+    padding: 2rem 1.25rem 0;
+  }
+
+  .company-logo {
+    width: 82px;
+    height: 82px;
+    margin-bottom: 2rem;
+  }
+
+  .legend legend {
+    font-size: clamp(2.35rem, 11.5vw, 3.25rem);
+  }
+
+  .sub-legend {
+    margin-bottom: 2.5rem;
+  }
+
+  #pnty-apply h3 {
+    margin-top: 3rem;
+    font-size: 1.75rem;
+  }
+
+  .grid-row {
+    gap: 0;
+  }
+
+  .grid-row .col-1-2 {
+    flex: none;
+    width: 100%;
+  }
+
+  #pnty-apply label {
+    margin-bottom: .35rem;
+  }
+
+  .file-btns {
+    gap: .5rem;
+  }
+
+  .file-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .consent-wrapper {
+    width: calc(100% + 2.5rem);
+    margin: 3rem -1.25rem 0;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .form-actions {
+    padding-bottom: 2.5rem;
+  }
+
+  #pnty-apply .btn--raised.btn--primary {
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
