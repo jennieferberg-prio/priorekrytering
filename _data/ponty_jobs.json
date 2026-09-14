@@ -2,6 +2,19 @@
   "generated_from": "Ponty",
   "jobs": [
     {
+      "id": "5",
+      "title": "VVS-Montör",
+      "slug": "vvs-montor",
+      "route_name": "vvs-montor-5",
+      "route": "/lediga-jobb/vvs-montor-5/",
+      "description": "Vill du jobba som VVS-Montör på ett stabilt bolag som har funnits sedan 1989, med spännande projekt, en trivsam arbetsmiljö och möjlighet till personlig utveckling. Du kommer till ett företag med högt i tak och en…",
+      "organization": "KA VVS Fastighets AB",
+      "location": "Stor Stockholm",
+      "publish_date": "2026-09-14",
+      "status": "active",
+      "aliases": []
+    },
+    {
       "id": "1",
       "title": "Spontanansökan",
       "slug": "spontanansokan",
