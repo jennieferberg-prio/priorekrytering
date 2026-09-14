@@ -3,12 +3,10 @@ name: Build and deploy GitHub Pages
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: "2-59/5 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -22,11 +20,6 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v7
-        with:
-          ref: main
-
-      - name: Generate pages from Ponty
-        run: python3 scripts/generate-ponty-jobs.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
@@ -39,18 +32,6 @@ jobs:
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
-
-      - name: Save generated pages
-        continue-on-error: true
-        run: |
-          git add -- _data/ponty_jobs.json lediga-jobb
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Sync Ponty job pages [skip ci]"
-          git push origin HEAD:main
 
   deploy:
     environment:

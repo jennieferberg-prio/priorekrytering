@@ -255,7 +255,11 @@ def generate(root: Path, current_jobs: list[dict[str, Any]]) -> int:
     clean_generated_pages(jobs_root)
     records: list[dict[str, Any]] = []
 
-    for job_id, job in sorted(current.items(), key=lambda item: item[1].get("publish_date", ""), reverse=True):
+    for job_id, job in sorted(
+        current.items(),
+        key=lambda item: (item[1].get("publish_date", ""), item[0]),
+        reverse=True,
+    ):
         old = previous.get(job_id, {})
         aliases = [str(alias) for alias in old.get("aliases", []) if alias]
         old_route_name = str(old.get("route_name") or "")
