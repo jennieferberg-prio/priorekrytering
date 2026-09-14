@@ -26,7 +26,6 @@ layout: null
         <h1>{{ site.data.jobs.hero.heading_first }}<br><i>{{ site.data.jobs.hero.heading_second }}</i></h1>
         <p class="subpage-lede">{{ site.data.jobs.hero.text }}</p>
       </section>
-      <figure class="subpage-image jobs-image">{% include responsive-image.html variant="jobs" src=site.data.jobs.image.url alt=site.data.jobs.image.alt sizes="94vw" %}</figure>
     </div>
 
     <section
@@ -45,6 +44,8 @@ layout: null
         <div><h2>{{ site.data.jobs.empty.heading }}</h2><p>{{ site.data.jobs.empty.text }}</p><a href="{{ '/index-preview.html#spontanansokan' | relative_url }}">{{ site.data.jobs.empty.button }} →</a></div>
       </div>
     </template>
+
+    <figure class="subpage-image jobs-image jobs-bottom-image">{% include responsive-image.html variant="jobs" src=site.data.jobs.image.url alt=site.data.jobs.image.alt sizes="94vw" %}</figure>
   </main>
   <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
   <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>

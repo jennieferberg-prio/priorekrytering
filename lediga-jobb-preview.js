@@ -208,7 +208,7 @@
           ${job.logo ? `<img class="job-client-logo" src="${job.logo}" alt="${escapeHtml(job.organization)}" loading="lazy" decoding="async">` : ""}
           <p class="kicker">Ansökan</p><h2>${escapeHtml(sidebarTitle)}</h2>
           ${job.location ? `<p>${escapeHtml(job.location)}</p>` : ""}
-          ${job.showcase ? '<p class="job-showcase-note">Detta är ett referensuppdrag och tar inte emot ansökningar.</p>' : `<a class="job-apply" href="${applyUrl}" data-job-apply>Ansök via Ponty →</a>`}
+          ${job.showcase ? '<p class="job-showcase-note">Detta är ett referensuppdrag och tar inte emot ansökningar.</p>' : `<a class="job-apply" href="${applyUrl}" data-job-apply>Ansök</a>`}
           ${contactMarkup(job)}
         </aside>
       </div>
