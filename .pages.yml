@@ -227,6 +227,40 @@ content:
           - { name: text, label: Text, type: text }
           - { name: button, label: Knapptext, type: string }
 
+  - name: privacy_page
+    label: Integritetspolicy
+    type: file
+    path: _data/privacy.yml
+    fields:
+      - name: seo
+        label: Google och delning
+        type: object
+        fields:
+          - { name: title, label: Sidtitel, type: string }
+          - { name: description, label: Beskrivning, type: text }
+      - name: hero
+        label: Sidhuvud
+        type: object
+        fields:
+          - { name: kicker, label: Liten rubrik, type: string }
+          - { name: heading_first, label: Rubrik rad 1, type: string }
+          - { name: heading_second, label: Rubrik rad 2, type: string }
+          - { name: introduction, label: Inledning, type: text }
+      - { name: updated, label: Senast uppdaterad, type: string }
+      - name: controller
+        label: Personuppgiftsansvarig
+        type: object
+        fields:
+          - { name: name, label: Företagsnamn, type: string }
+          - { name: email, label: E-post för integritetsfrågor, type: string }
+      - name: retention
+        label: Gallringstider
+        type: object
+        fields:
+          - { name: recruitment, label: Aktuell rekrytering, type: string }
+          - { name: candidate_network, label: Kandidatnätverk, type: string }
+          - { name: business_contact, label: Affärskontakter, type: string }
+
 settings:
   hide: true
   commit:

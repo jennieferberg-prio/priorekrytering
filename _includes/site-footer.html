@@ -1,0 +1,17 @@
+<footer>
+  <a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a>
+  <span>{{ site.data.site.contact.email }}</span>
+  <span class="footer-legal"><a href="{{ '/integritet.html' | relative_url }}">Integritet</a><span aria-hidden="true">/</span><button type="button" data-cookie-settings>Cookieinställningar</button></span>
+</footer>
+
+<aside class="cookie-banner" data-cookie-banner role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" hidden>
+  <p class="kicker">Din integritet</p>
+  <h2 id="cookie-title">Får vi använda statistikcookies?</h2>
+  <p id="cookie-description">Vi använder Google Analytics för att förstå hur webbplatsen används. Statistik aktiveras bara om du tillåter det.</p>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-accept" data-cookie-accept>Tillåt statistik</button>
+    <button type="button" class="cookie-decline" data-cookie-decline>Endast nödvändiga</button>
+  </div>
+  <a class="cookie-policy-link" href="{{ '/integritet.html#cookies' | relative_url }}">Läs om cookies och personuppgifter</a>
+</aside>
+{% include analytics.html %}

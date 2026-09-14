@@ -85,7 +85,7 @@ layout: null
       <details><summary><span>{{ site.data.site.candidate.summary }}</span><b>{{ site.data.site.candidate.button_label }} →</b></summary><div class="tally-embed candidate-form"><iframe data-tally-src="https://tally.so/embed/yPajp0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Spontanansökan"></iframe></div></details>
     </section>
   </main>
-  <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
+{% include site-footer.html %}
   <script src="https://tally.so/widgets/embed.js"></script>
   <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
 </body>

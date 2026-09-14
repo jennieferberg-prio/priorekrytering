@@ -132,7 +132,7 @@
     </section>
     {% endif %}
   </main>
-  <footer><a class="editorial-brand footer-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a><span>{{ site.data.site.contact.email }}</span><span>Integritet / LinkedIn</span></footer>
+{% include site-footer.html %}
   <script src="https://tally.so/widgets/embed.js"></script>
   <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
 </body>

@@ -1,9 +1,3 @@
 {% if site.google_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
+  <script src="{{ '/privacy.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}" data-measurement-id="{{ site.google_analytics | escape }}"></script>
 {% endif %}

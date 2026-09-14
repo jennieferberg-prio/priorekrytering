@@ -1,0 +1,151 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ site.data.privacy.seo.title }}</title>
+{% include seo.html title=site.data.privacy.seo.title description=site.data.privacy.seo.description path="/integritet.html" %}
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+</head>
+<body class="site search editorial-prio editorial-blue editorial-purple privacy-page">
+  <nav>
+    <a class="editorial-brand" href="{{ '/' | relative_url }}" aria-label="Prio Rekrytering – startsida"><span class="round-logo"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="Prio Rekrytering" width="128" height="128"></span><span>PRIO REKRYTERING</span></a>
+    <div class="site-nav-links"><a href="{{ '/om.html' | relative_url }}">Om Prio</a><a href="{{ '/sa-fungerar-prio.html' | relative_url }}">Så fungerar Prio</a><a href="{{ '/lediga-jobb.html' | relative_url }}">Lediga jobb</a><a href="{{ '/kontakt.html' | relative_url }}">Kontakt</a></div>
+    <span>SEARCH / SE</span>
+  </nav>
+  <main>
+    <header class="privacy-hero">
+      <p class="kicker">{{ site.data.privacy.hero.kicker }}</p>
+      <h1>{{ site.data.privacy.hero.heading_first }}<br><i>{{ site.data.privacy.hero.heading_second }}</i></h1>
+      <div class="privacy-hero-meta"><p>{{ site.data.privacy.hero.introduction }}</p><span>Senast uppdaterad<br><strong>{{ site.data.privacy.updated }}</strong></span></div>
+    </header>
+
+    <div class="privacy-layout">
+      <aside class="privacy-navigation" aria-label="Innehåll">
+        <span>På den här sidan</span>
+        <a href="#ansvar">Vem ansvarar?</a>
+        <a href="#behandling">Så använder vi uppgifter</a>
+        <a href="#delning">Vilka får del av uppgifter?</a>
+        <a href="#lagring">Hur länge sparas uppgifter?</a>
+        <a href="#cookies">Cookies och statistik</a>
+        <a href="#rattigheter">Dina rättigheter</a>
+        <a href="#kontakt">Kontakt</a>
+      </aside>
+
+      <article class="privacy-content">
+        <section id="ansvar">
+          <span class="privacy-number">01</span>
+          <h2>Vem ansvarar för dina personuppgifter?</h2>
+          <p><strong>{{ site.data.privacy.controller.name }}</strong> är personuppgiftsansvarig för den behandling som beskrivs i denna policy. Det betyder att vi bestämmer varför och hur personuppgifterna behandlas.</p>
+          <p>I ett rekryteringsuppdrag kan även det kundföretag som söker en medarbetare vara självständigt personuppgiftsansvarigt för sin behandling. Kundföretaget ansvarar då för att informera om sin hantering.</p>
+          <div class="privacy-contact-card"><span>Integritetsfrågor och begäranden</span><a href="mailto:{{ site.data.privacy.controller.email }}">{{ site.data.privacy.controller.email }}</a></div>
+        </section>
+
+        <section id="behandling">
+          <span class="privacy-number">02</span>
+          <h2>Vilka uppgifter behandlar vi och varför?</h2>
+
+          <div class="privacy-purpose">
+            <h3>Ansökningar och rekryteringsprocesser</h3>
+            <p>Vi behandlar till exempel namn, kontaktuppgifter, CV, personligt brev, svar i ansökningsformulär, arbetslivserfarenhet, utbildning, kompetenser, anteckningar från samtal och intervjuer, referenser samt övrig kommunikation.</p>
+            <dl><div><dt>Ändamål</dt><dd>Att ta emot och bedöma ansökningar, kommunicera med kandidater, genomföra urval och presentera relevanta kandidater i ett rekryteringsuppdrag.</dd></div><div><dt>Rättslig grund</dt><dd>Berättigat intresse av att genomföra en korrekt och effektiv rekrytering. Åtgärder som du själv begär inför ett möjligt anställningsavtal kan också stödjas på avtal. Om du vill finnas kvar för framtida möjligheter stödjer vi den fortsatta lagringen på ditt samtycke.</dd></div></dl>
+          </div>
+
+          <div class="privacy-purpose">
+            <h3>Spontanansökningar och kandidatnätverk</h3>
+            <p>När du skickar en spontanansökan behandlar vi de kontakt- och merituppgifter samt filer du själv lämnar. Syftet är att kunna kontakta dig om framtida roller som kan passa din profil.</p>
+            <dl><div><dt>Rättslig grund</dt><dd>Samtycke. Du kan när som helst återkalla samtycket genom att kontakta oss. Återkallelsen påverkar inte behandling som redan skett innan den.</dd></div></dl>
+          </div>
+
+          <div class="privacy-purpose">
+            <h3>Search och headhunting</h3>
+            <p>Vi kan behandla yrkesrelaterade uppgifter om potentiella kandidater, såsom namn, kontaktuppgifter, nuvarande och tidigare roller, arbetsgivare, utbildning, kompetens och information i offentliga yrkesprofiler. Uppgifterna kan komma från yrkesnätverk som LinkedIn, företags webbplatser, offentliga källor, rekommendationer eller våra uppdragsgivare.</p>
+            <dl><div><dt>Ändamål</dt><dd>Att identifiera och kontakta personer som kan vara relevanta för ett rekryteringsuppdrag.</dd></div><div><dt>Rättslig grund</dt><dd>Berättigat intresse. Vi väger behovet av rekrytering mot din rätt till privatliv och använder bara uppgifter som är relevanta i ett yrkesmässigt sammanhang. Du kan invända mot behandlingen.</dd></div></dl>
+          </div>
+
+          <div class="privacy-purpose">
+            <h3>Kund- och affärskontakter</h3>
+            <p>När du kontaktar oss som kund, leverantör eller samarbetspartner behandlar vi exempelvis namn, roll, företag, kontaktuppgifter, meddelanden och uppgifter om vår affärsrelation.</p>
+            <dl><div><dt>Ändamål</dt><dd>Att besvara förfrågningar, lämna offerter, genomföra uppdrag och vårda affärsrelationer.</dd></div><div><dt>Rättslig grund</dt><dd>Avtal eller åtgärder inför avtal samt vårt berättigade intresse av att kommunicera med befintliga och möjliga affärskontakter.</dd></div></dl>
+          </div>
+
+          <div class="privacy-purpose">
+            <h3>Webbplats, drift och säkerhet</h3>
+            <p>När du besöker webbplatsen kan tekniska uppgifter som IP-adress, webbläsare, enhet, tidpunkt och begärd sida behandlas i serverloggar. GitHub Pages, som levererar webbplatsen, loggar besökares IP-adresser för säkerhetsändamål. Behandlingen är nödvändig för vårt berättigade intresse av en säker och fungerande webbplats.</p>
+          </div>
+
+          <p class="privacy-note"><strong>Lämna inte känsliga personuppgifter</strong> som uppgifter om hälsa, religion, politiska åsikter eller fackligt medlemskap i en ansökan om vi inte uttryckligen har bett om dem och informerat om hur de behandlas.</p>
+        </section>
+
+        <section id="delning">
+          <span class="privacy-number">03</span>
+          <h2>Vilka kan få del av uppgifterna?</h2>
+          <p>Vi delar bara personuppgifter när det behövs för ändamålen ovan. Mottagare kan vara:</p>
+          <ul>
+            <li>kundföretag i ett relevant rekryteringsuppdrag,</li>
+            <li><a href="https://ponty.se/privacy-policy/" rel="noopener">Ponty Technology AB</a>, som levererar vårt rekryterings- och CRM-system,</li>
+            <li><a href="https://tally.so/help/gdpr" rel="noopener">Tally BV</a>, som levererar formulär som används på webbplatsen,</li>
+            <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub, Inc.</a>, som levererar webbplatsen genom GitHub Pages,</li>
+            <li><a href="https://policies.google.com/privacy" rel="noopener">Google Ireland Limited</a>, om du har samtyckt till webbstatistik, samt</li>
+            <li>myndigheter eller rådgivare när det krävs enligt lag eller behövs för att fastställa, göra gällande eller försvara rättsliga anspråk.</li>
+          </ul>
+          <p>Leverantörer som behandlar uppgifter för vår räkning får bara göra det enligt våra instruktioner och personuppgiftsbiträdesavtal. Ett kundföretag kan behandla uppgifter under eget ansvar när det bedömer kandidater för sin verksamhet.</p>
+          <h3>Överföring utanför EU/EES</h3>
+          <p>Vissa leverantörer kan behandla uppgifter i länder utanför EU/EES. När det sker ska överföringen stödjas på ett giltigt skydd, till exempel EU-kommissionens beslut om adekvat skyddsnivå eller standardavtalsklausuler, tillsammans med kompletterande skydd där det behövs.</p>
+        </section>
+
+        <section id="lagring">
+          <span class="privacy-number">04</span>
+          <h2>Hur länge sparar vi uppgifterna?</h2>
+          <p>Vi sparar aldrig personuppgifter längre än vad som behövs för ändamålet. Våra normala gallringsfrister är:</p>
+          <ul>
+            <li><strong>Aktuell rekrytering:</strong> under processen och upp till {{ site.data.privacy.retention.recruitment }}, bland annat för uppföljning och för att kunna hantera rättsliga anspråk.</li>
+            <li><strong>Spontanansökan och kandidatnätverk:</strong> upp till {{ site.data.privacy.retention.candidate_network }}, eller kortare om du återkallar ditt samtycke.</li>
+            <li><strong>Affärskontakter:</strong> normalt upp till {{ site.data.privacy.retention.business_contact }}. Uppgifter som ingår i bokföringsunderlag sparas så länge bokföringsreglerna kräver.</li>
+            <li><strong>Tekniska loggar och statistik:</strong> enligt respektive leverantörs säkerhets- och gallringsrutiner samt tiderna i cookieöversikten nedan.</li>
+          </ul>
+          <p>Uppgifter kan sparas längre om lag kräver det eller så länge de behövs för ett pågående rättsligt anspråk. Därefter raderas eller anonymiseras de.</p>
+        </section>
+
+        <section id="cookies">
+          <span class="privacy-number">05</span>
+          <h2>Cookies och webbstatistik</h2>
+          <p>Webbplatsen använder lokal lagring för att komma ihåg ditt cookieval. Den är nödvändig för att webbplatsen ska respektera ditt val. Google Analytics laddas först när du aktivt tillåter statistik.</p>
+          <div class="privacy-table-wrap"><table><thead><tr><th>Namn</th><th>Leverantör</th><th>Syfte</th><th>Lagringstid</th></tr></thead><tbody><tr><td><code>prio_cookie_consent_v1</code></td><td>Prio Rekrytering, lokal lagring</td><td>Kommer ihåg om du har tillåtit eller avböjt statistik.</td><td>6 månader</td></tr><tr><td><code>_ga</code></td><td>Google Analytics</td><td>Skiljer besökare åt för sammanställd webbstatistik.</td><td>Upp till 13 månader från senaste besök</td></tr><tr><td><code>_ga_9RT4SH1HEK</code></td><td>Google Analytics</td><td>Bevarar information om besökssessionen.</td><td>Upp till 13 månader från senaste besök</td></tr></tbody></table></div>
+          <p>Med ditt samtycke får vi sammanställd information om exempelvis antal besök, besökta sidor, ungefärligt geografiskt område samt webbläsar- och enhetstyp. Den rättsliga grunden är samtycke.</p>
+          <button type="button" class="privacy-settings-button" data-cookie-settings>Ändra mitt cookieval</button>
+        </section>
+
+        <section id="rattigheter">
+          <span class="privacy-number">06</span>
+          <h2>Dina rättigheter</h2>
+          <p>Beroende på omständigheterna har du rätt att:</p>
+          <ul>
+            <li>få information om och en kopia av de personuppgifter vi behandlar om dig,</li>
+            <li>få felaktiga eller ofullständiga uppgifter rättade,</li>
+            <li>begära radering eller begränsning av behandlingen,</li>
+            <li>invända mot behandling som grundas på berättigat intresse,</li>
+            <li>återkalla ett samtycke, och</li>
+            <li>i vissa fall få ut uppgifter i ett maskinläsbart format.</li>
+          </ul>
+          <p>Rättigheterna gäller inte utan undantag. Vi kan till exempel behöva behålla vissa uppgifter för att uppfylla en rättslig skyldighet eller försvara ett rättsligt anspråk. Vi kan be dig styrka din identitet innan vi lämnar ut eller ändrar uppgifter.</p>
+          <p>Vi använder inte personuppgifter för beslut som enbart grundas på automatiserad behandling och som har rättsliga eller motsvarande betydande följder för dig.</p>
+          <p>Om du inte är nöjd med vår hantering kan du lämna klagomål till <a href="https://www.imy.se/privatperson/utfora-arenden/lamna-ett-klagomal/" rel="noopener">Integritetsskyddsmyndigheten (IMY)</a>.</p>
+        </section>
+
+        <section id="kontakt">
+          <span class="privacy-number">07</span>
+          <h2>Kontakt och ändringar</h2>
+          <p>Kontakta oss på <a href="mailto:{{ site.data.privacy.controller.email }}">{{ site.data.privacy.controller.email }}</a> om du vill utöva en rättighet eller har frågor om hur vi behandlar personuppgifter.</p>
+          <p>Vi kan uppdatera policyn när våra arbetssätt, tjänster eller regler ändras. Den senaste versionen finns alltid på den här sidan, med datumet för senaste uppdatering högst upp.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+{% include site-footer.html %}
+  <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
+</body>
+</html>
