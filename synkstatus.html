@@ -1,0 +1,335 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#351b46">
+  <title>Jobbsynk | Prio Rekrytering</title>
+  <link rel="icon" type="image/png" href="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}">
+  <style>
+    @font-face{font-family:"DM Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url("{{ '/assets/fonts/dm-sans-latin.woff2' | relative_url }}") format("woff2")}
+    @font-face{font-family:"Playfair Display";font-style:normal;font-weight:600;font-display:swap;src:url("{{ '/assets/fonts/playfair-display-600-latin.woff2' | relative_url }}") format("woff2")}
+    @font-face{font-family:"Playfair Display";font-style:italic;font-weight:500;font-display:swap;src:url("{{ '/assets/fonts/playfair-display-500-italic-latin.woff2' | relative_url }}") format("woff2")}
+    :root{--ink:#351b46;--purple:#7c3f72;--paper:#f6f2f5;--card:#fff;--muted:#77687e;--line:#dfd3e2;--green:#2f7451;--green-soft:#e0efe6;--amber:#94651c;--amber-soft:#f4ead5;--red:#9b3b51;--red-soft:#f3dfe4}
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
+    body{margin:0;min-height:100vh;color:var(--ink);background:var(--paper);font-family:"DM Sans",Arial,sans-serif}
+    button{font:inherit}
+    .status-header{height:76px;padding:0 clamp(20px,4vw,60px);display:flex;align-items:center;border-bottom:1px solid var(--line);background:rgba(246,242,245,.94)}
+    .status-brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+    .status-brand img{width:42px;height:42px;object-fit:contain}
+    .status-brand span{display:flex;flex-direction:column;gap:2px}
+    .status-brand strong{font-size:12px;letter-spacing:.09em}
+    .status-brand small{font-size:10px;color:var(--muted)}
+    main{width:min(880px,calc(100% - 36px));margin:0 auto;padding:clamp(52px,8vw,92px) 0 80px}
+    .eyebrow{margin:0 0 14px;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:600;color:var(--purple)}
+    h1{max-width:760px;margin:0;font:600 clamp(46px,7vw,78px)/.98 "Playfair Display",serif;letter-spacing:-.045em}
+    h1 i{font-weight:500;color:var(--purple)}
+    .intro{max-width:620px;margin:25px 0 40px;color:var(--muted);font-size:16px;line-height:1.65}
+    .status-card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);padding:clamp(25px,5vw,46px)}
+    .status-card:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--amber)}
+    .status-card[data-state="success"]:before{background:var(--green)}
+    .status-card[data-state="error"]:before{background:var(--red)}
+    .status-summary{display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:center}
+    .status-symbol{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--amber-soft);color:var(--amber)}
+    .status-card[data-state="success"] .status-symbol{background:var(--green-soft);color:var(--green)}
+    .status-card[data-state="error"] .status-symbol{background:var(--red-soft);color:var(--red)}
+    .status-symbol svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .status-card[data-state="working"] .status-symbol svg{animation:pulse 1.25s ease-in-out infinite}
+    @keyframes pulse{50%{transform:scale(.86);opacity:.55}}
+    .status-label{margin:0 0 6px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    h2{margin:0;font:600 clamp(28px,4vw,39px)/1.08 "Playfair Display",serif;letter-spacing:-.025em}
+    .status-message{margin:15px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+    .progress{list-style:none;margin:38px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+    .progress li{position:relative;padding:23px 12px 0 0;color:#a396a8;font-size:11px;line-height:1.35}
+    .progress li:before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--card);border:2px solid var(--line)}
+    .progress li.is-done{color:var(--green)}
+    .progress li.is-done:before{background:var(--green);border-color:var(--green)}
+    .progress li.is-current{color:var(--amber);font-weight:600}
+    .progress li.is-current:before{background:var(--amber-soft);border-color:var(--amber);box-shadow:0 0 0 5px var(--amber-soft)}
+    .progress li.is-error{color:var(--red);font-weight:600}
+    .progress li.is-error:before{background:var(--red);border-color:var(--red)}
+    .status-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .status-meta div{display:flex;flex-direction:column;gap:5px}
+    .status-meta span{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+    .status-meta strong{font-size:13px;font-weight:600}
+    .status-actions{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:25px}
+    .refresh-button{border:0;background:var(--ink);color:#fff;padding:14px 19px;font-weight:600;font-size:12px;cursor:pointer}
+    .refresh-button:disabled{opacity:.6;cursor:wait}
+    .details-link{color:var(--purple);font-size:11px;text-underline-offset:3px}
+    .status-help{margin:25px 2px 0;color:var(--muted);font-size:12px;line-height:1.65}
+    .status-help strong{color:var(--ink)}
+    .status-footer{display:flex;justify-content:space-between;gap:25px;margin-top:55px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}
+    .status-footer a{color:inherit}
+    @media(max-width:600px){.status-header{height:68px}.status-brand img{width:36px;height:36px}.status-brand strong{font-size:10px}main{padding-top:46px}h1{font-size:47px}.intro{font-size:15px;margin-bottom:30px}.status-summary{grid-template-columns:50px 1fr;gap:16px}.status-symbol{width:50px;height:50px}.status-symbol svg{width:24px;height:24px}.progress{grid-template-columns:1fr 1fr;gap:22px 0}.progress li:nth-child(-n+2){border-top:0}.progress li:nth-child(n+3){border-top:1px solid var(--line);padding-top:20px;margin-top:5px}.progress li:nth-child(n+3):before{top:-6px}.status-meta{grid-template-columns:1fr}.status-actions{align-items:stretch;flex-direction:column}.refresh-button{width:100%}.details-link{text-align:center}.status-footer{display:block}.status-footer span{display:block;margin-top:9px}}
+    @media(prefers-reduced-motion:reduce){.status-card[data-state="working"] .status-symbol svg{animation:none}}
+  </style>
+</head>
+<body>
+  <header class="status-header">
+    <a class="status-brand" href="{{ '/' | relative_url }}" aria-label="Till Prio Rekrytering">
+      <img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" alt="" width="42" height="42">
+      <span><strong>PRIO REKRYTERING</strong><small>Jobbsynk</small></span>
+    </a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Status för lediga jobb</p>
+    <h1>Är ändringen <i>publicerad?</i></h1>
+    <p class="intro">När du sparar en annons i Ponty visas synken här inom några sekunder. Sidan uppdateras automatiskt medan webbplatsen byggs.</p>
+
+    <section class="status-card" id="status-card" data-state="working" aria-live="polite" aria-busy="true">
+      <div class="status-summary">
+        <div class="status-symbol" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path id="status-icon" d="M16 5a11 11 0 1 0 10.4 7.4M16 1v8h8"/></svg>
+        </div>
+        <div>
+          <p class="status-label" id="status-label">Kontrollerar</p>
+          <h2 id="status-title">Hämtar aktuell status…</h2>
+          <p class="status-message" id="status-message">Det tar normalt mindre än en minut att publicera en ändring.</p>
+        </div>
+      </div>
+
+      <ol class="progress" aria-label="Publiceringssteg">
+        <li id="step-received">Ändring mottagen</li>
+        <li id="step-fetch">Annonser hämtas</li>
+        <li id="step-build">Webbplatsen byggs</li>
+        <li id="step-publish">Publicering</li>
+      </ol>
+
+      <div class="status-meta">
+        <div><span>Senaste synk</span><strong id="run-time">–</strong></div>
+        <div><span>Tidsåtgång</span><strong id="run-duration">–</strong></div>
+      </div>
+
+      <div class="status-actions">
+        <button class="refresh-button" id="refresh-button" type="button">Uppdatera status</button>
+        <a class="details-link" id="details-link" href="https://github.com/jennieferberg-prio/priorekrytering/actions/workflows/ponty-sync.yml" target="_blank" rel="noopener noreferrer">Visa tekniska detaljer</a>
+      </div>
+    </section>
+
+    <p class="status-help"><strong>Syns ingen ny synk?</strong> Vänta några sekunder och uppdatera statusen. Om inget nytt visas kan du spara annonsen en gång till i Ponty.</p>
+
+    <footer class="status-footer">
+      <a href="{{ '/' | relative_url }}">Till priorekrytering.se</a>
+      <span>Status hämtas direkt från publiceringssystemet.</span>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const apiBase = "https://api.github.com/repos/jennieferberg-prio/priorekrytering";
+      const workflowPath = "actions/workflows/ponty-sync.yml/runs";
+      const activeStatuses = new Set(["queued", "in_progress", "waiting", "pending", "requested"]);
+      const failureConclusions = new Set(["failure", "cancelled", "timed_out", "action_required", "stale"]);
+      const dateFormat = new Intl.DateTimeFormat("sv-SE", {
+        timeZone: "Europe/Stockholm",
+        day: "numeric",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+
+      const elements = {
+        card: document.getElementById("status-card"),
+        label: document.getElementById("status-label"),
+        title: document.getElementById("status-title"),
+        message: document.getElementById("status-message"),
+        icon: document.getElementById("status-icon"),
+        time: document.getElementById("run-time"),
+        duration: document.getElementById("run-duration"),
+        details: document.getElementById("details-link"),
+        refresh: document.getElementById("refresh-button"),
+        steps: ["received", "fetch", "build", "publish"].map(name => document.getElementById(`step-${name}`))
+      };
+
+      let refreshTimer = 0;
+      let refreshing = false;
+      let activePoll = 0;
+      let cachedRunId = null;
+      let cachedJobs = [];
+
+      function apiUrl(path, params = {}) {
+        const url = new URL(`${apiBase}/${path}`);
+        Object.entries(params).forEach(([key, value]) => url.searchParams.set(key, value));
+        url.searchParams.set("_", Date.now());
+        return url;
+      }
+
+      async function requestJson(url) {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) {
+          const error = new Error(`GitHub svarade med ${response.status}`);
+          error.status = response.status;
+          throw error;
+        }
+        return response.json();
+      }
+
+      function secondsBetween(start, end) {
+        return Math.max(0, Math.round((new Date(end) - new Date(start)) / 1000));
+      }
+
+      function durationText(seconds) {
+        if (!Number.isFinite(seconds)) return "–";
+        if (seconds < 60) return `${seconds} sekunder`;
+        const minutes = Math.floor(seconds / 60);
+        const remainder = seconds % 60;
+        return remainder ? `${minutes} min ${remainder} sek` : `${minutes} min`;
+      }
+
+      function setSteps(states) {
+        elements.steps.forEach((element, index) => {
+          element.className = states[index] ? `is-${states[index]}` : "";
+        });
+      }
+
+      function findStep(jobs, name) {
+        return jobs.flatMap(job => job.steps || []).find(step => step.name === name);
+      }
+
+      function runningStage(run, jobs) {
+        if (run.status === "queued" || !jobs.length) return 0;
+        const deploy = jobs.find(job => job.name === "deploy");
+        if (deploy && activeStatuses.has(deploy.status)) return 3;
+        const build = findStep(jobs, "Build with Jekyll");
+        const upload = findStep(jobs, "Upload Pages artifact");
+        if ([build, upload].some(step => step && (activeStatuses.has(step.status) || step.conclusion === "success"))) return 2;
+        return 1;
+      }
+
+      function failedStage(jobs) {
+        const deploy = jobs.find(job => job.name === "deploy");
+        if (deploy && failureConclusions.has(deploy.conclusion)) return 3;
+        const build = findStep(jobs, "Build with Jekyll");
+        const upload = findStep(jobs, "Upload Pages artifact");
+        if ([build, upload].some(step => step && failureConclusions.has(step.conclusion))) return 2;
+        return 1;
+      }
+
+      function setState(state, label, title, message, iconPath) {
+        elements.card.dataset.state = state;
+        elements.card.setAttribute("aria-busy", state === "working" ? "true" : "false");
+        elements.label.textContent = label;
+        elements.title.textContent = title;
+        elements.message.textContent = message;
+        elements.icon.setAttribute("d", iconPath);
+      }
+
+      function render(run, jobs) {
+        const started = new Date(run.created_at);
+        const age = Date.now() - started.getTime();
+        const isFresh = age < 5 * 60 * 1000;
+        const deploy = jobs.find(job => job.name === "deploy");
+        const published = deploy?.conclusion === "success";
+
+        elements.time.textContent = dateFormat.format(started);
+        elements.duration.textContent = run.status === "completed"
+          ? durationText(secondsBetween(run.created_at, run.updated_at))
+          : "Pågår";
+        elements.details.href = `https://github.com/jennieferberg-prio/priorekrytering/actions/runs/${run.id}`;
+
+        if (activeStatuses.has(run.status)) {
+          const stage = runningStage(run, jobs);
+          const titles = ["Ändringen är mottagen", "Hämtar annonser från Ponty", "Bygger webbplatsen", "Publicerar webbplatsen"];
+          const states = ["done", "done", "done", "current"];
+          states.fill("", stage + 1);
+          states[stage] = "current";
+          setSteps(states);
+          setState("working", "Uppdatering pågår", titles[stage], "Du kan låta sidan vara öppen. Statusen uppdateras automatiskt.", "M16 5a11 11 0 1 0 10.4 7.4M16 1v8h8");
+          return;
+        }
+
+        if (run.conclusion === "success") {
+          setSteps(published ? ["done", "done", "done", "done"] : ["done", "done", "", ""]);
+          const title = published && isFresh ? "Ändringen är publicerad" : "Senaste synken lyckades";
+          const message = published
+            ? `Webbplatsen blev klar ${dateFormat.format(new Date(run.updated_at))}.`
+            : "Ponty och webbplatsen hade redan samma innehåll, så ingen publicering behövdes.";
+          setState("success", "Allt fungerar", title, message, "M6 16.5l6.2 6L26 8.5");
+          return;
+        }
+
+        const stage = failedStage(jobs);
+        const states = ["done", "done", "done", ""];
+        states[stage] = "error";
+        states.fill("", stage + 1);
+        setSteps(states);
+        setState("error", "Åtgärd behövs", "Synken misslyckades", "Spara annonsen igen i Ponty. Om felet återkommer behöver den tekniska loggen kontrolleras.", "M9 9l14 14M23 9L9 23");
+      }
+
+      function renderError(error) {
+        const rateLimited = error.status === 403;
+        setSteps(["", "", "", ""]);
+        elements.time.textContent = "–";
+        elements.duration.textContent = "–";
+        setState(
+          "error",
+          "Status kunde inte hämtas",
+          rateLimited ? "Vänta en minut" : "Kan inte läsa publiceringsstatus",
+          rateLimited ? "För många statuskontroller gjordes på kort tid. Försök igen om en minut." : "Kontrollera internetanslutningen och försök igen.",
+          "M9 9l14 14M23 9L9 23"
+        );
+      }
+
+      function schedule(delay) {
+        window.clearTimeout(refreshTimer);
+        refreshTimer = window.setTimeout(refresh, delay);
+      }
+
+      async function refresh() {
+        if (refreshing || document.hidden) return;
+        refreshing = true;
+        elements.refresh.disabled = true;
+        try {
+          const runs = await requestJson(apiUrl(workflowPath, {
+            event: "workflow_dispatch",
+            branch: "main",
+            per_page: "1",
+            exclude_pull_requests: "true"
+          }));
+          const run = runs.workflow_runs?.[0];
+          if (!run) throw new Error("Ingen synk hittades");
+          const shouldFetchJobs = run.id !== cachedRunId || !activeStatuses.has(run.status) || activePoll % 2 === 0;
+          if (shouldFetchJobs) {
+            const jobs = await requestJson(apiUrl(`actions/runs/${run.id}/jobs`, { per_page: "10" }));
+            cachedRunId = run.id;
+            cachedJobs = jobs.jobs || [];
+          }
+          render(run, cachedJobs);
+
+          if (activeStatuses.has(run.status)) {
+            activePoll += 1;
+            schedule(7000);
+          }
+        } catch (error) {
+          renderError(error);
+        } finally {
+          refreshing = false;
+          elements.refresh.disabled = false;
+        }
+      }
+
+      elements.refresh.addEventListener("click", () => {
+        window.clearTimeout(refreshTimer);
+        activePoll = 0;
+        refresh();
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+          activePoll = 0;
+          refresh();
+        }
+      });
+      refresh();
+    })();
+  </script>
+</body>
+</html>
