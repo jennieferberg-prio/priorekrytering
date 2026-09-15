@@ -1,0 +1,14 @@
+name = "prio-ponty-webhook"
+main = "src/worker.js"
+compatibility_date = "2026-09-15"
+workers_dev = true
+
+[vars]
+GITHUB_OWNER = "jennieferberg-prio"
+GITHUB_REPO = "priorekrytering"
+GITHUB_WORKFLOW = "ponty-sync.yml"
+GITHUB_REF = "main"
+SITE_BASE_URL = "https://priorekrytering.se"
+
+[secrets]
+required = ["PONTY_API_KEY", "GITHUB_WORKFLOW_TOKEN"]

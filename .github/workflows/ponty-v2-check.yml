@@ -1,0 +1,55 @@
+name: Validate Ponty v2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Generate pages from Ponty v2
+        env:
+          PONTY_CLIENT_ID: ${{ secrets.PONTY_CLIENT_ID }}
+          PONTY_CLIENT_SECRET: ${{ secrets.PONTY_CLIENT_SECRET }}
+        run: python3 scripts/generate-ponty-jobs.py --feed-source v2
+
+      - name: Validate generated job snapshot
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          internal = json.loads(Path("_data/ponty_jobs.json").read_text(encoding="utf-8"))
+          public = json.loads(Path("assets/data/ponty-jobs.json").read_text(encoding="utf-8"))
+          active = {str(job["id"]): job for job in internal["jobs"] if job["status"] == "active"}
+          visible = {str(job["id"]): job for job in public["jobs"]}
+          if not visible:
+              raise SystemExit("Ponty v2 returned no regular jobs; refusing to accept an empty snapshot.")
+          if active.keys() != visible.keys():
+              raise SystemExit("Internal and public job snapshots contain different assignment IDs.")
+          for job in visible.values():
+              page = Path(job["route"].strip("/")) / "index.html"
+              if not page.is_file():
+                  raise SystemExit(f"Missing generated page for assignment {job['id']}.")
+          print(f"Validated {len(visible)} regular Ponty job(s).")
+          PY
+
+      - name: Show generated change summary
+        run: git diff --stat -- _data/ponty_jobs.json assets/data/ponty-jobs.json lediga-jobb
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site

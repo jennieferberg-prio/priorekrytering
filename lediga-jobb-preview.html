@@ -31,7 +31,7 @@ layout: null
     <section
       class="jobs-app visible"
       id="jobs-app"
-      data-feed-url="https://priorekrytering.ponty-system.se/extapi/job?p=eyJ0IjogW119.d5b3329070ca38f38e501bab97bf3947f31a4e3e26cfc73f7802d12949dae4e2"
+      data-feed-url="{{ '/assets/data/ponty-jobs.json' | relative_url }}?v={{ site.data.ponty_jobs.version | default: site.github.build_revision | default: 'local' }}"
       data-apply-base="https://pnty-apply.ponty-system.se/priorekrytering"
       aria-live="polite"
     >

@@ -6,53 +6,41 @@
       "id": "3",
       "title": "Ledande Montör till Granitor Electro i Danderyd",
       "slug": "ledande-montor-till-granitor-electro-i-danderyd",
-      "route_name": "ledande-montor-till-granitor-electro-i-danderyd-3",
       "route": "/lediga-jobb/ledande-montor-till-granitor-electro-i-danderyd-3/",
-      "description": "Är du ledande montör idag med en gedigen bakgrund från entreprenadsidan? Vill du hamna på ett väletablerat och framgångsrikt bolag där du kan växa i din yrkesroll och får vara med och bidra? Då kan Granitor Electro…",
       "organization": "Granitor Electro i Danderyd",
       "location": "Stockholm Norr",
       "publish_date": "2026-09-15",
-      "status": "active",
-      "aliases": []
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-4-e998.jpg"
     },
     {
       "id": "6",
       "title": "Serviceelektriker till Granitor Electro Danderyd",
       "slug": "serviceelektriker-till-granitor-electro-danderyd",
-      "route_name": "serviceelektriker-till-granitor-electro-danderyd-6",
       "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
-      "description": "Vill du jobba som serviceelektriker på ett framgångsrikt bolag, där du har stor frihet med korta beslutsvägar? Då kanske Granitor Electro Danderyd är något för dig!",
       "organization": "Granitor Electro i Danderyd",
       "location": "Storstockholm",
       "publish_date": "2026-09-14",
-      "status": "active",
-      "aliases": []
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-4-e998.jpg"
     },
     {
       "id": "5",
       "title": "VVS-Montör",
       "slug": "vvs-montor",
-      "route_name": "vvs-montor-5",
       "route": "/lediga-jobb/vvs-montor-5/",
-      "description": "Vill du jobba som VVS-Montör på ett stabilt bolag som har funnits sedan 1989, med spännande projekt, en trivsam arbetsmiljö och möjlighet till personlig utveckling. Du kommer till ett företag med högt i tak och en…",
       "organization": "KA VVS Fastighets AB",
       "location": "Storstockholm",
       "publish_date": "2026-09-14",
-      "status": "active",
-      "aliases": []
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-13-23f6.png"
     },
     {
       "id": "1",
       "title": "Spontanansökan",
       "slug": "spontanansokan",
-      "route_name": "spontanansokan-1",
       "route": "/lediga-jobb/spontanansokan-1/",
-      "description": "Hittar du ingen tjänst som passar dig just nu? Skicka gärna in en spontanansökan och berätta mer om din erfarenhet, vad du söker och var du vill ta nästa steg.",
       "organization": "Prio rekrytering AB",
       "location": "Hela Sverige",
       "publish_date": "2026-09-14",
-      "status": "active",
-      "aliases": []
+      "logo_url": "https://priorekrytering.se/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png"
     }
   ]
 }

@@ -1,0 +1,35 @@
+[
+  {
+    "assignment_id": 3,
+    "title": "Serviceelektriker",
+    "title_slug": "serviceelektriker",
+    "excerpt": "Ett test av Pontys v2-flöde.",
+    "body": "<h2>Om rollen</h2><p>Arbeta med service.</p>",
+    "organization_name": "Exempelbolaget AB",
+    "profile_image": null,
+    "user_name": "Jenniefer Berg",
+    "user_email": "kontakt@priorekrytering.se",
+    "user_phone": "+46700000000",
+    "region": "Stockholm",
+    "location": "Danderyd",
+    "publish_date": "2026-09-15",
+    "withdrawal_date": null,
+    "confidential": false,
+    "logo": true,
+    "presentation": true,
+    "showcase": false,
+    "image_url": "https://cdn.example.com/logo.png",
+    "tags": [],
+    "address": {
+      "address": "Exempelvägen 1",
+      "postalcode": "111 11",
+      "city": "Danderyd",
+      "country": "Sweden"
+    },
+    "apply_url": "/priorekrytering?id=3",
+    "apply_btn": null,
+    "tracking_url": null,
+    "video_url": null,
+    "hero": null
+  }
+]

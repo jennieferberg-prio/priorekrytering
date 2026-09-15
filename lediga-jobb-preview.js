@@ -8,7 +8,6 @@
 
   const params = new URLSearchParams(window.location.search);
   const demoMode = params.has("demo") && params.get("demo") !== "0";
-  const showcaseMode = params.get("showcase") === "1";
   const pageTitle = document.title;
   const dateFormat = new Intl.DateTimeFormat("sv-SE", { day: "numeric", month: "long", year: "numeric" });
   const prioOrganizationLogo = "https://priorekrytering.se/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png";
@@ -89,11 +88,12 @@
     const title = String(raw.title || "Ledig tjänst");
     const organization = String(raw.organization_name || raw.organization || "");
     const normalizedOrganization = organization.trim().replace(/\s+/g, " ").toLocaleLowerCase("sv-SE");
-    const suppliedLogo = raw.logo === false ? "" : raw.image_url || (typeof raw.logo === "string" ? raw.logo : "");
+    const suppliedLogo = raw.logo === false ? "" : raw.logo_url || raw.image_url || (typeof raw.logo === "string" ? raw.logo : "");
     return {
       id,
       title,
       slug: String(raw.title_slug || raw.slug || slugify(title)),
+      route: String(raw.route || ""),
       excerpt: String(raw.excerpt || raw.meta_description || ""),
       body: String(raw.body || raw.description || ""),
       organization,
@@ -106,17 +106,18 @@
       phone: String(raw.phone || raw.user_phone || ""),
       logo: normalizedOrganization === "prio rekrytering ab" ? prioOrganizationLogo : safeUrl(suppliedLogo),
       externalApplyUrl: safeUrl(raw.external_apply_url || raw.apply_url),
-      showcase: Boolean(raw.showcase) || showcaseMode,
+      showcase: Boolean(raw.showcase),
       demo: Boolean(raw.demo)
     };
   }
 
   function routeFor(job) {
-    if (!job.demo) return `/lediga-jobb/${encodeURIComponent(job.slug)}-${encodeURIComponent(job.id)}/`;
+    if (!job.demo) return job.route || `/lediga-jobb/${encodeURIComponent(job.slug)}-${encodeURIComponent(job.id)}/`;
     return `#jobb/${encodeURIComponent(job.slug)}-${encodeURIComponent(job.id)}`;
   }
 
   function selectedJob() {
+    if (!demoMode) return null;
     if (!window.location.hash.startsWith("#jobb/")) return null;
     let route = "";
     try { route = decodeURIComponent(window.location.hash.slice(6)); }
@@ -182,7 +183,6 @@
 
   function renderModeLabel() {
     if (demoMode) return '<span class="jobs-mode">Testdata</span>';
-    if (showcaseMode) return '<span class="jobs-mode">Referensannonser</span>';
     return "";
   }
 
@@ -286,11 +286,10 @@
     try {
       if (demoMode) jobs = demoJobs.map(normalizeJob);
       else {
-        const feedUrl = `${app.dataset.feedUrl}${showcaseMode ? "&showcase=1" : ""}`;
-        const response = await fetch(feedUrl, { headers: { Accept: "application/json" } });
-        if (!response.ok) throw new Error(`Ponty svarade med ${response.status}.`);
+        const response = await fetch(app.dataset.feedUrl, { headers: { Accept: "application/json" } });
+        if (!response.ok) throw new Error(`Jobbflödet svarade med ${response.status}.`);
         const data = await response.json();
-        if (!data || !Array.isArray(data.jobs)) throw new Error("Ponty returnerade ett oväntat svar.");
+        if (!data || !Array.isArray(data.jobs)) throw new Error("Jobbflödet returnerade ett oväntat svar.");
         jobs = data.jobs.map(normalizeJob).filter(job => job.id);
       }
       jobs.sort((a, b) => {

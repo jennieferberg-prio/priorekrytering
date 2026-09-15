@@ -26,12 +26,16 @@ jobs:
           ref: main
 
       - name: Generate pages from Ponty
+        env:
+          PONTY_CLIENT_ID: ${{ secrets.PONTY_CLIENT_ID }}
+          PONTY_CLIENT_SECRET: ${{ secrets.PONTY_CLIENT_SECRET }}
+          PONTY_FEED_SOURCE: ${{ vars.PONTY_FEED_SOURCE || 'legacy' }}
         run: python3 scripts/generate-ponty-jobs.py
 
       - name: Check for Ponty changes
         id: changes
         run: |
-          git add -- _data/ponty_jobs.json lediga-jobb
+          git add -- _data/ponty_jobs.json assets/data/ponty-jobs.json lediga-jobb
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Generate crawlable GitHub Pages job pages from the Ponty feed."""
+"""Generate crawlable GitHub Pages job pages from Ponty's job feed."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import os
@@ -18,7 +19,10 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
-DEFAULT_FEED_URL = "https://priorekrytering.ponty-system.se/extapi/job?p=eyJ0IjogW119.d5b3329070ca38f38e501bab97bf3947f31a4e3e26cfc73f7802d12949dae4e2"
+DEFAULT_LEGACY_FEED_URL = "https://priorekrytering.ponty-system.se/extapi/job?p=eyJ0IjogW119.d5b3329070ca38f38e501bab97bf3947f31a4e3e26cfc73f7802d12949dae4e2"
+DEFAULT_V2_FEED_URL = "https://openapi.ponty-system.se/v2/ads/feed"
+DEFAULT_TOKEN_URL = "https://ponty-system.se/oauth2/token"
+APPLY_ORIGIN = "https://pnty-apply.ponty-system.se"
 APPLY_BASE = "https://pnty-apply.ponty-system.se/priorekrytering"
 PRIO_LOGO = "https://priorekrytering.se/assets/uploads/logo-utkast/prio-p-rund-03-tva-solida-farger.png"
 MONTHS = ("", "januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december")
@@ -38,6 +42,18 @@ def safe_url(value: Any, schemes: tuple[str, ...] = ("https",)) -> str:
     if scheme in ("http", "https"):
         return candidate if parsed.netloc else ""
     return candidate if parsed.path else ""
+
+
+def absolute_apply_url(value: Any, job_id: str) -> str:
+    candidate = str(value or "").strip()
+    if candidate:
+        parsed = urllib.parse.urlparse(candidate)
+        if not parsed.scheme and not parsed.netloc:
+            candidate = urllib.parse.urljoin(f"{APPLY_ORIGIN}/", candidate)
+        validated = safe_url(candidate)
+        if validated:
+            return validated
+    return f"{APPLY_BASE}?id={urllib.parse.quote(job_id)}"
 
 
 def slugify(value: Any) -> str:
@@ -138,7 +154,7 @@ def yaml_string(value: Any) -> str:
     return json.dumps(str(value or ""), ensure_ascii=False)
 
 
-def fetch_feed(url: str) -> list[dict[str, Any]]:
+def fetch_legacy_feed(url: str) -> list[dict[str, Any]]:
     request = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "Prio-Rekrytering-Pages/1.0"})
     with urllib.request.urlopen(request, timeout=30) as response:
         payload = json.load(response)
@@ -148,7 +164,54 @@ def fetch_feed(url: str) -> list[dict[str, Any]]:
     return [job for job in jobs if isinstance(job, dict)]
 
 
-def normalize_job(raw: dict[str, Any], showcase: bool = False) -> dict[str, Any]:
+def fetch_v2_feed(client_id: str, client_secret: str, token_url: str, feed_url: str) -> list[dict[str, Any]]:
+    token_body = urllib.parse.urlencode({
+        "grant_type": "client_credentials",
+        "client_id": client_id,
+        "client_secret": client_secret,
+        "scope": "ads:read",
+    }).encode("utf-8")
+    token_request = urllib.request.Request(
+        token_url,
+        data=token_body,
+        headers={
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "User-Agent": "Prio-Rekrytering-Pages/2.0",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(token_request, timeout=30) as response:
+        token_payload = json.load(response)
+    access_token = token_payload.get("access_token") if isinstance(token_payload, dict) else None
+    if not isinstance(access_token, str) or not access_token:
+        raise ValueError("Ponty OAuth response is missing access_token")
+
+    feed_request = urllib.request.Request(
+        feed_url,
+        headers={
+            "Accept": "application/json",
+            "Authorization": f"Bearer {access_token}",
+            "User-Agent": "Prio-Rekrytering-Pages/2.0",
+        },
+    )
+    with urllib.request.urlopen(feed_request, timeout=30) as response:
+        payload = json.load(response)
+    if not isinstance(payload, list):
+        raise ValueError("Ponty v2 returned an unexpected response: feed is not an array")
+    return [job for job in payload if isinstance(job, dict)]
+
+
+def jobs_from_fixture(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, list):
+        return [job for job in payload if isinstance(job, dict)]
+    jobs = payload.get("jobs") if isinstance(payload, dict) else None
+    if not isinstance(jobs, list):
+        raise ValueError("Fixture is neither a v2 feed array nor an object with a jobs array")
+    return [job for job in jobs if isinstance(job, dict)]
+
+
+def normalize_job(raw: dict[str, Any]) -> dict[str, Any]:
     job_id = re.sub(r"[^A-Za-z0-9_-]", "", str(raw.get("assignment_id") or raw.get("id") or ""))
     if not job_id:
         raise ValueError("Ponty job is missing assignment_id")
@@ -161,7 +224,7 @@ def normalize_job(raw: dict[str, Any], showcase: bool = False) -> dict[str, Any]
     supplied_logo = raw.get("image_url") if raw.get("logo") is not False else ""
     logo_url = PRIO_LOGO if organization.casefold() == "prio rekrytering ab" else safe_url(supplied_logo)
     publish_date = str(raw.get("publish_date") or raw.get("published_at") or "")[:10]
-    apply_url = safe_url(raw.get("external_apply_url") or raw.get("apply_url")) or f"{APPLY_BASE}?id={urllib.parse.quote(job_id)}"
+    apply_url = absolute_apply_url(raw.get("external_apply_url") or raw.get("apply_url"), job_id)
     slug = slugify(raw.get("title_slug") or raw.get("slug") or title)
     route_name = f"{slug}-{job_id}"
     phone = str(raw.get("phone") or raw.get("user_phone") or "").strip()
@@ -180,7 +243,7 @@ def normalize_job(raw: dict[str, Any], showcase: bool = False) -> dict[str, Any]
         "published_label": formatted_date(publish_date),
         "logo_url": logo_url,
         "apply_url": apply_url,
-        "showcase": bool(raw.get("showcase")) or showcase,
+        "showcase": bool(raw.get("showcase")),
         "contact_name": str(raw.get("name") or raw.get("user_name") or "").strip(),
         "contact_title": str(raw.get("user_title") or "").strip(),
         "contact_email": str(raw.get("email") or raw.get("user_email") or "").strip(),
@@ -247,19 +310,30 @@ def manifest_record(job: dict[str, Any], status: str, aliases: list[str]) -> dic
     return record
 
 
+def public_record(job: dict[str, Any]) -> dict[str, Any]:
+    keys = ("id", "title", "slug", "route", "organization", "location", "publish_date", "logo_url")
+    return {key: job.get(key, "") for key in keys}
+
+
 def generate(root: Path, current_jobs: list[dict[str, Any]]) -> int:
     manifest_path = root / "_data" / "ponty_jobs.json"
+    public_feed_path = root / "assets" / "data" / "ponty-jobs.json"
     jobs_root = root / "lediga-jobb"
     previous = load_previous(manifest_path)
     current = {job["id"]: job for job in current_jobs}
+    sorted_current = [
+        item[1]
+        for item in sorted(
+            current.items(),
+            key=lambda item: (item[1].get("publish_date", ""), item[0]),
+            reverse=True,
+        )
+    ]
     clean_generated_pages(jobs_root)
     records: list[dict[str, Any]] = []
 
-    for job_id, job in sorted(
-        current.items(),
-        key=lambda item: (item[1].get("publish_date", ""), item[0]),
-        reverse=True,
-    ):
+    for job in sorted_current:
+        job_id = job["id"]
         old = previous.get(job_id, {})
         aliases = [str(alias) for alias in old.get("aliases", []) if alias]
         old_route_name = str(old.get("route_name") or "")
@@ -296,8 +370,15 @@ def generate(root: Path, current_jobs: list[dict[str, Any]]) -> int:
         records.append(manifest_record(retired, "closed", sorted(set(aliases))))
 
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
-    manifest = {"generated_from": "Ponty", "jobs": records}
+    public_jobs = [public_record(job) for job in sorted_current]
+    public_version = hashlib.sha256(
+        json.dumps(public_jobs, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()[:16]
+    manifest = {"generated_from": "Ponty", "version": public_version, "jobs": records}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    public_feed_path.parent.mkdir(parents=True, exist_ok=True)
+    public_feed = {"generated_from": "Ponty", "version": public_version, "jobs": public_jobs}
+    public_feed_path.write_text(json.dumps(public_feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return sum(1 for record in records if record["status"] == "active")
 
 
@@ -305,26 +386,35 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--feed-file", type=Path, help="Use a local JSON response and skip network requests")
+    parser.add_argument("--feed-source", choices=("v2", "legacy"), default=os.environ.get("PONTY_FEED_SOURCE", "legacy"))
     args = parser.parse_args()
 
     if args.feed_file:
         payload = json.loads(args.feed_file.read_text(encoding="utf-8"))
-        raw_jobs = payload.get("jobs")
-        if not isinstance(raw_jobs, list):
-            raise ValueError("Fixture jobs is not an array")
-        normalized = [normalize_job(job) for job in raw_jobs]
+        raw_jobs = jobs_from_fixture(payload)
     else:
-        feed_url = os.environ.get("PONTY_FEED_URL", DEFAULT_FEED_URL)
-        normal_jobs = fetch_feed(feed_url)
-        showcase_jobs = fetch_feed(f"{feed_url}&showcase=1")
-        normalized_by_id: dict[str, dict[str, Any]] = {}
-        for raw in normal_jobs:
-            job = normalize_job(raw)
-            normalized_by_id[job["id"]] = job
-        for raw in showcase_jobs:
-            job = normalize_job(raw, showcase=True)
-            normalized_by_id.setdefault(job["id"], job)
-        normalized = list(normalized_by_id.values())
+        client_id = os.environ.get("PONTY_CLIENT_ID", "").strip()
+        client_secret = os.environ.get("PONTY_CLIENT_SECRET", "").strip()
+        source = args.feed_source
+        if source == "v2":
+            if not client_id or not client_secret:
+                raise ValueError("Both PONTY_CLIENT_ID and PONTY_CLIENT_SECRET are required for the v2 feed")
+            raw_jobs = fetch_v2_feed(
+                client_id,
+                client_secret,
+                os.environ.get("PONTY_TOKEN_URL", DEFAULT_TOKEN_URL),
+                os.environ.get("PONTY_V2_FEED_URL", DEFAULT_V2_FEED_URL),
+            )
+            print("Fetched regular job ads from Ponty OpenAPI v2.")
+        else:
+            raw_jobs = fetch_legacy_feed(os.environ.get("PONTY_FEED_URL", DEFAULT_LEGACY_FEED_URL))
+            print("Fetched regular job ads from the legacy Ponty feed.")
+
+    normalized_by_id: dict[str, dict[str, Any]] = {}
+    for raw in raw_jobs:
+        job = normalize_job(raw)
+        normalized_by_id[job["id"]] = job
+    normalized = list(normalized_by_id.values())
 
     count = generate(args.root.resolve(), normalized)
     print(f"Generated {count} active Ponty job page(s).")

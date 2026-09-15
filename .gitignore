@@ -5,3 +5,6 @@ secrets/
 *.pem
 google-creds.txt
 __pycache__/
+*.py[cod]
+.dev.vars
+node_modules/
