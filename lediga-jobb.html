@@ -9,7 +9,7 @@ layout: null
   <title>{{ site.data.jobs.seo.title }}</title>
 {% include seo.html title=site.data.jobs.seo.title description=site.data.jobs.seo.description path="/lediga-jobb.html" %}
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
-  <link rel="stylesheet" href="{{ '/lediga-jobb-preview.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+  <link rel="stylesheet" href="{{ '/lediga-jobb.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
 </head>
 <body class="site search editorial-prio editorial-blue editorial-purple jobs-page jobs-preview">
   <nav>
@@ -47,6 +47,6 @@ layout: null
   </main>
 {% include site-footer.html %}
   <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
-  <script src="{{ '/lediga-jobb-preview.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
+  <script src="{{ '/lediga-jobb.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
 </body>
 </html>
