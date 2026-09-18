@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "22e80fffe2104888",
+  "version": "855d51c1111d647f",
   "jobs": [
+    {
+      "id": "7",
+      "title": "Serviceelektriker till S2 Elektriska",
+      "slug": "serviceelektriker-till-s2-elektriska",
+      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
+      "organization": "S2 Elektriska AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-09-18",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-15-ba68.png"
+    },
     {
       "id": "3",
       "title": "Ledande Montör till Granitor Electro i Danderyd",
@@ -27,7 +37,7 @@
       "title": "VVS-Montör",
       "slug": "vvs-montor",
       "route": "/lediga-jobb/vvs-montor-5/",
-      "organization": "KA VVS Fastighets AB",
+      "organization": "KA VVS Service AB",
       "location": "Storstockholm",
       "publish_date": "2026-09-14",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-13-23f6.png"
