@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "68be7b1d5baa9b98",
+  "version": "7270d6e2934238a9",
   "jobs": [
+    {
+      "id": "9",
+      "title": "PE Svetsare till Inmek - Bo vart som helst i Sverige",
+      "slug": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige",
+      "route_name": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9/",
+      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
+      "organization": "Inmek AB",
+      "location": "Hela Sverige",
+      "publish_date": "2026-09-21",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "8",
       "title": "PE Svetsare till Inmek",

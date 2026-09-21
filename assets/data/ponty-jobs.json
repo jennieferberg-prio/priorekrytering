@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "68be7b1d5baa9b98",
+  "version": "7270d6e2934238a9",
   "jobs": [
+    {
+      "id": "9",
+      "title": "PE Svetsare till Inmek - Bo vart som helst i Sverige",
+      "slug": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9/",
+      "organization": "Inmek AB",
+      "location": "Hela Sverige",
+      "publish_date": "2026-09-21",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
+    },
     {
       "id": "8",
       "title": "PE Svetsare till Inmek",
