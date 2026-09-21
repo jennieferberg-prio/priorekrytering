@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "855d51c1111d647f",
+  "version": "d1bbab06787b6df7",
   "jobs": [
+    {
+      "id": "8",
+      "title": "PE Svetsare",
+      "slug": "pe-svetsare",
+      "route_name": "pe-svetsare-8",
+      "route": "/lediga-jobb/pe-svetsare-8/",
+      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
+      "organization": "Inmek AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-09-21",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "7",
       "title": "Serviceelektriker till S2 Elektriska",
