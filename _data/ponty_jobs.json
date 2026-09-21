@@ -1,19 +1,21 @@
 {
   "generated_from": "Ponty",
-  "version": "d1bbab06787b6df7",
+  "version": "68be7b1d5baa9b98",
   "jobs": [
     {
       "id": "8",
-      "title": "PE Svetsare",
-      "slug": "pe-svetsare",
-      "route_name": "pe-svetsare-8",
-      "route": "/lediga-jobb/pe-svetsare-8/",
+      "title": "PE Svetsare till Inmek",
+      "slug": "pe-svetsare-till-inmek",
+      "route_name": "pe-svetsare-till-inmek-8",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
       "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
       "organization": "Inmek AB",
       "location": "Storstockholm",
       "publish_date": "2026-09-21",
       "status": "active",
-      "aliases": []
+      "aliases": [
+        "pe-svetsare-8"
+      ]
     },
     {
       "id": "7",

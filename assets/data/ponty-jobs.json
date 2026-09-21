@@ -1,12 +1,12 @@
 {
   "generated_from": "Ponty",
-  "version": "d1bbab06787b6df7",
+  "version": "68be7b1d5baa9b98",
   "jobs": [
     {
       "id": "8",
-      "title": "PE Svetsare",
-      "slug": "pe-svetsare",
-      "route": "/lediga-jobb/pe-svetsare-8/",
+      "title": "PE Svetsare till Inmek",
+      "slug": "pe-svetsare-till-inmek",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
       "organization": "Inmek AB",
       "location": "Storstockholm",
       "publish_date": "2026-09-21",
