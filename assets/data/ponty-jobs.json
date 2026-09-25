@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "7270d6e2934238a9",
+  "version": "bde40f8ab3b33c4a",
   "jobs": [
+    {
+      "id": "10",
+      "title": "Snickare till Core Project",
+      "slug": "snickare-till-core-project",
+      "route": "/lediga-jobb/snickare-till-core-project-10/",
+      "organization": "Core Projektutveckling AB",
+      "location": "Skåne",
+      "publish_date": "2026-09-25",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-39-b007.png"
+    },
     {
       "id": "9",
       "title": "PE Svetsare till Inmek - Bo vart som helst i Sverige",
