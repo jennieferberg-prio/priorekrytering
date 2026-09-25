@@ -1,0 +1,105 @@
+    {% if include.variant == 1 %}
+    <section class="reference-section reference-1">
+      <p class="kicker">Ord från en kund</p>
+      <blockquote>“<span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span>”</blockquote>
+      <p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p>
+    </section>
+    {% elsif include.variant == 2 %}
+    <section class="reference-section reference-2">
+      <header><p class="kicker">Referenser</p><h2>Förtroende som<br><i>byggts över tid.</i></h2></header>
+      <article><span class="reference-mark">“</span><blockquote><span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span></blockquote><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p></article>
+    </section>
+    {% elsif include.variant == 3 %}
+    <section class="reference-section reference-3">
+      <div><p class="kicker">Kundens ord</p><span>01</span></div>
+      <blockquote>“<span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span>”</blockquote>
+      <p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p>
+    </section>
+    {% elsif include.variant == 4 %}
+    <section class="reference-section reference-4">
+      <header><div><p class="kicker">Kundreferenser</p><h2>Det säger de<br>som anlitat oss.</h2></div><div class="reference-controls"><span data-preview-counter>01 / 03</span><button type="button" data-preview-previous disabled aria-label="Föregående referens">←</button><button type="button" data-preview-next disabled aria-label="Nästa referens">→</button></div></header>
+      <article class="reference-slide">
+        <span class="reference-slide-mark">“</span>
+        <blockquote><span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span></blockquote>
+        <div class="reference-slide-client"><span data-preview-initials>EP</span><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p></div>
+      </article>
+    </section>
+    {% elsif include.variant == 5 %}
+    <section class="reference-section reference-5">
+      <div class="reference-photo" role="img" aria-label="Yrkesarbetare i samtal"></div>
+      <article>
+        <p class="kicker">Röster från våra kunder</p>
+        <blockquote>“<span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span>”</blockquote>
+        <div><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p><span class="reference-photo-index">01 — 03</span></div>
+      </article>
+    </section>
+    {% elsif include.variant == 6 %}
+    <section class="reference-section reference-6">
+      <div class="reference-bento-heading"><p class="kicker">Långsiktiga relationer</p><h2>När rätt matchning<br><i>märks på riktigt.</i></h2></div>
+      <article class="reference-bento-quote"><span>“</span><blockquote><span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span></blockquote><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p></article>
+      <div class="reference-bento-proof"><strong>Många år</strong><span>av fortsatt förtroende</span></div>
+      <div class="reference-bento-tag"><span>01</span><p>Rätt kandidater.<br>Bra arbete.</p></div>
+    </section>
+    {% elsif include.variant == 7 %}
+    <section class="reference-section reference-7">
+      <header><p class="kicker">Kundreferenser</p><h2>Vad våra kunder säger</h2></header>
+      <article>
+        <div class="reference-company"><span data-preview-company>Exempel AB</span></div>
+        <blockquote>“<span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span>”</blockquote>
+        <div class="reference-card-meta"><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p><span>01 / 01</span></div>
+      </article>
+    </section>
+    {% elsif include.variant == 8 %}
+    <section class="reference-section reference-8">
+      <div class="reference-logos"><p class="kicker">Ett urval av våra kunder</p><div><span data-preview-company>Exempel AB</span><i>Fler kundlogotyper</i></div></div>
+      <div class="reference-compact-quote"><p class="kicker">Kundens ord</p><blockquote>“<span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span>”</blockquote><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p></div>
+    </section>
+    {% elsif include.variant == 9 %}
+    <section class="reference-section reference-9">
+      <div class="reference-strip-label"><p class="kicker">Kundernas ord</p><span data-preview-counter>01 / 03</span></div>
+      <blockquote>“<span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span>”</blockquote>
+      <div class="reference-strip-meta"><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p><div><button type="button" data-preview-previous disabled aria-label="Föregående referens">←</button><button type="button" data-preview-next disabled aria-label="Nästa referens">→</button></div></div>
+    </section>
+    {% else %}
+    <section class="reference-section reference-10">
+      <header class="showcase-intro">
+        <p class="kicker">Referenser</p>
+        <h2>Det säger våra kunder</h2>
+        <p>Vi är stolta över förtroendet vi får från våra kunder. Här delar några av dem sina erfarenheter av att samarbeta med Prio Rekrytering.</p>
+      </header>
+      <div class="showcase-cards">
+        <article>
+          <span class="showcase-quote-mark" aria-hidden="true">“</span>
+          <small>Exempeltext</small>
+          <blockquote><span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span></blockquote>
+          <div class="showcase-card-footer"><p><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p><span class="showcase-logo logo-a"><i aria-hidden="true"></i><b data-preview-company>Exempel AB</b></span></div>
+        </article>
+        <article>
+          <span class="showcase-quote-mark" aria-hidden="true">“</span>
+          <small>Exempeltext</small>
+          <blockquote>Samarbetet med Prio Rekrytering har varit personligt och professionellt från första kontakt. Jenniefer förstod snabbt vilken kompetens vi behövde och presenterade ett träffsäkert urval. Vi kände oss trygga genom hela processen.</blockquote>
+          <div class="showcase-card-footer"><p><strong>Kundnamn</strong><span>HR-chef · Demo Form AB</span></p><span class="showcase-logo logo-b"><i aria-hidden="true"></i><b>Demo Form</b></span></div>
+        </article>
+        <article>
+          <span class="showcase-quote-mark" aria-hidden="true">“</span>
+          <small>Exempeltext</small>
+          <blockquote>Prio satte sig snabbt in i både rollen och vår verksamhet. Dialogen var nära, återkopplingen tydlig och kandidaterna höll genomgående hög kvalitet. Vi anlitar gärna Prio igen när nästa behov uppstår.</blockquote>
+          <div class="showcase-card-footer"><p><strong>Kundnamn</strong><span>Projektchef · Demo Bygg AB</span></p><span class="showcase-logo logo-c"><i aria-hidden="true"></i><b>Demo Bygg</b></span></div>
+        </article>
+      </div>
+      <div class="showcase-clients">
+        <h3>Några av våra kunder</h3>
+        <div>
+          <span class="showcase-logo logo-a"><i aria-hidden="true"></i><b data-preview-company>Exempel AB</b></span>
+          <span class="showcase-logo logo-b"><i aria-hidden="true"></i><b>Demo Form</b></span>
+          <span class="showcase-logo logo-c"><i aria-hidden="true"></i><b>Demo Bygg</b></span>
+          <span class="showcase-logo logo-d"><i aria-hidden="true"></i><b>Demo Axel</b></span>
+          <span class="showcase-logo logo-e"><i aria-hidden="true"></i><b>Demo Bas</b></span>
+        </div>
+      </div>
+      <div class="showcase-cta">
+        <div><p>Vill du också hitta rätt kompetens?</p><h3>Låt oss prata om ditt nästa tillskott.</h3></div>
+        <a href="{{ '/kontakt.html' | relative_url }}">Kontakta oss →</a>
+      </div>
+    </section>
+    {% endif %}

@@ -1,0 +1,85 @@
+---
+layout: null
+reference_designs:
+  - name: Stort citat
+    description: Ett centrerat citat med gott om luft.
+  - name: Rubrik och citat
+    description: En ljuslila sektion med rubrik och kundens ord sida vid sida.
+  - name: Mörk citatsektion
+    description: Ett stort citat mot en mörklila bakgrund.
+  - name: Bläddringsbart citatkort
+    description: Ett ljust kort med möjlighet att bläddra mellan referenser.
+  - name: Bild och kundröst
+    description: En arbetsplatsbild bredvid kundens berättelse.
+  - name: Flera innehållsblock
+    description: Citat, rubrik och korta budskap i ett rutnät.
+  - name: Kompakt referenskort
+    description: Företag, citat och avsändare i ett sammanhållet kort.
+  - name: Kundloggor och citat
+    description: En rad för kundloggor följd av ett kompakt citat.
+  - name: Kompakt mörk sektion
+    description: En smalare citatsektion med bläddring.
+  - name: Tre referenser och kundloggor
+    description: Tre kort, en logotyprad och en avslutande kontaktknapp.
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Kundreferenser – designförslag | Prio Rekrytering</title>
+{% include favicons.html %}
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+  <link rel="stylesheet" href="{{ '/references-preview.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+</head>
+<body class="site search editorial-prio editorial-blue editorial-purple reference-preview">
+  <header class="preview-header" id="toppen">
+    <a class="preview-brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/uploads/prio-p-rund-128.png' | relative_url }}" width="48" height="48" alt=""><span>PRIO REKRYTERING</span></a>
+    <span>Designförslag</span>
+  </header>
+  <main>
+    <div class="preview-intro">
+      <p class="kicker">Kundreferenser</p>
+      <h1>Hitta rätt uttryck<br>för kundernas ord.</h1>
+      <p>Här finns tio förslag att jämföra. Alla citat, kundnamn och logotyper är exempel. Välj ett nummer i menyn eller bläddra igenom sidan.</p>
+      <details class="preview-editor">
+        <summary>Prova med en egen referens</summary>
+        <div class="preview-fields">
+          <p>Din text visas i alla förslag och i det första kortet i förslag 10. Den stannar i den här webbläsarfliken och sparas inte på sajten.</p>
+          <label for="preview-quote">Kundens citat</label>
+          <textarea id="preview-quote" rows="4" required>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</textarea>
+          <div class="preview-person-fields">
+            <label for="preview-name">Namn<input id="preview-name" type="text" value="Exempelperson" autocomplete="off"></label>
+            <label for="preview-company">Företag<input id="preview-company" type="text" value="Exempel AB" autocomplete="off"></label>
+          </div>
+          <div class="preview-actions"><button type="button" id="preview-apply" disabled>Visa i förslagen</button><button type="button" id="preview-reset" disabled>Återställ exempel</button></div>
+          <p id="preview-status" role="status"></p>
+          <noscript><p>Slå på JavaScript för att prova egen text. Alla designförslag kan läsas utan JavaScript.</p></noscript>
+        </div>
+      </details>
+    </div>
+    <div class="preview-toolbar">
+      <label for="preview-design">Hoppa till förslag</label>
+      <select id="preview-design" disabled>
+        {% for design in page.reference_designs %}<option value="forslag-{{ forloop.index }}">{{ forloop.index }}. {{ design.name | escape }}</option>{% endfor %}
+      </select>
+      <a href="#toppen">Till toppen ↑</a>
+    </div>
+    <div class="preview-options">
+      {% for design in page.reference_designs %}
+      <article class="preview-option" id="forslag-{{ forloop.index }}" aria-labelledby="design-title-{{ forloop.index }}">
+        <header class="preview-caption">
+          <span>{{ forloop.index }} / 10</span>
+          <div><h2 id="design-title-{{ forloop.index }}">{{ design.name | escape }}</h2><p>{{ design.description | escape }}</p></div>
+          <a href="#forslag-{{ forloop.index }}" aria-label="Direktlänk till förslag {{ forloop.index }}">#{{ forloop.index }}</a>
+        </header>
+{% include reference-design.html variant=forloop.index %}
+      </article>
+      {% endfor %}
+    </div>
+  </main>
+  <div class="preview-footer"><span>Prio Rekrytering · Förhandsvisning med exempelmaterial</span><a href="#toppen">Till toppen ↑</a></div>
+  <script src="{{ '/references-preview.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
+</body>
+</html>

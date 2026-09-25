@@ -1,0 +1,47 @@
+.reference-preview .preview-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 5vw;border-bottom:1px solid #d8cadb}
+.preview-brand{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.12em}
+.preview-brand img{width:48px;height:48px}
+.preview-header>span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#77687e}
+.preview-intro{max-width:980px;padding:64px 5vw 42px}
+.preview-intro>.kicker{color:#8752a3}
+.preview-intro h1{font:600 clamp(42px,6vw,80px)/1.04 "Playfair Display",serif;letter-spacing:-.035em;margin:24px 0}
+.preview-intro>p:not(.kicker){max-width:710px;font-size:17px;line-height:1.7}
+.preview-editor{margin-top:30px;border:1px solid #c7b4ce;background:#fffafd}
+.preview-editor summary{padding:20px 24px;cursor:pointer;font-weight:600;font-size:14px}
+.preview-fields{padding:0 24px 24px}
+.preview-fields>p{font-size:13px;line-height:1.6;color:#77687e}
+.preview-fields label{font-size:12px;font-weight:600}
+.preview-fields textarea,.preview-fields input{display:block;margin-top:8px;border:1px solid #c7b4ce;background:#fff;padding:12px;font-size:15px;font-weight:400;line-height:1.5}
+.preview-fields textarea:focus,.preview-fields input:focus{outline:2px solid #8752a3;outline-offset:2px}
+.preview-person-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.preview-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.preview-actions button{padding:12px 18px;border:1px solid #7c3f72;background:#7c3f72;color:#fff;font-size:13px}
+.preview-actions button+button{background:transparent;color:#7c3f72}
+.preview-fields #preview-status{margin:16px 0 0;min-height:1.6em}
+.preview-toolbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;padding:15px 5vw;background:#fffafd;border-top:1px solid #d8cadb;border-bottom:1px solid #d8cadb}
+.preview-toolbar label{font-size:12px;font-weight:600}
+.preview-toolbar select{min-width:0;max-width:430px;flex:1;padding:10px 34px 10px 12px;border:1px solid #bda4c8;background:#fff;color:#351b46;font:inherit;font-size:13px}
+.preview-toolbar>a{margin-left:auto;white-space:nowrap;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.preview-option{scroll-margin-top:90px}
+.preview-caption{display:flex;align-items:center;gap:20px;padding:32px 5vw;background:#eee6f0;border-top:1px solid #c7b4ce;border-bottom:1px solid #c7b4ce}
+.preview-caption>span{font-size:12px;font-weight:600;white-space:nowrap;color:#8752a3}
+.preview-caption h2{margin:0;font:600 22px/1.25 "DM Sans",sans-serif}
+.preview-caption p{font-size:13px;color:#77687e;line-height:1.5;margin:6px 0 0}
+.preview-caption>a{margin-left:auto;font-size:13px;color:#8752a3;padding:10px}
+body.reference-preview .reference-section{opacity:1;transform:none;transition:none;overflow-wrap:anywhere}
+.reference-preview .reference-section>*{min-width:0}
+.reference-preview [data-preview-quote]{white-space:pre-line}
+.reference-preview .reference-company{padding:24px;text-align:center}
+.reference-preview .reference-company span{max-width:100%}
+.reference-preview .showcase-card-footer{flex-wrap:wrap;align-items:start}
+.reference-preview .showcase-logo{white-space:normal;max-width:100%}
+.reference-preview .showcase-logo b{overflow-wrap:anywhere}
+.reference-preview .reference-slide-client .reference-byline{min-width:0}
+.reference-preview .reference-logos>div{gap:24px;flex-wrap:wrap}
+.reference-preview button:disabled{cursor:default;opacity:.45}
+.reference-preview :focus-visible{outline:3px solid #b38bc3;outline-offset:4px}
+.preview-footer{display:flex;justify-content:space-between;gap:25px;padding:32px 5vw;background:#351b46;color:#fff;font-size:12px;line-height:1.6}
+.preview-footer a{white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:761px) and (max-width:1100px){.reference-preview .reference-3{grid-template-columns:1fr 2fr}.reference-preview .reference-3>.reference-byline{grid-column:2}.reference-preview .reference-slide{padding:35px;grid-template-columns:50px minmax(0,1fr)}.reference-preview .reference-slide-client{grid-column:2;border-left:0;padding-left:0}.reference-preview .reference-slide-client .reference-byline{margin-top:20px}.reference-preview .reference-6{grid-template-columns:1fr 1fr}.reference-preview .reference-bento-heading{grid-row:auto;grid-column:1/-1;min-height:280px}.reference-preview .reference-bento-quote{grid-column:1/-1}.reference-preview .reference-7 article{grid-template-columns:150px minmax(0,1fr)}.reference-preview .reference-card-meta{grid-column:1/-1;border-left:0;border-top:1px solid #d8cadb;flex-direction:row}.reference-preview .reference-compact-quote{grid-template-columns:1fr 2fr;gap:22px}.reference-preview .reference-compact-quote blockquote{border-right:0;padding:0 0 0 24px}.reference-preview .reference-compact-quote .reference-byline{grid-column:2;padding-left:24px}.reference-preview .reference-9{grid-template-columns:110px minmax(0,1fr)}.reference-preview .reference-strip-meta{grid-column:2;border-left:0;padding-left:0;flex-direction:row;gap:24px}.reference-preview .showcase-cards{grid-template-columns:1fr}.reference-preview .showcase-cards>article{min-height:0}.reference-preview .showcase-clients>div{flex-wrap:wrap}}
+@media(max-width:760px){.preview-header>span{display:none}.preview-intro{padding:42px 24px 32px}.preview-intro>p:not(.kicker){font-size:15px}.preview-person-fields{grid-template-columns:1fr}.preview-toolbar{padding:12px 18px;flex-wrap:wrap;gap:8px 12px}.preview-toolbar label{width:100%;font-size:11px}.preview-toolbar select{font-size:12px}.preview-option{scroll-margin-top:115px}.preview-caption{padding:25px 24px;gap:14px;align-items:start}.preview-caption h2{font-size:19px}.preview-caption>span{padding-top:4px}.preview-caption>a{display:none}.preview-footer{flex-direction:column;gap:12px}.reference-preview .showcase-clients>div{gap:28px 14px}.reference-preview .showcase-clients .showcase-logo b{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
