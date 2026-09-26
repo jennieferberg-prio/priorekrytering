@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex,nofollow">
   <title>Referensförslag {{ page.reference_variant }} | Prio Rekrytering</title>
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+  <link rel="stylesheet" href="{{ '/references.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
 </head>
 <body class="site search editorial-prio editorial-blue editorial-purple reference-preview">
   <nav>
@@ -30,6 +31,7 @@
   </main>
 {% include site-footer.html %}
   <script src="https://tally.so/widgets/embed.js"></script>
+  <script src="{{ '/references.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
   <script src="{{ '/script.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
 </body>
 </html>

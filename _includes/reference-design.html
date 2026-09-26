@@ -5,10 +5,11 @@
       <p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p>
     </section>
     {% elsif include.variant == 2 %}
-    <section class="reference-section reference-2">
-      <header><p class="kicker">Referenser</p><h2>Förtroende som<br><i>byggts över tid.</i></h2></header>
-      <article><span class="reference-mark">“</span><blockquote><span data-preview-quote>Jenniefer har rekryterat till oss i många år och alltid gjort ett bra jobb med rätt kandidater!</span></blockquote><p class="reference-byline"><strong data-preview-name>Exempelperson</strong><span data-preview-company>Exempel AB</span></p></article>
-    </section>
+    {% if site.data.references.items.size > 0 %}
+      {% include customer-references.html references=site.data.references.items id='reference-preview-2' preview=true %}
+    {% else %}
+      {% include customer-references.html references=site.data.reference_examples id='reference-preview-2' preview=true example=true %}
+    {% endif %}
     {% elsif include.variant == 3 %}
     <section class="reference-section reference-3">
       <div><p class="kicker">Kundens ord</p><span>01</span></div>

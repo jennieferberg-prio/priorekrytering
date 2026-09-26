@@ -4,7 +4,7 @@ reference_designs:
   - name: Stort citat
     description: Ett centrerat citat med gott om luft.
   - name: Rubrik och citat
-    description: En ljuslila sektion med rubrik och kundens ord sida vid sida.
+    description: En ljuslila sektion med bläddring. Redigera innehållet under Kundreferenser i Pages CMS.
   - name: Mörk citatsektion
     description: Ett stort citat mot en mörklila bakgrund.
   - name: Bläddringsbart citatkort
@@ -32,6 +32,7 @@ reference_designs:
 {% include favicons.html %}
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
   <link rel="stylesheet" href="{{ '/references-preview.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
+  <link rel="stylesheet" href="{{ '/references.css' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}">
 </head>
 <body class="site search editorial-prio editorial-blue editorial-purple reference-preview">
   <header class="preview-header" id="toppen">
@@ -42,7 +43,7 @@ reference_designs:
     <div class="preview-intro">
       <p class="kicker">Kundreferenser</p>
       <h1>Hitta rätt uttryck<br>för kundernas ord.</h1>
-      <p>Här finns tio förslag att jämföra. Alla citat, kundnamn och logotyper är exempel. Välj ett nummer i menyn eller bläddra igenom sidan.</p>
+      <p>Här finns tio förslag att jämföra. Förslag 2 visar referenserna ni lagt in under Kundreferenser i Pages CMS, eller exempel tills ni har lagt in egna. Övriga förslag använder exempelmaterial.</p>
       <details class="preview-editor">
         <summary>Prova med en egen referens</summary>
         <div class="preview-fields">
@@ -53,7 +54,7 @@ reference_designs:
             <label for="preview-name">Namn<input id="preview-name" type="text" value="Exempelperson" autocomplete="off"></label>
             <label for="preview-company">Företag<input id="preview-company" type="text" value="Exempel AB" autocomplete="off"></label>
           </div>
-          <div class="preview-actions"><button type="button" id="preview-apply" disabled>Visa i förslagen</button><button type="button" id="preview-reset" disabled>Återställ exempel</button></div>
+          <div class="preview-actions"><button type="button" id="preview-apply" disabled>Visa i förslagen</button><button type="button" id="preview-reset" disabled>Återställ innehåll</button></div>
           <p id="preview-status" role="status"></p>
           <noscript><p>Slå på JavaScript för att prova egen text. Alla designförslag kan läsas utan JavaScript.</p></noscript>
         </div>
@@ -79,7 +80,8 @@ reference_designs:
       {% endfor %}
     </div>
   </main>
-  <div class="preview-footer"><span>Prio Rekrytering · Förhandsvisning med exempelmaterial</span><a href="#toppen">Till toppen ↑</a></div>
+  <div class="preview-footer"><span>Prio Rekrytering · Förhandsvisning av kundreferenser</span><a href="#toppen">Till toppen ↑</a></div>
+  <script src="{{ '/references.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
   <script src="{{ '/references-preview.js' | relative_url }}?v={{ site.github.build_revision | default: 'local' }}"></script>
 </body>
 </html>

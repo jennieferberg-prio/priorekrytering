@@ -11,11 +11,13 @@
   if (!selector || !quote || !name || !company || !apply || !reset || !status) return;
 
   const original = { quote: quote.value, name: name.value, company: company.value };
+  const originalElements = Array.from(document.querySelectorAll("[data-preview-quote], [data-preview-name], [data-preview-company], [data-preview-initials]"), element => ({ element, text: element.textContent }));
   const examples = Array.from(document.querySelectorAll(".showcase-cards>article"), card => ({
     quote: card.querySelector("blockquote").textContent.trim(),
     name: card.querySelector(".showcase-card-footer strong").textContent.trim(),
     company: card.querySelector(".showcase-card-footer p span").textContent.trim()
   }));
+  const originalExample = { ...examples[0] };
   const carousels = [];
 
   function render(container, reference) {
@@ -47,13 +49,18 @@
     next.addEventListener("click", () => move(1));
   });
 
-  function update(reference, message) {
-    examples[0] = reference;
-    render(document, reference);
+  function resetCarousels() {
     carousels.forEach(carousel => {
       carousel.index = 0;
       carousel.counter.textContent = `01 / ${String(examples.length).padStart(2, "0")}`;
     });
+    document.querySelectorAll("[data-reference-carousel]").forEach(carousel => carousel.dispatchEvent(new Event("reference:reset")));
+  }
+
+  function update(reference, message) {
+    examples[0] = reference;
+    render(document, reference);
+    resetCarousels();
     status.textContent = message;
   }
 
@@ -69,7 +76,10 @@
     name.value = original.name;
     company.value = original.company;
     quote.setCustomValidity("");
-    update({ ...original }, "Exempelreferensen är återställd.");
+    examples[0] = { ...originalExample };
+    originalElements.forEach(({ element, text }) => { element.textContent = text; });
+    resetCarousels();
+    status.textContent = "Sparade referenser och exempel är återställda.";
   });
 
   selector.addEventListener("change", () => {

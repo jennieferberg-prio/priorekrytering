@@ -1,0 +1,9 @@
+.customer-references .reference-controls{margin-top:36px}
+.customer-references [hidden]{display:none!important}
+.customer-references .reference-2-content{min-width:0}
+.customer-references blockquote{white-space:pre-line;overflow-wrap:anywhere}
+.customer-references .reference-byline{overflow-wrap:anywhere}
+.customer-references .reference-controls button:disabled{opacity:.45;cursor:default}
+.customer-references .reference-controls button:focus-visible{outline:3px solid #8752a3;outline-offset:4px}
+.customer-references .reference-example-note{font-size:11px;line-height:1.6;margin:20px 0 0;color:#75438f}
+@media(max-width:760px){.customer-references .reference-2-content{margin-top:45px}.reference-2.customer-references article{margin-top:0}}

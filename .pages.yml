@@ -85,6 +85,27 @@ content:
         fields:
           - { name: email, label: E-postadress, type: string }
 
+  - name: customer_references
+    label: Kundreferenser
+    type: file
+    path: _data/references.yml
+    fields:
+      - { name: kicker, label: Liten rubrik, type: string }
+      - { name: heading_first, label: Rubrik rad 1, type: string }
+      - { name: heading_second, label: Rubrik rad 2, type: string }
+      - name: items
+        label: Referenser
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.name} – {fields.company}"
+        description: Lägg till kundernas citat och dra referenserna till önskad ordning. De visas i förslag 2 på references-preview.html efter publiceringen.
+        fields:
+          - { name: quote, label: Kundens citat, type: text, required: true }
+          - { name: name, label: Namn, type: string, required: true }
+          - { name: company, label: Företag, type: string, required: true }
+
   - name: about
     label: Om Prio
     type: file

@@ -1,0 +1,36 @@
+{% assign reference_count = 0 %}
+{% capture reference_slides %}
+  {% for reference in include.references %}
+    {% assign reference_quote = reference.quote | default: '' | strip %}
+    {% if reference_quote != '' %}
+      {% assign reference_count = reference_count | plus: 1 %}
+      <article data-reference-slide{% if reference_count != 1 %} hidden{% endif %}>
+        <span class="reference-mark" aria-hidden="true">“</span>
+        <blockquote><span{% if include.preview and reference_count == 1 %} data-preview-quote{% endif %}>{{ reference_quote | escape }}</span></blockquote>
+        <p class="reference-byline"><strong{% if include.preview and reference_count == 1 %} data-preview-name{% endif %}>{{ reference.name | escape }}</strong><span{% if include.preview and reference_count == 1 %} data-preview-company{% endif %}>{{ reference.company | escape }}</span></p>
+      </article>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% if reference_count > 0 %}
+<section class="reference-section reference-2 customer-references" data-reference-carousel aria-label="{{ site.data.references.kicker | default: 'Referenser' | escape }}">
+  <header>
+    <p class="kicker">{{ site.data.references.kicker | default: 'Referenser' | escape }}</p>
+    <h2>{{ site.data.references.heading_first | default: 'Förtroende som' | escape }}<br><i>{{ site.data.references.heading_second | default: 'byggts över tid.' | escape }}</i></h2>
+    <div class="reference-controls"{% if reference_count < 2 %} hidden{% endif %}>
+      <span data-reference-counter>01 / {% if reference_count < 10 %}0{% endif %}{{ reference_count }}</span>
+      <button type="button" data-reference-previous disabled aria-label="Föregående referens" aria-controls="{{ include.id }}-slides">←</button>
+      <button type="button" data-reference-next disabled aria-label="Nästa referens" aria-controls="{{ include.id }}-slides">→</button>
+    </div>
+    {% if include.example %}<p class="reference-example-note">Exempelreferenser</p>{% endif %}
+  </header>
+  <div class="reference-2-content" id="{{ include.id }}-slides" aria-live="polite" aria-atomic="true">
+{{ reference_slides }}
+  </div>
+</section>
+{% elsif include.preview %}
+<section class="reference-section reference-2 customer-references">
+  <header><p class="kicker">Referenser</p><h2>Lägg till<br><i>kundernas ord.</i></h2></header>
+  <p>Lägg till ett citat under Kundreferenser i Pages CMS för att se det här.</p>
+</section>
+{% endif %}
