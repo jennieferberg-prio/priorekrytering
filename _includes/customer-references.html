@@ -17,15 +17,17 @@
   <header>
     <p class="kicker">{{ site.data.references.kicker | default: 'Referenser' | escape }}</p>
     <h2>{{ site.data.references.heading_first | default: 'Förtroende som' | escape }}<br><i>{{ site.data.references.heading_second | default: 'byggts över tid.' | escape }}</i></h2>
+    {% if include.example %}<p class="reference-example-note">Exempelreferenser</p>{% endif %}
+  </header>
+  <div class="reference-2-content">
+    <div id="{{ include.id }}-slides" aria-live="polite" aria-atomic="true">
+{{ reference_slides }}
+    </div>
     <div class="reference-controls"{% if reference_count < 2 %} hidden{% endif %}>
       <span data-reference-counter>01 / {% if reference_count < 10 %}0{% endif %}{{ reference_count }}</span>
       <button type="button" data-reference-previous disabled aria-label="Föregående referens" aria-controls="{{ include.id }}-slides">←</button>
       <button type="button" data-reference-next disabled aria-label="Nästa referens" aria-controls="{{ include.id }}-slides">→</button>
     </div>
-    {% if include.example %}<p class="reference-example-note">Exempelreferenser</p>{% endif %}
-  </header>
-  <div class="reference-2-content" id="{{ include.id }}-slides" aria-live="polite" aria-atomic="true">
-{{ reference_slides }}
   </div>
 </section>
 {% elsif include.preview %}
