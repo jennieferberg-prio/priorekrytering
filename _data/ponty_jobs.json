@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "bde40f8ab3b33c4a",
+  "version": "ce1e11f6eb1d7983",
   "jobs": [
+    {
+      "id": "11",
+      "title": "VVS-Montör Entreprenad till Rör som Rör AB",
+      "slug": "vvs-montor-entreprenad-till-ror-som-ror-ab",
+      "route_name": "vvs-montor-entreprenad-till-ror-som-ror-ab-11",
+      "route": "/lediga-jobb/vvs-montor-entreprenad-till-ror-som-ror-ab-11/",
+      "description": "Är du VVS-Montör och vill arbeta på entreprenadsidan? Rör som Rör har varierande jobb och årligt bonussystem!",
+      "organization": "Rör som Rör i Stockholm AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-02",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "10",
       "title": "Snickare till Core Project",
