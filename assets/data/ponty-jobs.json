@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "ce1e11f6eb1d7983",
+  "version": "51c1300d38b0f997",
   "jobs": [
     {
       "id": "11",
@@ -41,16 +41,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-09-21",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
-    },
-    {
-      "id": "7",
-      "title": "Serviceelektriker till S2 Elektriska",
-      "slug": "serviceelektriker-till-s2-elektriska",
-      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
-      "organization": "S2 Elektriska AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-18",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-15-ba68.png"
     },
     {
       "id": "3",

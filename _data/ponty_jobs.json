@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "ce1e11f6eb1d7983",
+  "version": "51c1300d38b0f997",
   "jobs": [
     {
       "id": "11",
@@ -57,19 +57,6 @@
       ]
     },
     {
-      "id": "7",
-      "title": "Serviceelektriker till S2 Elektriska",
-      "slug": "serviceelektriker-till-s2-elektriska",
-      "route_name": "serviceelektriker-till-s2-elektriska-7",
-      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
-      "description": "Vill du ha frihet i vardagen, arbeta med varierande eljobb och samtidigt komma till ett bolag där du faktiskt får möjlighet att utvecklas?",
-      "organization": "S2 Elektriska AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-18",
-      "status": "active",
-      "aliases": []
-    },
-    {
       "id": "3",
       "title": "Ledande Montör till Granitor Electro i Danderyd",
       "slug": "ledande-montor-till-granitor-electro-i-danderyd",
@@ -119,6 +106,19 @@
       "location": "Hela Sverige",
       "publish_date": "2026-09-14",
       "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "7",
+      "title": "Serviceelektriker till S2 Elektriska",
+      "slug": "serviceelektriker-till-s2-elektriska",
+      "route_name": "serviceelektriker-till-s2-elektriska-7",
+      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
+      "description": "Vill du ha frihet i vardagen, arbeta med varierande eljobb och samtidigt komma till ett bolag där du faktiskt får möjlighet att utvecklas?",
+      "organization": "S2 Elektriska AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-09-18",
+      "status": "closed",
       "aliases": []
     }
   ]
