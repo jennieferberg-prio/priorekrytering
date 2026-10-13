@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "51c1300d38b0f997",
+  "version": "8657f05d63e497de",
   "jobs": [
     {
       "id": "11",
@@ -23,16 +23,6 @@
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-39-b007.png"
     },
     {
-      "id": "9",
-      "title": "PE Svetsare till Inmek - Bo vart som helst i Sverige",
-      "slug": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige",
-      "route": "/lediga-jobb/pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9/",
-      "organization": "Inmek AB",
-      "location": "Hela Sverige",
-      "publish_date": "2026-09-21",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
-    },
-    {
       "id": "8",
       "title": "PE Svetsare till Inmek",
       "slug": "pe-svetsare-till-inmek",
@@ -41,16 +31,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-09-21",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
-    },
-    {
-      "id": "3",
-      "title": "Ledande Montör till Granitor Electro i Danderyd",
-      "slug": "ledande-montor-till-granitor-electro-i-danderyd",
-      "route": "/lediga-jobb/ledande-montor-till-granitor-electro-i-danderyd-3/",
-      "organization": "Granitor Electro i Danderyd",
-      "location": "Stockholm Norr",
-      "publish_date": "2026-09-15",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-4-e998.jpg"
     },
     {
       "id": "6",

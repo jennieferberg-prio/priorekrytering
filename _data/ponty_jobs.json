@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "51c1300d38b0f997",
+  "version": "8657f05d63e497de",
   "jobs": [
     {
       "id": "11",
@@ -29,19 +29,6 @@
       "aliases": []
     },
     {
-      "id": "9",
-      "title": "PE Svetsare till Inmek - Bo vart som helst i Sverige",
-      "slug": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige",
-      "route_name": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9",
-      "route": "/lediga-jobb/pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9/",
-      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
-      "organization": "Inmek AB",
-      "location": "Hela Sverige",
-      "publish_date": "2026-09-21",
-      "status": "active",
-      "aliases": []
-    },
-    {
       "id": "8",
       "title": "PE Svetsare till Inmek",
       "slug": "pe-svetsare-till-inmek",
@@ -55,19 +42,6 @@
       "aliases": [
         "pe-svetsare-8"
       ]
-    },
-    {
-      "id": "3",
-      "title": "Ledande Montör till Granitor Electro i Danderyd",
-      "slug": "ledande-montor-till-granitor-electro-i-danderyd",
-      "route_name": "ledande-montor-till-granitor-electro-i-danderyd-3",
-      "route": "/lediga-jobb/ledande-montor-till-granitor-electro-i-danderyd-3/",
-      "description": "Är du ledande montör idag med en gedigen bakgrund från entreprenadsidan? Vill du hamna på ett väletablerat och framgångsrikt bolag där du kan växa i din yrkesroll och får vara med och bidra? Då kan Granitor Electro…",
-      "organization": "Granitor Electro i Danderyd",
-      "location": "Stockholm Norr",
-      "publish_date": "2026-09-15",
-      "status": "active",
-      "aliases": []
     },
     {
       "id": "6",
@@ -106,6 +80,32 @@
       "location": "Hela Sverige",
       "publish_date": "2026-09-14",
       "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "9",
+      "title": "PE Svetsare till Inmek - Bo vart som helst i Sverige",
+      "slug": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige",
+      "route_name": "pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-bo-vart-som-helst-i-sverige-9/",
+      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
+      "organization": "Inmek AB",
+      "location": "Hela Sverige",
+      "publish_date": "2026-09-21",
+      "status": "closed",
+      "aliases": []
+    },
+    {
+      "id": "3",
+      "title": "Ledande Montör till Granitor Electro i Danderyd",
+      "slug": "ledande-montor-till-granitor-electro-i-danderyd",
+      "route_name": "ledande-montor-till-granitor-electro-i-danderyd-3",
+      "route": "/lediga-jobb/ledande-montor-till-granitor-electro-i-danderyd-3/",
+      "description": "Är du ledande montör idag med en gedigen bakgrund från entreprenadsidan? Vill du hamna på ett väletablerat och framgångsrikt bolag där du kan växa i din yrkesroll och får vara med och bidra? Då kan Granitor Electro…",
+      "organization": "Granitor Electro i Danderyd",
+      "location": "Stockholm Norr",
+      "publish_date": "2026-09-15",
+      "status": "closed",
       "aliases": []
     },
     {
