@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "8657f05d63e497de",
+  "version": "8a438c104561105c",
   "jobs": [
     {
       "id": "11",
@@ -12,19 +12,6 @@
       "organization": "Rör som Rör i Stockholm AB",
       "location": "Storstockholm",
       "publish_date": "2026-10-02",
-      "status": "active",
-      "aliases": []
-    },
-    {
-      "id": "10",
-      "title": "Snickare till Core Project",
-      "slug": "snickare-till-core-project",
-      "route_name": "snickare-till-core-project-10",
-      "route": "/lediga-jobb/snickare-till-core-project-10/",
-      "description": "Är du en erfaren snickare som trivs med varierande projekt, stort eget ansvar och en arbetsplats där samarbete och yrkesstolthet står i centrum?",
-      "organization": "Core Projektutveckling AB",
-      "location": "Skåne",
-      "publish_date": "2026-09-25",
       "status": "active",
       "aliases": []
     },
@@ -44,6 +31,32 @@
       ]
     },
     {
+      "id": "1",
+      "title": "Spontanansökan",
+      "slug": "spontanansokan",
+      "route_name": "spontanansokan-1",
+      "route": "/lediga-jobb/spontanansokan-1/",
+      "description": "Hittar du ingen tjänst som passar dig just nu? Skicka gärna in en spontanansökan och berätta mer om din erfarenhet, vad du söker och var du vill ta nästa steg.",
+      "organization": "Prio rekrytering AB",
+      "location": "Hela Sverige",
+      "publish_date": "2026-09-14",
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "10",
+      "title": "Snickare till Core Project",
+      "slug": "snickare-till-core-project",
+      "route_name": "snickare-till-core-project-10",
+      "route": "/lediga-jobb/snickare-till-core-project-10/",
+      "description": "Är du en erfaren snickare som trivs med varierande projekt, stort eget ansvar och en arbetsplats där samarbete och yrkesstolthet står i centrum?",
+      "organization": "Core Projektutveckling AB",
+      "location": "Skåne",
+      "publish_date": "2026-09-25",
+      "status": "closed",
+      "aliases": []
+    },
+    {
       "id": "6",
       "title": "Serviceelektriker till Granitor Electro Danderyd",
       "slug": "serviceelektriker-till-granitor-electro-danderyd",
@@ -53,7 +66,7 @@
       "organization": "Granitor Electro i Danderyd",
       "location": "Storstockholm",
       "publish_date": "2026-09-14",
-      "status": "active",
+      "status": "closed",
       "aliases": []
     },
     {
@@ -66,20 +79,7 @@
       "organization": "KA VVS Service AB",
       "location": "Storstockholm",
       "publish_date": "2026-09-14",
-      "status": "active",
-      "aliases": []
-    },
-    {
-      "id": "1",
-      "title": "Spontanansökan",
-      "slug": "spontanansokan",
-      "route_name": "spontanansokan-1",
-      "route": "/lediga-jobb/spontanansokan-1/",
-      "description": "Hittar du ingen tjänst som passar dig just nu? Skicka gärna in en spontanansökan och berätta mer om din erfarenhet, vad du söker och var du vill ta nästa steg.",
-      "organization": "Prio rekrytering AB",
-      "location": "Hela Sverige",
-      "publish_date": "2026-09-14",
-      "status": "active",
+      "status": "closed",
       "aliases": []
     },
     {
