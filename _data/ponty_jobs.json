@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "025d61b937bc9526",
+  "version": "e78d0660ff7da836",
   "jobs": [
     {
       "id": "6",
@@ -24,6 +24,19 @@
       "description": "Vill du jobba som VVS-Montör på ett stabilt bolag som har funnits sedan 1989, med spännande projekt, en trivsam arbetsmiljö och möjlighet till personlig utveckling. Du kommer till ett företag med högt i tak och en…",
       "organization": "KA VVS Service AB",
       "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "10",
+      "title": "Snickare till Core Project",
+      "slug": "snickare-till-core-project",
+      "route_name": "snickare-till-core-project-10",
+      "route": "/lediga-jobb/snickare-till-core-project-10/",
+      "description": "Är du en erfaren snickare som trivs med varierande projekt, stort eget ansvar och en arbetsplats där samarbete och yrkesstolthet står i centrum?",
+      "organization": "Core Projektutveckling AB",
+      "location": "Skåne",
       "publish_date": "2026-10-20",
       "status": "active",
       "aliases": []
@@ -68,19 +81,6 @@
       "aliases": [
         "pe-svetsare-8"
       ]
-    },
-    {
-      "id": "10",
-      "title": "Snickare till Core Project",
-      "slug": "snickare-till-core-project",
-      "route_name": "snickare-till-core-project-10",
-      "route": "/lediga-jobb/snickare-till-core-project-10/",
-      "description": "Är du en erfaren snickare som trivs med varierande projekt, stort eget ansvar och en arbetsplats där samarbete och yrkesstolthet står i centrum?",
-      "organization": "Core Projektutveckling AB",
-      "location": "Skåne",
-      "publish_date": "2026-09-25",
-      "status": "closed",
-      "aliases": []
     },
     {
       "id": "9",

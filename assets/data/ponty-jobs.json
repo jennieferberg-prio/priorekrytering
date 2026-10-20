@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "025d61b937bc9526",
+  "version": "e78d0660ff7da836",
   "jobs": [
     {
       "id": "6",
@@ -21,6 +21,16 @@
       "location": "Storstockholm",
       "publish_date": "2026-10-20",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-13-23f6.png"
+    },
+    {
+      "id": "10",
+      "title": "Snickare till Core Project",
+      "slug": "snickare-till-core-project",
+      "route": "/lediga-jobb/snickare-till-core-project-10/",
+      "organization": "Core Projektutveckling AB",
+      "location": "Skåne",
+      "publish_date": "2026-10-20",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-39-b007.png"
     },
     {
       "id": "11",
