@@ -1,7 +1,27 @@
 {
   "generated_from": "Ponty",
-  "version": "8a438c104561105c",
+  "version": "025d61b937bc9526",
   "jobs": [
+    {
+      "id": "6",
+      "title": "Serviceelektriker till Granitor Electro Danderyd",
+      "slug": "serviceelektriker-till-granitor-electro-danderyd",
+      "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
+      "organization": "Granitor Electro i Danderyd",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-4-e998.jpg"
+    },
+    {
+      "id": "5",
+      "title": "VVS-Montör",
+      "slug": "vvs-montor",
+      "route": "/lediga-jobb/vvs-montor-5/",
+      "organization": "KA VVS Service AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-13-23f6.png"
+    },
     {
       "id": "11",
       "title": "VVS-Montör Entreprenad till Rör som Rör AB",
@@ -11,16 +31,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-10-02",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-47-030e.png"
-    },
-    {
-      "id": "8",
-      "title": "PE Svetsare till Inmek",
-      "slug": "pe-svetsare-till-inmek",
-      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
-      "organization": "Inmek AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-21",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
     },
     {
       "id": "1",

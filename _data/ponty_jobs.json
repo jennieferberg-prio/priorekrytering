@@ -1,7 +1,33 @@
 {
   "generated_from": "Ponty",
-  "version": "8a438c104561105c",
+  "version": "025d61b937bc9526",
   "jobs": [
+    {
+      "id": "6",
+      "title": "Serviceelektriker till Granitor Electro Danderyd",
+      "slug": "serviceelektriker-till-granitor-electro-danderyd",
+      "route_name": "serviceelektriker-till-granitor-electro-danderyd-6",
+      "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
+      "description": "Vill du jobba som serviceelektriker på ett framgångsrikt bolag, där du har stor frihet med korta beslutsvägar? Då kanske Granitor Electro Danderyd är något för dig!",
+      "organization": "Granitor Electro i Danderyd",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "5",
+      "title": "VVS-Montör",
+      "slug": "vvs-montor",
+      "route_name": "vvs-montor-5",
+      "route": "/lediga-jobb/vvs-montor-5/",
+      "description": "Vill du jobba som VVS-Montör på ett stabilt bolag som har funnits sedan 1989, med spännande projekt, en trivsam arbetsmiljö och möjlighet till personlig utveckling. Du kommer till ett företag med högt i tak och en…",
+      "organization": "KA VVS Service AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "11",
       "title": "VVS-Montör Entreprenad till Rör som Rör AB",
@@ -14,21 +40,6 @@
       "publish_date": "2026-10-02",
       "status": "active",
       "aliases": []
-    },
-    {
-      "id": "8",
-      "title": "PE Svetsare till Inmek",
-      "slug": "pe-svetsare-till-inmek",
-      "route_name": "pe-svetsare-till-inmek-8",
-      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
-      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
-      "organization": "Inmek AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-21",
-      "status": "active",
-      "aliases": [
-        "pe-svetsare-8"
-      ]
     },
     {
       "id": "1",
@@ -44,6 +55,21 @@
       "aliases": []
     },
     {
+      "id": "8",
+      "title": "PE Svetsare till Inmek",
+      "slug": "pe-svetsare-till-inmek",
+      "route_name": "pe-svetsare-till-inmek-8",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
+      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
+      "organization": "Inmek AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-09-21",
+      "status": "closed",
+      "aliases": [
+        "pe-svetsare-8"
+      ]
+    },
+    {
       "id": "10",
       "title": "Snickare till Core Project",
       "slug": "snickare-till-core-project",
@@ -53,32 +79,6 @@
       "organization": "Core Projektutveckling AB",
       "location": "Skåne",
       "publish_date": "2026-09-25",
-      "status": "closed",
-      "aliases": []
-    },
-    {
-      "id": "6",
-      "title": "Serviceelektriker till Granitor Electro Danderyd",
-      "slug": "serviceelektriker-till-granitor-electro-danderyd",
-      "route_name": "serviceelektriker-till-granitor-electro-danderyd-6",
-      "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
-      "description": "Vill du jobba som serviceelektriker på ett framgångsrikt bolag, där du har stor frihet med korta beslutsvägar? Då kanske Granitor Electro Danderyd är något för dig!",
-      "organization": "Granitor Electro i Danderyd",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-14",
-      "status": "closed",
-      "aliases": []
-    },
-    {
-      "id": "5",
-      "title": "VVS-Montör",
-      "slug": "vvs-montor",
-      "route_name": "vvs-montor-5",
-      "route": "/lediga-jobb/vvs-montor-5/",
-      "description": "Vill du jobba som VVS-Montör på ett stabilt bolag som har funnits sedan 1989, med spännande projekt, en trivsam arbetsmiljö och möjlighet till personlig utveckling. Du kommer till ett företag med högt i tak och en…",
-      "organization": "KA VVS Service AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-14",
       "status": "closed",
       "aliases": []
     },
