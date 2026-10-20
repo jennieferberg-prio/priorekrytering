@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "e78d0660ff7da836",
+  "version": "8822f60e209f9a64",
   "jobs": [
+    {
+      "id": "7",
+      "title": "Serviceelektriker till S2 Elektriska",
+      "slug": "serviceelektriker-till-s2-elektriska",
+      "route_name": "serviceelektriker-till-s2-elektriska-7",
+      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
+      "description": "Vill du ha frihet i vardagen, arbeta med varierande eljobb och samtidigt komma till ett bolag där du faktiskt får möjlighet att utvecklas?",
+      "organization": "S2 Elektriska AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "6",
       "title": "Serviceelektriker till Granitor Electro Danderyd",
@@ -105,19 +118,6 @@
       "organization": "Granitor Electro i Danderyd",
       "location": "Stockholm Norr",
       "publish_date": "2026-09-15",
-      "status": "closed",
-      "aliases": []
-    },
-    {
-      "id": "7",
-      "title": "Serviceelektriker till S2 Elektriska",
-      "slug": "serviceelektriker-till-s2-elektriska",
-      "route_name": "serviceelektriker-till-s2-elektriska-7",
-      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
-      "description": "Vill du ha frihet i vardagen, arbeta med varierande eljobb och samtidigt komma till ett bolag där du faktiskt får möjlighet att utvecklas?",
-      "organization": "S2 Elektriska AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-09-18",
       "status": "closed",
       "aliases": []
     }

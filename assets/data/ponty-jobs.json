@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "e78d0660ff7da836",
+  "version": "8822f60e209f9a64",
   "jobs": [
+    {
+      "id": "7",
+      "title": "Serviceelektriker till S2 Elektriska",
+      "slug": "serviceelektriker-till-s2-elektriska",
+      "route": "/lediga-jobb/serviceelektriker-till-s2-elektriska-7/",
+      "organization": "S2 Elektriska AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-15-ba68.png"
+    },
     {
       "id": "6",
       "title": "Serviceelektriker till Granitor Electro Danderyd",
