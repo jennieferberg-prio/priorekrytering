@@ -109,9 +109,25 @@ def create_application(payload, token):
     application_id = data.get("application_id") if isinstance(data, dict) else None
     if type(application_id) is not int or application_id <= 0:
         raise RuntimeError("Ponty did not return an application ID")
-    if not data.get("candidate_id"):
-        print("Application created, but Ponty did not confirm candidate approval.")
+    candidate_id = data.get("candidate_id")
+    if type(candidate_id) is not int or candidate_id <= 0:
+        raise RuntimeError("Application created, but candidate approval was not confirmed; note not added")
+    add_candidate_note(candidate_id, payload, token)
     return application_id
+
+
+def add_candidate_note(candidate_id, payload, token):
+    platform = payload.get("referer", "").removeprefix("meta-")
+    platform = {"fb": "Facebook", "ig": "Instagram"}.get(platform.lower(), platform or "Okänd")
+    lines = [f"Plattform: {platform}"]
+    for question in payload.get("extra", {}).get("questions", []):
+        lines.append(f"{question['question']}: {question['answer']}")
+    request_json(
+        f"https://openapi.ponty-system.se/v2/candidates/{candidate_id}/notes",
+        # Jenniefer Berg, verified through assignment 1's responsible users.
+        json.dumps({"text": "\n".join(lines), "user_id": 2}, ensure_ascii=False).encode(),
+        {"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+    )
 
 
 def import_leads(leads, state, state_path, submit=None, limit=0):

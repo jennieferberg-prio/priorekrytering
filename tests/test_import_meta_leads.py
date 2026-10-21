@@ -78,14 +78,28 @@ class MetaImportTests(unittest.TestCase):
                 importer.read_leads("https://example.com", "test-token")
 
     def test_submits_multipart_payload_and_returns_application_id(self):
-        with patch.object(importer, "request_json", return_value={"data": {"application_id": 42}}) as request:
+        with patch.object(importer, "request_json", side_effect=[
+            {"data": {"application_id": 42, "candidate_id": 93}}, {"data": {"id": 17}},
+        ]) as request:
             payload = importer.application_payload(lead())
             self.assertEqual(importer.create_application(payload, "test-token"), 42)
-            url, body, headers = request.call_args.args
+            url, body, headers = request.call_args_list[0].args
             self.assertEqual(url, "https://openapi.ponty-system.se/v2/applications")
             self.assertTrue(headers["Content-Type"].startswith("multipart/form-data; boundary="))
             self.assertIn(json.dumps(payload).encode(), body)
             self.assertIn(b'name="auto_approve"\r\n\r\ntrue', body)
+            self.assertEqual(request.call_args_list[1].args[0],
+                             "https://openapi.ponty-system.se/v2/candidates/93/notes")
+
+    def test_candidate_note_contains_readable_platform_and_both_answers(self):
+        for platform, label in [("fb", "Facebook"), ("ig", "Instagram")]:
+            row = lead()
+            row.update(platform=platform, ad_name="Elektriker", job_title="Montör")
+            with patch.object(importer, "request_json", return_value={"data": {"id": 17}}) as request:
+                importer.add_candidate_note(93, importer.application_payload(row), "test-token")
+                body = json.loads(request.call_args.args[1])
+                self.assertEqual(body, {"user_id": 2, "text":
+                    f"Plattform: {label}\nAnnons: Elektriker\nAngiven yrkestitel: Montör"})
 
 
 if __name__ == "__main__":
