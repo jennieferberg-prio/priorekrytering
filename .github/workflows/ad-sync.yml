@@ -1,0 +1,58 @@
+name: Import Meta leads into Ponty
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Create applications in Ponty (false is a dry run)
+        type: boolean
+        default: false
+      limit:
+        description: Maximum imports (0 means all)
+        type: string
+        default: '1'
+
+permissions:
+  contents: write
+
+# Share the existing group so job-sync and ad-sync commits cannot overlap.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Import leads
+        env:
+          AD_SHEET_URL: ${{ secrets.AD_SHEET_URL }}
+          AD_SHEET_TOKEN: ${{ secrets.AD_SHEET_TOKEN }}
+          PONTY_AD_SYNC_CLIENT_ID: ${{ secrets.PONTY_AD_SYNC_CLIENT_ID }}
+          PONTY_AD_SYNC_CLIENT_SECRET: ${{ secrets.PONTY_AD_SYNC_CLIENT_SECRET }}
+          APPLY: ${{ inputs.apply }}
+          IMPORT_LIMIT: ${{ inputs.limit }}
+        run: |
+          args=(--limit "$IMPORT_LIMIT")
+          if [ "$APPLY" = "true" ]; then
+            args+=(--apply)
+          fi
+          python3 scripts/import-meta-leads.py "${args[@]}"
+
+      - name: Save successful imports
+        if: ${{ always() }}
+        run: |
+          git add -- _data/ad-sync.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record imported Meta leads [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
