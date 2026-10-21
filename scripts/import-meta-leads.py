@@ -15,12 +15,14 @@ import uuid
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def request_json(url, data=None, headers=None):
+def request_json(url, data=None, headers=None, allow_existing_tag=False):
     request = urllib.request.Request(url, data=data, headers=headers or {})
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
             return json.load(response)
     except urllib.error.HTTPError as error:
+        if allow_existing_tag and error.code == 409:
+            return None  # Ponty reports an already-linked tag as 409.
         # Responses may contain applicant details: never print the body.
         raise RuntimeError(f"Request failed (HTTP {error.code})") from None
     except (urllib.error.URLError, TimeoutError, ValueError):
@@ -113,7 +115,17 @@ def create_application(payload, token):
     if type(candidate_id) is not int or candidate_id <= 0:
         raise RuntimeError("Application created, but candidate approval was not confirmed; note not added")
     add_candidate_note(candidate_id, payload, token)
+    add_candidate_tag(candidate_id, token)
     return application_id
+
+
+def add_candidate_tag(candidate_id, token):
+    request_json(
+        f"https://openapi.ponty-system.se/v2/candidates/{candidate_id}/tags",
+        json.dumps({"tag_id": 8}).encode(),
+        {"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        allow_existing_tag=True,
+    )
 
 
 def add_candidate_note(candidate_id, payload, token):

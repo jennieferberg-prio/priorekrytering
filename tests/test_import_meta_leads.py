@@ -79,7 +79,8 @@ class MetaImportTests(unittest.TestCase):
 
     def test_submits_multipart_payload_and_returns_application_id(self):
         with patch.object(importer, "request_json", side_effect=[
-            {"data": {"application_id": 42, "candidate_id": 93}}, {"data": {"id": 17}},
+            {"data": {"application_id": 42, "candidate_id": 93}},
+            {"data": {"id": 17}}, {"data": {"id": 8}},
         ]) as request:
             payload = importer.application_payload(lead())
             self.assertEqual(importer.create_application(payload, "test-token"), 42)
@@ -90,6 +91,20 @@ class MetaImportTests(unittest.TestCase):
             self.assertIn(b'name="auto_approve"\r\n\r\ntrue', body)
             self.assertEqual(request.call_args_list[1].args[0],
                              "https://openapi.ponty-system.se/v2/candidates/93/notes")
+            self.assertEqual(request.call_args_list[2].args[0],
+                             "https://openapi.ponty-system.se/v2/candidates/93/tags")
+            self.assertEqual(json.loads(request.call_args_list[2].args[1]), {"tag_id": 8})
+
+    def test_existing_tag_is_accepted_but_other_http_errors_fail(self):
+        import urllib.error
+        for status in [409, 403]:
+            error = urllib.error.HTTPError("https://example.com", status, "", {}, None)
+            with patch.object(importer.urllib.request, "urlopen", side_effect=error):
+                if status == 409:
+                    importer.add_candidate_tag(93, "test-token")
+                else:
+                    with self.assertRaises(RuntimeError):
+                        importer.add_candidate_tag(93, "test-token")
 
     def test_candidate_note_contains_readable_platform_and_both_answers(self):
         for platform, label in [("fb", "Facebook"), ("ig", "Instagram")]:
