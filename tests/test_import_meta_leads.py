@@ -32,6 +32,16 @@ class MetaImportTests(unittest.TestCase):
             importer.import_leads([lead()], {}, path)
             self.assertFalse(path.exists())
 
+    def test_preserves_ad_and_self_reported_title_as_application_details(self):
+        row = lead()
+        row.update(ad_name=" Elektriker – Stockholm ", job_title=" Servicetekniker ")
+        payload = importer.application_payload(row)
+        self.assertEqual(payload["extra"],
+                         "Annons: Elektriker – Stockholm\nAngiven yrkestitel: Servicetekniker")
+        self.assertEqual(payload["assignment_id"], 1)
+        row.update(ad_name="", job_title=None)
+        self.assertNotIn("extra", importer.application_payload(row))
+
     def test_skips_imported_and_repeated_ids_and_respects_limit(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "state.json"

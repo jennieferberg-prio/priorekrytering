@@ -51,7 +51,7 @@ def application_payload(lead):
     if not email or "@" not in email or not name:
         raise ValueError("Missing name or invalid email")
     phone = str(lead.get("phone_number", "")).strip().removeprefix("p:")
-    return {
+    payload = {
         "assignment_id": 1,
         "email": email,
         "firstname": name[0],
@@ -59,6 +59,14 @@ def application_payload(lead):
         "phone": phone,
         "referer": "meta-" + str(lead.get("platform", "unknown")).strip(),
     }
+    extra = []
+    for field, label in [("ad_name", "Annons"), ("job_title", "Angiven yrkestitel")]:
+        value = str(lead.get(field) or "").strip()
+        if value:
+            extra.append(f"{label}: {value}")
+    if extra:
+        payload["extra"] = "\n".join(extra)
+    return payload
 
 
 def access_token(client_id, client_secret):
