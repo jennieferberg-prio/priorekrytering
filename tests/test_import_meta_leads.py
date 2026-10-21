@@ -85,7 +85,7 @@ class MetaImportTests(unittest.TestCase):
             self.assertEqual(url, "https://openapi.ponty-system.se/v2/applications")
             self.assertTrue(headers["Content-Type"].startswith("multipart/form-data; boundary="))
             self.assertIn(json.dumps(payload).encode(), body)
-            self.assertNotIn(b"auto_approve", body)
+            self.assertIn(b'name="auto_approve"\r\n\r\ntrue', body)
 
 
 if __name__ == "__main__":

@@ -93,6 +93,8 @@ def create_application(payload, token):
         'Content-Disposition: form-data; name="payload"\r\n'
         "Content-Type: application/json\r\n\r\n"
         + json.dumps(payload, ensure_ascii=False)
+        + f"\r\n--{boundary}\r\n"
+        + 'Content-Disposition: form-data; name="auto_approve"\r\n\r\ntrue'
         + f"\r\n--{boundary}--\r\n"
     ).encode()
     result = request_json(
@@ -107,6 +109,8 @@ def create_application(payload, token):
     application_id = data.get("application_id") if isinstance(data, dict) else None
     if type(application_id) is not int or application_id <= 0:
         raise RuntimeError("Ponty did not return an application ID")
+    if not data.get("candidate_id"):
+        print("Application created, but Ponty did not confirm candidate approval.")
     return application_id
 
 
