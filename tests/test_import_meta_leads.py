@@ -36,8 +36,10 @@ class MetaImportTests(unittest.TestCase):
         row = lead()
         row.update(ad_name=" Elektriker – Stockholm ", job_title=" Servicetekniker ")
         payload = importer.application_payload(row)
-        self.assertEqual(payload["extra"],
-                         "Annons: Elektriker – Stockholm\nAngiven yrkestitel: Servicetekniker")
+        self.assertEqual(payload["extra"], {
+            "title": "Servicetekniker",
+            "questions": [{"question": "Annons", "type": "text", "answer": "Elektriker – Stockholm"}],
+        })
         self.assertEqual(payload["assignment_id"], 1)
         row.update(ad_name="", job_title=None)
         self.assertNotIn("extra", importer.application_payload(row))
