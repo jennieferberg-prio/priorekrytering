@@ -1,6 +1,8 @@
 name: Import Meta leads into Ponty
 
 on:
+  schedule:
+    - cron: '17,47 * * * *'
   workflow_dispatch:
     inputs:
       apply:
@@ -35,8 +37,8 @@ jobs:
           AD_SHEET_TOKEN: ${{ secrets.AD_SHEET_TOKEN }}
           PONTY_AD_SYNC_CLIENT_ID: ${{ secrets.PONTY_AD_SYNC_CLIENT_ID }}
           PONTY_AD_SYNC_CLIENT_SECRET: ${{ secrets.PONTY_AD_SYNC_CLIENT_SECRET }}
-          APPLY: ${{ inputs.apply }}
-          IMPORT_LIMIT: ${{ inputs.limit }}
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+          IMPORT_LIMIT: ${{ github.event_name == 'schedule' && '0' || inputs.limit }}
         run: |
           args=(--limit "$IMPORT_LIMIT")
           if [ "$APPLY" = "true" ]; then
