@@ -59,15 +59,13 @@ def application_payload(lead):
         "phone": phone,
         "referer": "meta-" + str(lead.get("platform", "unknown")).strip(),
     }
-    extra = {}
-    title = str(lead.get("job_title") or "").strip()
-    ad_name = str(lead.get("ad_name") or "").strip()
-    if title:
-        extra["title"] = title
-    if ad_name:
-        extra["questions"] = [{"question": "Annons", "type": "text", "answer": ad_name}]
-    if extra:
-        payload["extra"] = extra
+    questions = []
+    for field, label in [("ad_name", "Annons"), ("job_title", "Angiven yrkestitel")]:
+        value = str(lead.get(field) or "").strip()
+        if value:
+            questions.append({"question": label, "type": "text", "answer": value})
+    if questions:
+        payload["extra"] = {"questions": questions}
     return payload
 
 
