@@ -170,7 +170,7 @@ def import_leads(leads, state, state_path, submit=None, limit=0):
         return invalid
     for index, (lead_id, payload) in enumerate(selected):
         if index:
-            time.sleep(5)  # Three Ponty writes per lead; keep below its rate limit.
+            time.sleep(8)  # Three writes per lead; Ponty allows 30 requests/minute.
         state[lead_id] = submit(payload)
         state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
     print(f"Imported: {len(selected)}")
