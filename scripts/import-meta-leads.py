@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -167,7 +168,9 @@ def import_leads(leads, state, state_path, submit=None, limit=0):
     if submit is None:
         print("Dry run: no Ponty applications or tracking changes made.")
         return invalid
-    for lead_id, payload in selected:
+    for index, (lead_id, payload) in enumerate(selected):
+        if index:
+            time.sleep(5)  # Three Ponty writes per lead; keep below its rate limit.
         state[lead_id] = submit(payload)
         state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
     print(f"Imported: {len(selected)}")
