@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "0b646423db153314",
+  "version": "1195a663525b4ed9",
   "jobs": [
+    {
+      "id": "14",
+      "title": "Projektledare VVS",
+      "slug": "projektledare-vvs",
+      "route": "/lediga-jobb/projektledare-vvs-14/",
+      "organization": "Rör som Rör i Stockholm AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-25",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-47-030e.png"
+    },
     {
       "id": "8",
       "title": "PE Svetsare till Inmek",
