@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "1195a663525b4ed9",
+  "version": "442b236689b186c5",
   "jobs": [
+    {
+      "id": "15",
+      "title": "Ansvarig VVS-Montör/Ledande montör med stora möjligheter",
+      "slug": "ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter",
+      "route_name": "ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter-15",
+      "route": "/lediga-jobb/ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter-15/",
+      "description": "Är du VVS-Montör och vill utvecklas snabbt med mer ansvar och på sikt möjlighet till delägarskap?",
+      "organization": "Bd4 VVS AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-26",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "14",
       "title": "Projektledare VVS",
