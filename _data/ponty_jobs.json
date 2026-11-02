@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "42cf881ef107386c",
+  "version": "8a2b7d74b7ac353e",
   "jobs": [
+    {
+      "id": "16",
+      "title": "Serviceelektriker till KNG Elkonsult & Installation",
+      "slug": "serviceelektriker-till-kng-elkonsult-installation",
+      "route_name": "serviceelektriker-till-kng-elkonsult-installation-16",
+      "route": "/lediga-jobb/serviceelektriker-till-kng-elkonsult-installation-16/",
+      "description": "Är du en erfaren serviceelektriker som trivs med frihet under ansvar, varierande arbetsdagar och möjligheten att utvecklas? Då kan KNG El Konsult & Installation AB vara din nästa arbetsgivare!",
+      "organization": "Kng El Konsult Och Installation Ab",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-02",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "15",
       "title": "Ansvarig VVS-Montör/Ledande montör med stora möjligheter",
