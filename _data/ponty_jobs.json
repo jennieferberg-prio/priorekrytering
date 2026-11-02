@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "58f8f6870439f336",
+  "version": "e7907abc3605279b",
   "jobs": [
     {
       "id": "17",
@@ -17,16 +17,18 @@
     },
     {
       "id": "16",
-      "title": "Serviceelektriker till KNG Elkonsult & Installation",
-      "slug": "serviceelektriker-till-kng-elkonsult-installation",
-      "route_name": "serviceelektriker-till-kng-elkonsult-installation-16",
-      "route": "/lediga-jobb/serviceelektriker-till-kng-elkonsult-installation-16/",
-      "description": "Är du en erfaren serviceelektriker som trivs med frihet under ansvar, varierande arbetsdagar och möjligheten att utvecklas? Då kan KNG El Konsult & Installation AB vara din nästa arbetsgivare!",
+      "title": "Elektriker till KNG Elkonsult & Installation",
+      "slug": "elektriker-till-kng-elkonsult-installation",
+      "route_name": "elektriker-till-kng-elkonsult-installation-16",
+      "route": "/lediga-jobb/elektriker-till-kng-elkonsult-installation-16/",
+      "description": "Är du en erfaren Elektriker som trivs med frihet under ansvar, varierande arbetsdagar och möjligheten att utvecklas? Då kan KNG El Konsult & Installation AB vara din nästa arbetsgivare!",
       "organization": "Kng El Konsult Och Installation Ab",
       "location": "Storstockholm",
       "publish_date": "2026-11-02",
       "status": "active",
-      "aliases": []
+      "aliases": [
+        "serviceelektriker-till-kng-elkonsult-installation-16"
+      ]
     },
     {
       "id": "15",
