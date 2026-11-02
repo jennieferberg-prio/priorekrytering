@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "8a2b7d74b7ac353e",
+  "version": "58f8f6870439f336",
   "jobs": [
+    {
+      "id": "17",
+      "title": "Tekniker inom Brandlarm",
+      "slug": "tekniker-inom-brandlarm",
+      "route": "/lediga-jobb/tekniker-inom-brandlarm-17/",
+      "organization": "SEAL Scandinavia AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-02",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-91-8e80.jpg"
+    },
     {
       "id": "16",
       "title": "Serviceelektriker till KNG Elkonsult & Installation",
