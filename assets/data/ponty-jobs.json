@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "82168b282ae3e7e1",
+  "version": "a3cc1c6b5a1a462f",
   "jobs": [
+    {
+      "id": "18",
+      "title": "VVS-Montör till Dannbergs Mark & VVS",
+      "slug": "vvs-montor-till-dannbergs-mark-vvs",
+      "route": "/lediga-jobb/vvs-montor-till-dannbergs-mark-vvs-18/",
+      "organization": "Dannbergs Mark och VVS AB",
+      "location": "Göteborg",
+      "publish_date": "2026-11-07",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-79-31d3.jpg"
+    },
     {
       "id": "17",
       "title": "Tekniker inom Brandlarm",
@@ -81,16 +91,6 @@
       "location": "Skåne",
       "publish_date": "2026-10-20",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-39-b007.png"
-    },
-    {
-      "id": "11",
-      "title": "VVS-Montör Entreprenad till Rör som Rör AB",
-      "slug": "vvs-montor-entreprenad-till-ror-som-ror-ab",
-      "route": "/lediga-jobb/vvs-montor-entreprenad-till-ror-som-ror-ab-11/",
-      "organization": "Rör som Rör i Stockholm AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-02",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-47-030e.png"
     },
     {
       "id": "1",
