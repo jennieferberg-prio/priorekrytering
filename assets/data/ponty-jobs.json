@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "a3cc1c6b5a1a462f",
+  "version": "ae676410e1b5c3aa",
   "jobs": [
+    {
+      "id": "19",
+      "title": "Fönsterputsare till Gsons Fönsterputs",
+      "slug": "fonsterputsare-till-gsons-fonsterputs",
+      "route": "/lediga-jobb/fonsterputsare-till-gsons-fonsterputs-19/",
+      "organization": "Gsons Fönsterputs AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-09",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-101-82a4.png"
+    },
     {
       "id": "18",
       "title": "VVS-Montör till Dannbergs Mark & VVS",

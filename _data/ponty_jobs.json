@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "a3cc1c6b5a1a462f",
+  "version": "ae676410e1b5c3aa",
   "jobs": [
+    {
+      "id": "19",
+      "title": "Fönsterputsare till Gsons Fönsterputs",
+      "slug": "fonsterputsare-till-gsons-fonsterputs",
+      "route_name": "fonsterputsare-till-gsons-fonsterputs-19",
+      "route": "/lediga-jobb/fonsterputsare-till-gsons-fonsterputs-19/",
+      "description": "Är du en riktigt vass fönsterputsare som vill mer än att bara putsa fönster? Vill du få möjligheten att bygga upp, utveckla och på sikt leda en egen del av en verksamhet? Då kan Gsons Fönsterputs vara något för dig!",
+      "organization": "Gsons Fönsterputs AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-09",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "18",
       "title": "VVS-Montör till Dannbergs Mark & VVS",
