@@ -1,7 +1,20 @@
 {
   "generated_from": "Ponty",
-  "version": "ae676410e1b5c3aa",
+  "version": "19fee9c0669659ca",
   "jobs": [
+    {
+      "id": "20",
+      "title": "Brandskyddstekniker till TMP Alarm AB",
+      "slug": "brandskyddstekniker-till-tmp-alarm-ab",
+      "route_name": "brandskyddstekniker-till-tmp-alarm-ab-20",
+      "route": "/lediga-jobb/brandskyddstekniker-till-tmp-alarm-ab-20/",
+      "description": "Jobbar du som tekniker med brandskydd? Vill du arbeta självständigt, ha varierande arbetsdagar och bli en del av ett företag där din kompetens verkligen gör skillnad?",
+      "organization": "TMP Alarm AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-10",
+      "status": "active",
+      "aliases": []
+    },
     {
       "id": "19",
       "title": "Fönsterputsare till Gsons Fönsterputs",

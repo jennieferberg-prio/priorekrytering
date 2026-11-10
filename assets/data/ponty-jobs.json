@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "ae676410e1b5c3aa",
+  "version": "19fee9c0669659ca",
   "jobs": [
+    {
+      "id": "20",
+      "title": "Brandskyddstekniker till TMP Alarm AB",
+      "slug": "brandskyddstekniker-till-tmp-alarm-ab",
+      "route": "/lediga-jobb/brandskyddstekniker-till-tmp-alarm-ab-20/",
+      "organization": "TMP Alarm AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-10",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-105-e2a7.png"
+    },
     {
       "id": "19",
       "title": "Fönsterputsare till Gsons Fönsterputs",
