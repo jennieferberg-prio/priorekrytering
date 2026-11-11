@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "19fee9c0669659ca",
+  "version": "6e484a49aa880675",
   "jobs": [
     {
       "id": "20",
@@ -83,16 +83,6 @@
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
     },
     {
-      "id": "6",
-      "title": "Serviceelektriker till Granitor Electro Danderyd",
-      "slug": "serviceelektriker-till-granitor-electro-danderyd",
-      "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
-      "organization": "Granitor Electro i Danderyd",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-20",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-4-e998.jpg"
-    },
-    {
       "id": "5",
       "title": "VVS-Montör",
       "slug": "vvs-montor",
@@ -101,16 +91,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-10-20",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-13-23f6.png"
-    },
-    {
-      "id": "10",
-      "title": "Snickare till Core Project",
-      "slug": "snickare-till-core-project",
-      "route": "/lediga-jobb/snickare-till-core-project-10/",
-      "organization": "Core Projektutveckling AB",
-      "location": "Skåne",
-      "publish_date": "2026-10-20",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-39-b007.png"
     },
     {
       "id": "1",

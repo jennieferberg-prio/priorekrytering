@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "19fee9c0669659ca",
+  "version": "6e484a49aa880675",
   "jobs": [
     {
       "id": "20",
@@ -111,19 +111,6 @@
       ]
     },
     {
-      "id": "6",
-      "title": "Serviceelektriker till Granitor Electro Danderyd",
-      "slug": "serviceelektriker-till-granitor-electro-danderyd",
-      "route_name": "serviceelektriker-till-granitor-electro-danderyd-6",
-      "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
-      "description": "Vill du jobba som serviceelektriker på ett framgångsrikt bolag, där du har stor frihet med korta beslutsvägar? Då kanske Granitor Electro Danderyd är något för dig!",
-      "organization": "Granitor Electro i Danderyd",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-20",
-      "status": "active",
-      "aliases": []
-    },
-    {
       "id": "5",
       "title": "VVS-Montör",
       "slug": "vvs-montor",
@@ -132,19 +119,6 @@
       "description": "Vill du jobba som VVS-Montör på ett stabilt bolag som har funnits sedan 1989, med spännande projekt, en trivsam arbetsmiljö och möjlighet till personlig utveckling. Du kommer till ett företag med högt i tak och en…",
       "organization": "KA VVS Service AB",
       "location": "Storstockholm",
-      "publish_date": "2026-10-20",
-      "status": "active",
-      "aliases": []
-    },
-    {
-      "id": "10",
-      "title": "Snickare till Core Project",
-      "slug": "snickare-till-core-project",
-      "route_name": "snickare-till-core-project-10",
-      "route": "/lediga-jobb/snickare-till-core-project-10/",
-      "description": "Är du en erfaren snickare som trivs med varierande projekt, stort eget ansvar och en arbetsplats där samarbete och yrkesstolthet står i centrum?",
-      "organization": "Core Projektutveckling AB",
-      "location": "Skåne",
       "publish_date": "2026-10-20",
       "status": "active",
       "aliases": []
@@ -160,6 +134,32 @@
       "location": "Hela Sverige",
       "publish_date": "2026-09-14",
       "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "6",
+      "title": "Serviceelektriker till Granitor Electro Danderyd",
+      "slug": "serviceelektriker-till-granitor-electro-danderyd",
+      "route_name": "serviceelektriker-till-granitor-electro-danderyd-6",
+      "route": "/lediga-jobb/serviceelektriker-till-granitor-electro-danderyd-6/",
+      "description": "Vill du jobba som serviceelektriker på ett framgångsrikt bolag, där du har stor frihet med korta beslutsvägar? Då kanske Granitor Electro Danderyd är något för dig!",
+      "organization": "Granitor Electro i Danderyd",
+      "location": "Storstockholm",
+      "publish_date": "2026-10-20",
+      "status": "closed",
+      "aliases": []
+    },
+    {
+      "id": "10",
+      "title": "Snickare till Core Project",
+      "slug": "snickare-till-core-project",
+      "route_name": "snickare-till-core-project-10",
+      "route": "/lediga-jobb/snickare-till-core-project-10/",
+      "description": "Är du en erfaren snickare som trivs med varierande projekt, stort eget ansvar och en arbetsplats där samarbete och yrkesstolthet står i centrum?",
+      "organization": "Core Projektutveckling AB",
+      "location": "Skåne",
+      "publish_date": "2026-10-20",
+      "status": "closed",
       "aliases": []
     },
     {
