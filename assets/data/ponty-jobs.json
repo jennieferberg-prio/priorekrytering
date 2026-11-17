@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "6e484a49aa880675",
+  "version": "0240ba661ec4d1a0",
   "jobs": [
     {
       "id": "20",
@@ -61,16 +61,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-10-26",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-82-284e.png"
-    },
-    {
-      "id": "14",
-      "title": "Projektledare VVS",
-      "slug": "projektledare-vvs",
-      "route": "/lediga-jobb/projektledare-vvs-14/",
-      "organization": "Rör som Rör i Stockholm AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-25",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-47-030e.png"
     },
     {
       "id": "8",
