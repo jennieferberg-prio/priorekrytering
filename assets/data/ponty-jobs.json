@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "0240ba661ec4d1a0",
+  "version": "63314fa344e76ed8",
   "jobs": [
     {
       "id": "20",
@@ -11,16 +11,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-11-10",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-105-e2a7.png"
-    },
-    {
-      "id": "19",
-      "title": "Fönsterputsare till Gsons Fönsterputs",
-      "slug": "fonsterputsare-till-gsons-fonsterputs",
-      "route": "/lediga-jobb/fonsterputsare-till-gsons-fonsterputs-19/",
-      "organization": "Gsons Fönsterputs AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-11-09",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-101-82a4.png"
     },
     {
       "id": "18",
@@ -51,36 +41,6 @@
       "location": "Storstockholm",
       "publish_date": "2026-11-02",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-78-ab20.png"
-    },
-    {
-      "id": "15",
-      "title": "Ansvarig VVS-Montör/Ledande montör med stora möjligheter",
-      "slug": "ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter",
-      "route": "/lediga-jobb/ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter-15/",
-      "organization": "B4D VVS AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-26",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-82-284e.png"
-    },
-    {
-      "id": "8",
-      "title": "PE Svetsare till Inmek",
-      "slug": "pe-svetsare-till-inmek",
-      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
-      "organization": "Inmek AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-20",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
-    },
-    {
-      "id": "5",
-      "title": "VVS-Montör",
-      "slug": "vvs-montor",
-      "route": "/lediga-jobb/vvs-montor-5/",
-      "organization": "KA VVS Service AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-20",
-      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-13-23f6.png"
     },
     {
       "id": "1",

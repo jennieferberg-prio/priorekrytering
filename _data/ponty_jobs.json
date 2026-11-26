@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "0240ba661ec4d1a0",
+  "version": "63314fa344e76ed8",
   "jobs": [
     {
       "id": "20",
@@ -12,19 +12,6 @@
       "organization": "TMP Alarm AB",
       "location": "Storstockholm",
       "publish_date": "2026-11-10",
-      "status": "active",
-      "aliases": []
-    },
-    {
-      "id": "19",
-      "title": "Fönsterputsare till Gsons Fönsterputs",
-      "slug": "fonsterputsare-till-gsons-fonsterputs",
-      "route_name": "fonsterputsare-till-gsons-fonsterputs-19",
-      "route": "/lediga-jobb/fonsterputsare-till-gsons-fonsterputs-19/",
-      "description": "Är du en riktigt vass fönsterputsare som vill mer än att bara putsa fönster? Vill du få möjligheten att bygga upp, utveckla och på sikt leda en egen del av en verksamhet? Då kan Gsons Fönsterputs vara något för dig!",
-      "organization": "Gsons Fönsterputs AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-11-09",
       "status": "active",
       "aliases": []
     },
@@ -70,6 +57,32 @@
       ]
     },
     {
+      "id": "1",
+      "title": "Spontanansökan",
+      "slug": "spontanansokan",
+      "route_name": "spontanansokan-1",
+      "route": "/lediga-jobb/spontanansokan-1/",
+      "description": "Hittar du ingen tjänst som passar dig just nu? Skicka gärna in en spontanansökan och berätta mer om din erfarenhet, vad du söker och var du vill ta nästa steg.",
+      "organization": "Prio rekrytering AB",
+      "location": "Hela Sverige",
+      "publish_date": "2026-09-14",
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "19",
+      "title": "Fönsterputsare till Gsons Fönsterputs",
+      "slug": "fonsterputsare-till-gsons-fonsterputs",
+      "route_name": "fonsterputsare-till-gsons-fonsterputs-19",
+      "route": "/lediga-jobb/fonsterputsare-till-gsons-fonsterputs-19/",
+      "description": "Är du en riktigt vass fönsterputsare som vill mer än att bara putsa fönster? Vill du få möjligheten att bygga upp, utveckla och på sikt leda en egen del av en verksamhet? Då kan Gsons Fönsterputs vara något för dig!",
+      "organization": "Gsons Fönsterputs AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-09",
+      "status": "closed",
+      "aliases": []
+    },
+    {
       "id": "15",
       "title": "Ansvarig VVS-Montör/Ledande montör med stora möjligheter",
       "slug": "ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter",
@@ -79,7 +92,7 @@
       "organization": "B4D VVS AB",
       "location": "Storstockholm",
       "publish_date": "2026-10-26",
-      "status": "active",
+      "status": "closed",
       "aliases": []
     },
     {
@@ -92,7 +105,7 @@
       "organization": "Inmek AB",
       "location": "Storstockholm",
       "publish_date": "2026-10-20",
-      "status": "active",
+      "status": "closed",
       "aliases": [
         "pe-svetsare-8"
       ]
@@ -107,20 +120,7 @@
       "organization": "KA VVS Service AB",
       "location": "Storstockholm",
       "publish_date": "2026-10-20",
-      "status": "active",
-      "aliases": []
-    },
-    {
-      "id": "1",
-      "title": "Spontanansökan",
-      "slug": "spontanansokan",
-      "route_name": "spontanansokan-1",
-      "route": "/lediga-jobb/spontanansokan-1/",
-      "description": "Hittar du ingen tjänst som passar dig just nu? Skicka gärna in en spontanansökan och berätta mer om din erfarenhet, vad du söker och var du vill ta nästa steg.",
-      "organization": "Prio rekrytering AB",
-      "location": "Hela Sverige",
-      "publish_date": "2026-09-14",
-      "status": "active",
+      "status": "closed",
       "aliases": []
     },
     {
