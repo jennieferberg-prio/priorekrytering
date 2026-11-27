@@ -1,7 +1,17 @@
 {
   "generated_from": "Ponty",
-  "version": "63314fa344e76ed8",
+  "version": "c2833ad0ce0ee7ca",
   "jobs": [
+    {
+      "id": "8",
+      "title": "PE Svetsare till Inmek",
+      "slug": "pe-svetsare-till-inmek",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
+      "organization": "Inmek AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-27",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
+    },
     {
       "id": "20",
       "title": "Brandskyddstekniker till TMP Alarm AB",

@@ -1,7 +1,22 @@
 {
   "generated_from": "Ponty",
-  "version": "63314fa344e76ed8",
+  "version": "c2833ad0ce0ee7ca",
   "jobs": [
+    {
+      "id": "8",
+      "title": "PE Svetsare till Inmek",
+      "slug": "pe-svetsare-till-inmek",
+      "route_name": "pe-svetsare-till-inmek-8",
+      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
+      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
+      "organization": "Inmek AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-27",
+      "status": "active",
+      "aliases": [
+        "pe-svetsare-8"
+      ]
+    },
     {
       "id": "20",
       "title": "Brandskyddstekniker till TMP Alarm AB",
@@ -94,21 +109,6 @@
       "publish_date": "2026-10-26",
       "status": "closed",
       "aliases": []
-    },
-    {
-      "id": "8",
-      "title": "PE Svetsare till Inmek",
-      "slug": "pe-svetsare-till-inmek",
-      "route_name": "pe-svetsare-till-inmek-8",
-      "route": "/lediga-jobb/pe-svetsare-till-inmek-8/",
-      "description": "Vill du jobba som PE-svetsare fokuserat en vecka – och sedan vara helt ledig nästa?",
-      "organization": "Inmek AB",
-      "location": "Storstockholm",
-      "publish_date": "2026-10-20",
-      "status": "closed",
-      "aliases": [
-        "pe-svetsare-8"
-      ]
     },
     {
       "id": "5",
