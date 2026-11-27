@@ -1,6 +1,6 @@
 {
   "generated_from": "Ponty",
-  "version": "c2833ad0ce0ee7ca",
+  "version": "bc21ab422df580ef",
   "jobs": [
     {
       "id": "8",
@@ -11,6 +11,16 @@
       "location": "Storstockholm",
       "publish_date": "2026-11-27",
       "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-29-c107.png"
+    },
+    {
+      "id": "15",
+      "title": "Ansvarig VVS-Montör/Ledande montör med stora möjligheter",
+      "slug": "ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter",
+      "route": "/lediga-jobb/ansvarig-vvs-montor-ledande-montor-med-stora-mojligheter-15/",
+      "organization": "B4D VVS AB",
+      "location": "Storstockholm",
+      "publish_date": "2026-11-27",
+      "logo_url": "https://pnty-prs3.s3.eu-west-1.amazonaws.com/priorekrytering/logo-82-284e.png"
     },
     {
       "id": "20",
